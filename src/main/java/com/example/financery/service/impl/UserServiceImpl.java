@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) {
+        user.setBalance(0.0);
         return userRepository.save(user);
     }
 
