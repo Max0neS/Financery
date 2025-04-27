@@ -19,7 +19,9 @@ public class InMemoryCache {
 
     public InMemoryCache() {
         this.maxSize = 3;
-        this.cache = new LinkedHashMap<Long, List<TransactionDtoResponse>>(maxSize, 0.75f, true) {
+        this.cache = new LinkedHashMap<Long, List<TransactionDtoResponse>>(maxSize,
+                0.75f,
+                true) {
             @Override
             protected boolean removeEldestEntry(
                     Map.Entry<Long,

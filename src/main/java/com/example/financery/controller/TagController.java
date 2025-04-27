@@ -41,6 +41,11 @@ public class TagController {
         return tagService.createTag(tagDto);
     }
 
+    @PutMapping("/update-by-id/{tagId}")
+    public TagDtoResponse updateTag(@PathVariable long tagId, @RequestBody TagDtoRequest tagDto) {
+        return tagService.updateTag(tagId, tagDto);
+    }
+
     @DeleteMapping("/delete-by-id/{tagId}")
     public void deleteTagById(@PathVariable long tagId) {
         tagService.deleteTag(tagId);

@@ -2,6 +2,8 @@ package com.example.financery.service.impl;
 
 import com.example.financery.dto.BillDtoRequest;
 import com.example.financery.dto.BillDtoResponse;
+import com.example.financery.exception.InvalidInputException;
+import com.example.financery.exception.NotFoundException;
 import com.example.financery.mapper.BillMapper;
 import com.example.financery.model.Bill;
 import com.example.financery.model.User;
@@ -18,8 +20,8 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class BillServiceImpl implements BillService {
 
-    public static final String TAG_WITH_ID_NOT_FOUND = "Пользователь с id %d не найден";
-    public static final String BILL_WITH_ID_NOT_FOUND = "Счет с id %d не найдена";
+    private static final String USER_NOT_FOUND = "Пользователь с id %d не найден";
+    private static final String BILL_NOT_FOUND = "Счет с id %d не найден";
 
     private final BillRepository billRepository;
     private final BillMapper billMapper;
@@ -37,6 +39,9 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public List<BillDtoResponse> getBillsByUserId(long userId) {
+        userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(USER_NOT_FOUND, userId)));
         List<Bill> bills = billRepository.findByUser(userId);
         List<BillDtoResponse> billsResponse = new ArrayList<>();
 
@@ -49,16 +54,26 @@ public class BillServiceImpl implements BillService {
 
     public BillDtoResponse getBillById(long id) {
         Bill bill = billRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException(
-                        String.format(BILL_WITH_ID_NOT_FOUND, id)));
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(BILL_NOT_FOUND, id)));
         Hibernate.initialize(bill.getTransactions());
         return billMapper.toBillDto(bill);
     }
 
     @Override
     public BillDtoResponse createBill(BillDtoRequest billDto) {
+        if (billDto.getBalance() < 0) {
+            throw new InvalidInputException(
+                    "Баланс счёта не может быть отрицательным");
+        }
+        if (billDto.getName() == null || billDto.getName().trim().isEmpty()) {
+            throw new InvalidInputException(
+                    "Имя счёта не может быть пустым");
+        }
+
         User user = userRepository.findById(billDto.getUserId())
-                .orElseThrow(() -> new RuntimeException("User Not Found"));
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(USER_NOT_FOUND, billDto.getUserId())));
 
         Bill bill = BillMapper.toBill(billDto);
 
@@ -71,13 +86,20 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public BillDtoResponse updateBill(long billId, BillDtoRequest billDto) {
+        if (billDto.getBalance() < 0) {
+            throw new InvalidInputException("Баланс счёта не может быть отрицательным");
+        }
+        if (billDto.getName() == null || billDto.getName().trim().isEmpty()) {
+            throw new InvalidInputException("Имя счёта не может быть пустым");
+        }
+
         Bill bill = billRepository.findById(billId)
-                .orElseThrow(() -> new RuntimeException(
-                        TAG_WITH_ID_NOT_FOUND + billId));
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(BILL_NOT_FOUND, billId)));
 
         User user = userRepository.findById(bill.getUser().getId())
-                .orElseThrow(() -> new RuntimeException(
-                        TAG_WITH_ID_NOT_FOUND + bill.getUser().getId()));
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(USER_NOT_FOUND, billDto.getUserId())));
 
         double currentBalance = bill.getBalance();
 
@@ -95,12 +117,12 @@ public class BillServiceImpl implements BillService {
 
     public void deleteBill(long billId) {
         Bill bill = billRepository.findById(billId)
-                .orElseThrow(() -> new RuntimeException(
-                        String.format(BILL_WITH_ID_NOT_FOUND, billId)));
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(BILL_NOT_FOUND, billId)));
 
         User user = userRepository.findById(bill.getUser().getId())
-                .orElseThrow(() -> new RuntimeException(
-                        TAG_WITH_ID_NOT_FOUND + bill.getUser().getId()));
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(USER_NOT_FOUND, bill.getUser().getId())));
 
         user.setBalance(user.getBalance() - bill.getBalance());
 

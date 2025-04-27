@@ -2,6 +2,7 @@ package com.example.financery.service.impl;
 
 import com.example.financery.dto.UserDtoRequest;
 import com.example.financery.dto.UserDtoResponse;
+import com.example.financery.exception.NotFoundException;
 import com.example.financery.mapper.UserMapper;
 import com.example.financery.model.User;
 import com.example.financery.repository.UserRepository;
@@ -44,8 +45,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(long id) {
-        return userRepository.findById(id).orElse(null);
+    public UserDtoResponse getUserById(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException("Пользователь с id " + userId + " не найден"));
+        return userMapper.toDto(user);
     }
 
     @Override
@@ -56,7 +59,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDtoResponse updateUser(long id, UserDtoRequest userDtoRequest) {
         User newUser = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found with id " + id));
+                .orElseThrow(() -> new NotFoundException("Пользователь с id " + id + " не найден"));
 
 
         newUser.setName(userDtoRequest.getName());
@@ -70,7 +73,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+                .orElseThrow(() -> new NotFoundException("Пользователь с id " + id + " не найден"));
 
         userRepository.deleteById(id);
 
