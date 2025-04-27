@@ -2,7 +2,6 @@ package com.example.financery.controller;
 
 import com.example.financery.dto.TagDtoRequest;
 import com.example.financery.dto.TagDtoResponse;
-import com.example.financery.dto.TransactionDtoResponse;
 import com.example.financery.service.TagService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

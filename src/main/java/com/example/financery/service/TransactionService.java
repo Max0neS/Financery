@@ -2,7 +2,6 @@ package com.example.financery.service;
 
 import com.example.financery.dto.TransactionDtoRequest;
 import com.example.financery.dto.TransactionDtoResponse;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
 package com.example.financery.model;
 
-import com.example.financery.utils.InMemoryCache;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

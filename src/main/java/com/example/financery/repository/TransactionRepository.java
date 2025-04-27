@@ -1,6 +1,5 @@
 package com.example.financery.repository;
 
-import com.example.financery.model.Bill;
 import com.example.financery.model.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

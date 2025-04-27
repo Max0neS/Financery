@@ -2,7 +2,6 @@ package com.example.financery.controller;
 
 import com.example.financery.dto.BillDtoRequest;
 import com.example.financery.dto.BillDtoResponse;
-import com.example.financery.repository.BillRepository;
 import com.example.financery.service.BillService;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -34,8 +33,7 @@ public class BillController {
 
     @PostMapping("/create")
     public BillDtoResponse createBill(@RequestBody BillDtoRequest billDto) {
-        BillDtoResponse createBill = billService.createBill(billDto);
-        return createBill;
+        return billService.createBill(billDto);
     }
 
     @PutMapping("/update-by-id/{billId}")

@@ -1,10 +1,7 @@
 package com.example.financery.controller;
 
-import com.example.financery.dto.BillDtoRequest;
-import com.example.financery.dto.BillDtoResponse;
 import com.example.financery.dto.TransactionDtoRequest;
 import com.example.financery.dto.TransactionDtoResponse;
-import com.example.financery.service.BillService;
 import com.example.financery.service.TransactionService;
 import com.example.financery.utils.InMemoryCache;
 import lombok.AllArgsConstructor;
@@ -49,9 +46,7 @@ public class TransactionController {
 
     @PostMapping("/create")
     public TransactionDtoResponse createBill(@RequestBody TransactionDtoRequest transactionDto) {
-        TransactionDtoResponse createTransaction = transactionService
-                .createTransaction(transactionDto);
-        return createTransaction;
+        return transactionService.createTransaction(transactionDto);
     }
 
     @PutMapping("/update-by-id/{transactionId}")

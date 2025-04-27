@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class BillServiceImpl implements BillService {
 
+    public static final String TAG_WITH_ID_NOT_FOUND = "Пользователь с id %d не найден";
     public static final String BILL_WITH_ID_NOT_FOUND = "Счет с id %d не найдена";
 
     private final BillRepository billRepository;
@@ -72,11 +73,11 @@ public class BillServiceImpl implements BillService {
     public BillDtoResponse updateBill(long billId, BillDtoRequest billDto) {
         Bill bill = billRepository.findById(billId)
                 .orElseThrow(() -> new RuntimeException(
-                        "User not found with id " + billId));
+                        TAG_WITH_ID_NOT_FOUND + billId));
 
         User user = userRepository.findById(bill.getUser().getId())
                 .orElseThrow(() -> new RuntimeException(
-                        "User not found with id " + bill.getUser().getId()));
+                        TAG_WITH_ID_NOT_FOUND + bill.getUser().getId()));
 
         double currentBalance = bill.getBalance();
 
@@ -99,7 +100,7 @@ public class BillServiceImpl implements BillService {
 
         User user = userRepository.findById(bill.getUser().getId())
                 .orElseThrow(() -> new RuntimeException(
-                        "User not found with id " + bill.getUser().getId()));
+                        TAG_WITH_ID_NOT_FOUND + bill.getUser().getId()));
 
         user.setBalance(user.getBalance() - bill.getBalance());
 

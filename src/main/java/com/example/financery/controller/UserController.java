@@ -7,8 +7,6 @@ import com.example.financery.model.User;
 import com.example.financery.service.UserService;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -36,8 +34,7 @@ public class UserController {
 
     @PostMapping("/create")
     public UserDtoResponse createUser(@RequestBody UserDtoRequest userDtoRequest) {
-        UserDtoResponse createUser = userService.createUser(userDtoRequest);
-        return createUser;
+        return userService.createUser(userDtoRequest);
     }
 
     @PutMapping("/update-by-id/{id}")

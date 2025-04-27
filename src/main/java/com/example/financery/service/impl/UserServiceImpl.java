@@ -69,12 +69,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(long id) {
-        Long userId;
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
         userRepository.deleteById(id);
 
-        cache.clearForUser(id);
+        cache.clearForUser(user.getId());
     }
 }

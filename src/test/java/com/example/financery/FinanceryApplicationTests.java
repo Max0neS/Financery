@@ -8,6 +8,7 @@ class FinanceryApplicationTests {
 
     @Test
     void contextLoads() {
+        // Здесь можно добавить логику для проверки загрузки контекста обновление
     }
 
 }

@@ -106,7 +106,7 @@ public class TransactionServiceImpl implements TransactionService {
                 .orElseThrow(() -> new RuntimeException(
                         "Bill Not Found or does not belong to the user"));
 
-        Transaction transaction = transactionMapper.toTransaction(transactionDto);
+        Transaction transaction = TransactionMapper.toTransaction(transactionDto);
 
         if (transaction.isType()) {
             bill.addAmount(transaction.getAmount());
