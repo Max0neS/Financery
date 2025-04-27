@@ -3,7 +3,6 @@ package com.example.financery.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class Bill {
 
     public void addAmount(double amount) {
         this.balance += amount;
-        if(user != null) {
+        if (user != null) {
             user.setBalance(user.getBalance() + amount);
         }
     }

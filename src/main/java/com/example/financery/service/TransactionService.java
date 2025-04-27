@@ -18,7 +18,9 @@ public interface TransactionService {
 
     TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto);
 
-    TransactionDtoResponse updateTransaction(long transactionId, TransactionDtoRequest transactionDto);
+    TransactionDtoResponse updateTransaction(
+            long transactionId,
+            TransactionDtoRequest transactionDto);
 
     void deleteTransaction(long transactionId);
 }

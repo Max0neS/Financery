@@ -44,7 +44,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDtoResponse getTransactionById(long transactionId){
+    public TransactionDtoResponse getTransactionById(long transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new RuntimeException(
                         String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)));
@@ -53,7 +53,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<TransactionDtoResponse> getTransactionsByUserId(long userId){
+    public List<TransactionDtoResponse> getTransactionsByUserId(long userId) {
         List<Transaction> transactions = transactionRepository.findByUser(userId);
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
 
@@ -66,7 +66,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<TransactionDtoResponse> getTransactionsByBillId(long billId){
+    public List<TransactionDtoResponse> getTransactionsByBillId(long billId) {
         List<Transaction> transactions = transactionRepository.findByBill(billId);
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
 
@@ -79,7 +79,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto){
+    public TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto) {
         User user = userRepository.findById(transactionDto.getUserId())
                 .orElseThrow(() -> new RuntimeException("User Not Found"));
         Bill bill = billRepository
@@ -92,10 +92,9 @@ public class TransactionServiceImpl implements TransactionService {
 
         Transaction transaction = transactionMapper.toTransaction(transactionDto);
 
-        if(transaction.isType()){
+        if (transaction.isType()) {
             bill.addAmount(transaction.getAmount());
-        }
-        else{
+        }  else {
             bill.subtractAmount(transaction.getAmount());
         }
 
@@ -119,8 +118,11 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDtoResponse updateTransaction(long transactionId, TransactionDtoRequest transactionDto){
-        Transaction existingTransaction = transactionRepository.findById(transactionId)
+    public TransactionDtoResponse updateTransaction(
+            long transactionId,
+            TransactionDtoRequest transactionDto) {
+        Transaction existingTransaction = transactionRepository
+                .findById(transactionId)
                 .orElseThrow(() -> new RuntimeException("Transaction not found"));
 
         User user = existingTransaction.getUser();
@@ -132,7 +134,8 @@ public class TransactionServiceImpl implements TransactionService {
         boolean newType = transactionDto.isType();
 
         if (!newType && newAmount > bill.getBalance()) {
-            throw new RuntimeException("Insufficient funds in the bill for the new transaction amount.");
+            throw new RuntimeException(
+                    "Insufficient funds in the bill for the new transaction amount.");
         }
 
 
@@ -147,7 +150,8 @@ public class TransactionServiceImpl implements TransactionService {
             List<Tag> tags = transactionDto.getTagIds().isEmpty()
                     ? new ArrayList<>()
                     : tagRepository.findAllById(transactionDto.getTagIds());
-            if (!transactionDto.getTagIds().isEmpty() && tags.size() != transactionDto.getTagIds().size()) {
+            if (!transactionDto.getTagIds().isEmpty()
+                    && tags.size() != transactionDto.getTagIds().size()) {
                 throw new RuntimeException("One or more tag IDs not found");
             }
             if (tags.stream().anyMatch(tag -> tag.getUser().getId() != user.getId())) {
@@ -175,7 +179,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public void deleteTransaction(long transactionId){
+    public void deleteTransaction(long transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new RuntimeException(
                         String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)));

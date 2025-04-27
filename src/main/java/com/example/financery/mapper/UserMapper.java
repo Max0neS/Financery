@@ -15,7 +15,7 @@ public class UserMapper {
     private final BillMapper billMapper;
     private final TransactionMapper transactionMapper;
 
-    public User toEntity(UserDtoRequest userDto){
+    public User toEntity(UserDtoRequest userDto) {
         User user = new User();
 
         user.setName(userDto.getName());
@@ -25,7 +25,7 @@ public class UserMapper {
         return user;
     }
 
-    public UserDtoResponse toDto(User user){
+    public UserDtoResponse toDto(User user) {
         UserDtoResponse userDtoResponse = new UserDtoResponse();
 
         userDtoResponse.setId(user.getId());

@@ -25,24 +25,29 @@ public class TransactionController {
     }
 
     @GetMapping("/get-transaction-by-id/{transactionId}")
-    public ResponseEntity<TransactionDtoResponse> getTransactionById(@PathVariable long transactionId) {
-        return ResponseEntity.ok(transactionService.getTransactionById(transactionId));
+    public ResponseEntity<TransactionDtoResponse> getTransactionById(
+            @PathVariable long transactionId) {
+        return ResponseEntity.ok(transactionService
+                .getTransactionById(transactionId));
     }
 
     @GetMapping("/get-all-user-transactions/{userId}")
-    public List<TransactionDtoResponse> getAllUserTransactions(@PathVariable long userId) {
+    public List<TransactionDtoResponse> getAllUserTransactions(
+            @PathVariable long userId) {
         return transactionService.getTransactionsByUserId(userId);
     }
 
     @GetMapping("/get-all-bill-transactions/{billId}")
-    public List<TransactionDtoResponse> getAllBillTransactions(@PathVariable long billId) {
+    public List<TransactionDtoResponse> getAllBillTransactions(
+            @PathVariable long billId) {
         return transactionService.getTransactionsByBillId(billId);
     }
 
 
     @PostMapping("/create")
     public TransactionDtoResponse createBill(@RequestBody TransactionDtoRequest transactionDto) {
-        TransactionDtoResponse createTransaction = transactionService.createTransaction(transactionDto);
+        TransactionDtoResponse createTransaction = transactionService
+                .createTransaction(transactionDto);
         return createTransaction;
     }
 

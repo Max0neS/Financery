@@ -11,9 +11,9 @@ public interface TagRepository extends JpaRepository<Tag, Long> {
     @Query(value = "SELECT * FROM tag_table WHERE user_id = ?1", nativeQuery = true)
     List<Tag> findByUser(long userId);
 
-    @Query(value = "SELECT t.* FROM tag_table t " +
-            "JOIN transaction_tag tt ON t.id = tt.tag_id " +
-            "WHERE tt.transaction_id = ?1", nativeQuery = true)
+    @Query(value = "SELECT t.* FROM tag_table t "
+            + "JOIN transaction_tag tt ON t.id = tt.tag_id "
+            + "WHERE tt.transaction_id = ?1", nativeQuery = true)
     List<Tag> findByTransaction(long transactionId);
 
 }
