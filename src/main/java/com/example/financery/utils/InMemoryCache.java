@@ -21,9 +21,13 @@ public class InMemoryCache {
         this.maxSize = 3;
         this.cache = new LinkedHashMap<Long, List<TransactionDtoResponse>>(maxSize, 0.75f, true) {
             @Override
-            protected boolean removeEldestEntry(Map.Entry<Long, List<TransactionDtoResponse>> eldest) {
+            protected boolean removeEldestEntry(
+                    Map.Entry<Long,
+                            List<TransactionDtoResponse>> eldest) {
                 if (size() > maxSize) {
-                    logger.info("Removing least recently used cache for userId: {}", eldest.getKey());
+                    logger.info(
+                            "Removing least recently used cache for userId: {}",
+                            eldest.getKey());
                     return true;
                 }
                 return false;
@@ -47,10 +51,12 @@ public class InMemoryCache {
     public void updateTransaction(Long userId, TransactionDtoResponse transaction) {
         List<TransactionDtoResponse> transactions = cache.get(userId);
         if (transactions != null) {
-            transactions.removeIf(t -> t.getId() == transaction.getId());
+            transactions.removeIf(
+                    t -> t.getId() == transaction.getId());
             transactions.add(transaction);
             cache.put(userId, transactions);
-            logger.info("Updated transaction {} in cache for userId: {}", transaction.getId(), userId);
+            logger.info("Updated transaction {} in cache for userId: {}",
+                    transaction.getId(), userId);
         }
     }
 
@@ -59,7 +65,8 @@ public class InMemoryCache {
         if (transactions != null) {
             transactions.removeIf(t -> t.getId() == transactionId);
             cache.put(userId, transactions);
-            logger.info("Removed transaction {} from cache for userId: {}", transactionId, userId);
+            logger.info("Removed transaction {} from cache for userId: {}",
+                    transactionId, userId);
         }
     }
 

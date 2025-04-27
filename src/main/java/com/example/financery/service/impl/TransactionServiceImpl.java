@@ -191,7 +191,8 @@ public class TransactionServiceImpl implements TransactionService {
         billRepository.save(bill);
         transactionRepository.save(existingTransaction);
         Hibernate.initialize(existingTransaction.getTags());
-        cache.updateTransaction(user.getId(), transactionMapper.toTransactionDto(existingTransaction));
+        cache.updateTransaction(user.getId(),
+                transactionMapper.toTransactionDto(existingTransaction));
         return transactionMapper.toTransactionDto(existingTransaction);
     }
 

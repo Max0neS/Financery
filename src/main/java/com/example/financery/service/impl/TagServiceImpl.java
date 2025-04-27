@@ -67,8 +67,9 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<TransactionDtoResponse> getTransactionsByTagId(long tagId) {
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
-        tagRepository.findTransactionsByTag(tagId).forEach(
-                transaction -> transactionsResponse.add(transactionMapper.toTransactionDto(transaction)));
+        tagRepository.findTransactionsByTag(tagId)
+                .forEach(transaction -> transactionsResponse
+                        .add(transactionMapper.toTransactionDto(transaction)));
         return transactionsResponse;
     }
 
