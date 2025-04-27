@@ -2,13 +2,16 @@ package com.example.financery.service.impl;
 
 import com.example.financery.dto.TagDtoRequest;
 import com.example.financery.dto.TagDtoResponse;
+import com.example.financery.dto.TransactionDtoResponse;
 import com.example.financery.mapper.TagMapper;
 import com.example.financery.mapper.TransactionMapper;
 import com.example.financery.model.Tag;
 import com.example.financery.model.User;
 import com.example.financery.repository.TagRepository;
+import com.example.financery.repository.TransactionRepository;
 import com.example.financery.repository.UserRepository;
 import com.example.financery.service.TagService;
+import com.example.financery.utils.InMemoryCache;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +28,9 @@ public class TagServiceImpl implements TagService {
     private final TagMapper tagMapper;
     private final TransactionMapper transactionMapper;
     private final UserRepository userRepository;
+    private final TransactionRepository transactionRepository;
+
+    private final InMemoryCache cache;
 
     @Override
     public List<TagDtoResponse> getAllTags() {
@@ -59,6 +65,14 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
+    public List<TransactionDtoResponse> getTransactionsByTagId(long tagId) {
+        List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
+        tagRepository.findTransactionsByTag(tagId).forEach(
+                transaction -> transactionsResponse.add(transactionMapper.toTransactionDto(transaction)));
+        return transactionsResponse;
+    }
+
+    @Override
     public TagDtoResponse createTag(TagDtoRequest tagDto) {
         User user = userRepository.findById(tagDto.getUserId())
                 .orElseThrow(() -> new RuntimeException("User Not Found"));
@@ -71,10 +85,41 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
+    public TagDtoResponse updateTag(long id, TagDtoRequest tagDto) {
+        Tag tag = tagRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException(
+                        String.format(TAG_WITH_ID_NOT_FOUND, id)));
+        Long userId = tag.getUser().getId();
+
+        if (tag.getUser().getId() != tagDto.getUserId()) {
+            throw new RuntimeException("Tag does not belong to the specified user");
+        }
+
+        tag.setTitle(tagDto.getTitle());
+        tagRepository.save(tag);
+
+        List<TransactionDtoResponse> transactions = getTransactionsByTagId(id);
+        for (TransactionDtoResponse transaction : transactions) {
+            cache.updateTransaction(userId, transactionMapper.toTransactionDto(
+                    transactionRepository.findById(transaction.getId()).orElseThrow()));
+        }
+
+        return tagMapper.toTagDto(tag);
+    }
+
+    @Override
     public void deleteTag(long id) {
         Tag tag = tagRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(
                         String.format(TAG_WITH_ID_NOT_FOUND, id)));
+        Long userId = tag.getUser().getId();
+
+        List<TransactionDtoResponse> transactions = getTransactionsByTagId(id);
         tagRepository.delete(tag);
+
+        for (TransactionDtoResponse transaction : transactions) {
+            transaction.getTags().removeIf(tagDto -> tagDto.getId() == id);
+            cache.updateTransaction(userId, transaction);
+        }
     }
 }

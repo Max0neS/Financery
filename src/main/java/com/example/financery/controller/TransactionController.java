@@ -6,6 +6,7 @@ import com.example.financery.dto.TransactionDtoRequest;
 import com.example.financery.dto.TransactionDtoResponse;
 import com.example.financery.service.BillService;
 import com.example.financery.service.TransactionService;
+import com.example.financery.utils.InMemoryCache;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,8 @@ import java.util.List;
 public class TransactionController {
 
     private final TransactionService transactionService;
+
+    private final InMemoryCache cache;
 
     @GetMapping("/get-all-transactions")
     public List<TransactionDtoResponse> getAllTransactions() {
@@ -61,5 +64,17 @@ public class TransactionController {
     @DeleteMapping("/delete-by-id/{transactionId}")
     public void deleteTransactionById(@PathVariable long transactionId) {
         transactionService.deleteTransaction(transactionId);
+    }
+
+    @DeleteMapping("/cache/clear")
+    public ResponseEntity<String> clearCache() {
+        cache.clear();
+        return ResponseEntity.ok("Cache cleared successfully");
+    }
+
+    @DeleteMapping("/cache/clear/{userId}")
+    public ResponseEntity<String> clearCacheForUser(@PathVariable long userId) {
+        cache.clearForUser(userId);
+        return ResponseEntity.ok("Cache cleared for userId: " + userId);
     }
 }

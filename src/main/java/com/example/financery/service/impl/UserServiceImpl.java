@@ -9,6 +9,8 @@ import com.example.financery.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.financery.utils.InMemoryCache;
 import lombok.AllArgsConstructor;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final InMemoryCache cache;
 
     @Override
     public List<UserDtoResponse> getAllUsers() {
@@ -66,6 +69,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(long id) {
+        Long userId;
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+
         userRepository.deleteById(id);
+
+        cache.clearForUser(id);
     }
 }

@@ -17,7 +17,11 @@ public interface TagService {
 
     List<TagDtoResponse> getTagsByTransactionId(long transactionId);
 
+    List<TransactionDtoResponse> getTransactionsByTagId(long tagId);
+
     TagDtoResponse createTag(TagDtoRequest tagDto);
+
+    TagDtoResponse updateTag(long id, TagDtoRequest tagDto);
 
     void deleteTag(long id);
 }

@@ -1,5 +1,6 @@
 package com.example.financery.model;
 
+import com.example.financery.utils.InMemoryCache;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,4 +41,5 @@ public class User {
             orphanRemoval = true,
             fetch = FetchType.LAZY)
     private List<Tag> tags = new ArrayList<>();
+
 }
