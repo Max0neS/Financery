@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -40,4 +42,12 @@ public class Transaction {
     @JoinColumn(name = "billId", nullable = false)
     @JsonBackReference
     private Bill bill;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "TransactionTag",
+            joinColumns = @JoinColumn(name = "transactionId"),
+            inverseJoinColumns = @JoinColumn(name = "tagId")
+    )
+    private List<Tag> tags = new ArrayList<>();
 }

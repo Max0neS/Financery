@@ -5,13 +5,16 @@ import com.example.financery.dto.TransactionDtoRequest;
 import com.example.financery.dto.TransactionDtoResponse;
 import com.example.financery.mapper.TransactionMapper;
 import com.example.financery.model.Bill;
+import com.example.financery.model.Tag;
 import com.example.financery.model.Transaction;
 import com.example.financery.model.User;
 import com.example.financery.repository.BillRepository;
+import com.example.financery.repository.TagRepository;
 import com.example.financery.repository.TransactionRepository;
 import com.example.financery.repository.UserRepository;
 import com.example.financery.service.TransactionService;
 import lombok.AllArgsConstructor;
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,12 +30,16 @@ public class TransactionServiceImpl implements TransactionService {
     private final TransactionMapper transactionMapper;
     private final UserRepository userRepository;
     private final BillRepository billRepository;
+    private final TagRepository tagRepository;
 
     @Override
     public List<TransactionDtoResponse> getAllTransactions() {
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
         transactionRepository.findAll().forEach(
-                transaction -> transactionsResponse.add(transactionMapper.toTransactionDto(transaction)));
+                transaction -> {
+                    Hibernate.initialize(transaction.getTags());
+                    transactionsResponse.add(transactionMapper.toTransactionDto(transaction));
+                });
         return transactionsResponse;
     }
 
@@ -41,6 +48,7 @@ public class TransactionServiceImpl implements TransactionService {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new RuntimeException(
                         String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)));
+        Hibernate.initialize(transaction.getTags());
         return transactionMapper.toTransactionDto(transaction);
     }
 
@@ -50,9 +58,10 @@ public class TransactionServiceImpl implements TransactionService {
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
 
         transactions.forEach(
-                transaction -> transactionsResponse
-                        .add(transactionMapper
-                                .toTransactionDto(transaction)));
+                transaction -> {
+                    Hibernate.initialize(transaction.getTags());
+                    transactionsResponse.add(transactionMapper.toTransactionDto(transaction));
+                });
         return transactionsResponse;
     }
 
@@ -62,9 +71,10 @@ public class TransactionServiceImpl implements TransactionService {
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
 
         transactions.forEach(
-                transaction -> transactionsResponse
-                        .add(transactionMapper
-                                .toTransactionDto(transaction)));
+                transaction -> {
+                    Hibernate.initialize(transaction.getTags());
+                    transactionsResponse.add(transactionMapper.toTransactionDto(transaction));
+                });
         return transactionsResponse;
     }
 
@@ -72,8 +82,13 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto){
         User user = userRepository.findById(transactionDto.getUserId())
                 .orElseThrow(() -> new RuntimeException("User Not Found"));
-        Bill bill = billRepository.findById(transactionDto.getBillId())
-                .orElseThrow(() -> new RuntimeException("Bill Not Found"));
+        Bill bill = billRepository
+                .findByIdAndUserId(
+                        transactionDto
+                                .getBillId(),
+                        transactionDto.getUserId())
+                .orElseThrow(() -> new RuntimeException(
+                        "Bill Not Found or does not belong to the user"));
 
         Transaction transaction = transactionMapper.toTransaction(transactionDto);
 
@@ -86,6 +101,17 @@ public class TransactionServiceImpl implements TransactionService {
 
         transaction.setUser(user);
         transaction.setBill(bill);
+
+        if (transactionDto.getTagIds() != null && !transactionDto.getTagIds().isEmpty()) {
+            List<Tag> tags = tagRepository.findAllById(transactionDto.getTagIds());
+            if (tags.size() != transactionDto.getTagIds().size()) {
+                throw new RuntimeException("One or more tag IDs not found");
+            }
+            if (tags.stream().anyMatch(tag -> tag.getUser().getId() != user.getId())) {
+                throw new RuntimeException("One or more tags do not belong to the user");
+            }
+            transaction.setTags(tags);
+        }
 
         transactionRepository.save(transaction);
 
@@ -109,11 +135,26 @@ public class TransactionServiceImpl implements TransactionService {
             throw new RuntimeException("Insufficient funds in the bill for the new transaction amount.");
         }
 
+
         existingTransaction.setName(transactionDto.getName());
         existingTransaction.setDescription(transactionDto.getDescription());
         existingTransaction.setType(transactionDto.isType());
         existingTransaction.setAmount(newAmount);
         existingTransaction.setDate(transactionDto.getDate());
+
+
+        if (transactionDto.getTagIds() != null) {
+            List<Tag> tags = transactionDto.getTagIds().isEmpty()
+                    ? new ArrayList<>()
+                    : tagRepository.findAllById(transactionDto.getTagIds());
+            if (!transactionDto.getTagIds().isEmpty() && tags.size() != transactionDto.getTagIds().size()) {
+                throw new RuntimeException("One or more tag IDs not found");
+            }
+            if (tags.stream().anyMatch(tag -> tag.getUser().getId() != user.getId())) {
+                throw new RuntimeException("One or more tags do not belong to the user");
+            }
+            existingTransaction.setTags(tags);
+        }
 
         if (!oldType) { // Если старый тип false
             bill.addAmount(oldAmount);
@@ -129,6 +170,7 @@ public class TransactionServiceImpl implements TransactionService {
         userRepository.save(user);
         billRepository.save(bill);
         transactionRepository.save(existingTransaction);
+        Hibernate.initialize(existingTransaction.getTags());
         return transactionMapper.toTransactionDto(existingTransaction);
     }
 

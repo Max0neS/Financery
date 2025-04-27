@@ -7,9 +7,13 @@ import com.example.financery.model.Transaction;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.stream.Collectors;
+
 @Component
 @AllArgsConstructor
 public class TransactionMapper {
+
+    private final TagMapper tagMapper;
 
     public TransactionDtoResponse toTransactionDto(Transaction transaction) {
         TransactionDtoResponse transactionDtoResponse = new TransactionDtoResponse();
@@ -23,6 +27,12 @@ public class TransactionMapper {
 
         transactionDtoResponse.setUserId(transaction.getUser().getId());
         transactionDtoResponse.setBillId(transaction.getBill().getId());
+
+        transactionDtoResponse.setTags(
+                transaction.getTags().stream()
+                        .map(tagMapper::toTagDto)
+                        .collect(Collectors.toList())
+        );
 
         return transactionDtoResponse;
     }

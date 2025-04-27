@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 public class TransactionDtoRequest {
@@ -17,4 +18,6 @@ public class TransactionDtoRequest {
 
     private long userId;
     private long billId;
+    private List<Long> tagIds;
+
 }
