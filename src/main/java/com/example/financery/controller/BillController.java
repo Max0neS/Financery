@@ -2,14 +2,13 @@ package com.example.financery.controller;
 
 import com.example.financery.dto.BillDtoRequest;
 import com.example.financery.dto.BillDtoResponse;
-import com.example.financery.model.Bill;
 import com.example.financery.repository.BillRepository;
 import com.example.financery.service.BillService;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/bills")
@@ -41,7 +40,9 @@ public class BillController {
     }
 
     @PutMapping("/update-by-id/{billId}")
-    public BillDtoResponse updateBillById(@PathVariable long billId, @RequestBody BillDtoRequest billDto) {
+    public BillDtoResponse updateBillById(
+            @PathVariable long billId,
+            @RequestBody BillDtoRequest billDto) {
         return billService.updateBill(billId, billDto);
     }
 

@@ -7,5 +7,5 @@ public class BillDtoRequest {
 
     private String name;
     private double balance;
-    private long user_id;
+    private long userId;
 }

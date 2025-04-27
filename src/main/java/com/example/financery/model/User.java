@@ -1,10 +1,9 @@
 package com.example.financery.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Data;
 
 @Data
 @Entity

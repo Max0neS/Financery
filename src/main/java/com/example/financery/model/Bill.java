@@ -20,7 +20,7 @@ public class Bill {
     private double balance = 0.0;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "userId", nullable = false)
     @JsonBackReference
     private User user;
 }

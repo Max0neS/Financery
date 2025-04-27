@@ -14,7 +14,7 @@ public class BillMapper {
         billDtoResponse.setId(bill.getId());
         billDtoResponse.setName(bill.getName());
         billDtoResponse.setBalance(bill.getBalance());
-        billDtoResponse.setUser_id(bill.getUser().getId());
+        billDtoResponse.setUserId(bill.getUser().getId());
 
         return billDtoResponse;
     }
