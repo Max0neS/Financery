@@ -11,13 +11,14 @@ import com.example.financery.service.BillService;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class BillServiceImpl implements BillService {
 
-    public static final String TASK_WITH_ID_NOT_FOUND = "Задача с id %d не найдена";
+    public static final String BILL_WITH_ID_NOT_FOUND = "Счет с id %d не найдена";
 
     private final BillRepository billRepository;
     private final BillMapper billMapper;
@@ -26,8 +27,10 @@ public class BillServiceImpl implements BillService {
     @Override
     public List<BillDtoResponse> getAllBills() {
         List<BillDtoResponse> billsResponse = new ArrayList<>();
-        billRepository.findAll().forEach(
-                bill -> billsResponse.add(billMapper.toBillDto(bill)));
+        billRepository.findAll().forEach(bill -> {
+            Hibernate.initialize(bill.getTransactions());
+            billsResponse.add(billMapper.toBillDto(bill));
+        });
         return billsResponse;
     }
 
@@ -36,14 +39,18 @@ public class BillServiceImpl implements BillService {
         List<Bill> bills = billRepository.findByUser(userId);
         List<BillDtoResponse> billsResponse = new ArrayList<>();
 
-        bills.forEach(bill -> billsResponse.add(billMapper.toBillDto(bill)));
+        bills.forEach(bill -> {
+            Hibernate.initialize(bill.getTransactions());
+            billsResponse.add(billMapper.toBillDto(bill));
+        });
         return billsResponse;
     }
 
     public BillDtoResponse getBillById(long id) {
         Bill bill = billRepository.findById(id)
             .orElseThrow(() -> new RuntimeException(
-                        String.format(TASK_WITH_ID_NOT_FOUND, id)));
+                        String.format(BILL_WITH_ID_NOT_FOUND, id)));
+        Hibernate.initialize(bill.getTransactions());
         return billMapper.toBillDto(bill);
     }
 
@@ -88,7 +95,7 @@ public class BillServiceImpl implements BillService {
     public void deleteBill(long billId) {
         Bill bill = billRepository.findById(billId)
                 .orElseThrow(() -> new RuntimeException(
-                        String.format(TASK_WITH_ID_NOT_FOUND, billId)));
+                        String.format(BILL_WITH_ID_NOT_FOUND, billId)));
 
         User user = userRepository.findById(bill.getUser().getId())
                 .orElseThrow(() -> new RuntimeException(

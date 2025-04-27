@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 public class BillController {
 
     private final BillService billService;
-    private final BillRepository billRepository;
 
     @GetMapping("/get-all-bills")
     public List<BillDtoResponse> getAllBills() {

@@ -1,10 +1,14 @@
 package com.example.financery.controller;
 
 
+import com.example.financery.dto.UserDtoRequest;
+import com.example.financery.dto.UserDtoResponse;
 import com.example.financery.model.User;
 import com.example.financery.service.UserService;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -16,7 +20,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/get-all-users")
-    public List<User> getAllUsers() {
+    public List<UserDtoResponse> getAllUsers() {
         return userService.getAllUsers();
     }
 
@@ -31,13 +35,14 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public UserDtoResponse createUser(@RequestBody UserDtoRequest userDtoRequest) {
+        UserDtoResponse createUser = userService.createUser(userDtoRequest);
+        return createUser;
     }
 
     @PutMapping("/update-by-id/{id}")
-    public User updateUser(@PathVariable long id, @RequestBody User user) {
-        return userService.updateUser(id, user);
+    public UserDtoResponse updateUser(@PathVariable long id, @RequestBody UserDtoRequest userDtoRequest) {
+        return userService.updateUser(id, userDtoRequest);
     }
 
     @DeleteMapping("/delete-by-id/{id}")

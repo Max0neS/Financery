@@ -5,12 +5,14 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class BillDtoResponse {
+public class UserDtoResponse {
 
     private long id;
-    private String name;
-    private double balance;
-    private long userId;
 
-    private List<TransactionDtoResponse> transactions;
+    private String name;
+    private String email;
+
+    private double balance;
+
+    private List<BillDtoResponse> bills;
 }

@@ -1,10 +1,16 @@
 package com.example.financery.service.impl;
 
+import com.example.financery.dto.UserDtoRequest;
+import com.example.financery.dto.UserDtoResponse;
+import com.example.financery.mapper.UserMapper;
 import com.example.financery.model.User;
 import com.example.financery.repository.UserRepository;
 import com.example.financery.service.UserService;
+
+import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
 
 
@@ -13,16 +19,25 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @Override
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserDtoResponse> getAllUsers() {
+        List<UserDtoResponse> userDtoResponses = new ArrayList<>();
+        userRepository.findAll().forEach(user -> {
+            Hibernate.initialize(user.getBills());
+            userDtoResponses.add(userMapper.toDto(user));
+        });
+        return userDtoResponses;
+
     }
 
     @Override
-    public User createUser(User user) {
+    public UserDtoResponse createUser(UserDtoRequest userDtoRequest) {
+        User user = userMapper.toEntity(userDtoRequest);
         user.setBalance(0.0);
-        return userRepository.save(user);
+        userRepository.save(user);
+        return userMapper.toDto(user);
     }
 
     @Override
@@ -36,14 +51,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(long id, User user) {
+    public UserDtoResponse updateUser(long id, UserDtoRequest userDtoRequest) {
         User newUser = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id " + id));
 
-        newUser.setName(user.getName());
-        newUser.setEmail(user.getEmail());
 
-        return userRepository.save(newUser);
+        newUser.setName(userDtoRequest.getName());
+        newUser.setEmail(userDtoRequest.getEmail());
+
+        userRepository.save(newUser);
+
+        return userMapper.toDto(newUser);
     }
 
     @Override
