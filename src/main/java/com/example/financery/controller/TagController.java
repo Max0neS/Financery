@@ -36,7 +36,8 @@ public class TagController {
     )
     @GetMapping("/get-all-user-tags/{userId}")
     public List<TagDtoResponse> getAllUserTags(
-            @Parameter(description = "ID пользователя, чьи теги необходимо получить", required = true, example = "1")
+            @Parameter(description = "ID пользователя, чьи теги необходимо получить",
+                    required = true, example = "1")
             @PathVariable long userId) {
         return tagService.getTagsByUserId(userId);
     }
@@ -47,18 +48,21 @@ public class TagController {
     )
     @GetMapping("/get-tag-by-id/{tagId}")
     public ResponseEntity<TagDtoResponse> getTagById(
-            @Parameter(description = "ID тега, который необходимо получить", required = true, example = "1")
+            @Parameter(description = "ID тега, который необходимо получить",
+                    required = true, example = "1")
             @PathVariable long tagId) {
         return ResponseEntity.ok(tagService.getTagById(tagId));
     }
 
     @Operation(
             summary = "Получение тегов по транзакции",
-            description = "Возвращает список тегов, связанных с транзакцией по указанному ID транзакции."
+            description = "Возвращает список тегов,"
+                    + " связанных с транзакцией по указанному ID транзакции."
     )
     @GetMapping("/get-tags-by-transaction/{transactionId}")
     public List<TagDtoResponse> getTagsByTransactionId(
-            @Parameter(description = "ID транзакции, теги которой необходимо получить", required = true, example = "1")
+            @Parameter(description = "ID транзакции, теги которой необходимо получить",
+                    required = true, example = "1")
             @PathVariable long transactionId) {
         return tagService.getTagsByTransactionId(transactionId);
     }
@@ -80,7 +84,8 @@ public class TagController {
     )
     @PutMapping("/update-by-id/{tagId}")
     public TagDtoResponse updateTag(
-            @Parameter(description = "ID тега, который необходимо обновить", required = true, example = "1")
+            @Parameter(description = "ID тега, который необходимо обновить",
+                    required = true, example = "1")
             @PathVariable long tagId,
             @Parameter(description = "Обновленные данные тега", required = true)
             @Valid @RequestBody TagDtoRequest tagDto) {
@@ -93,7 +98,8 @@ public class TagController {
     )
     @DeleteMapping("/delete-by-id/{tagId}")
     public void deleteTagById(
-            @Parameter(description = "ID тега, который необходимо удалить", required = true, example = "1")
+            @Parameter(description = "ID тега, который необходимо удалить",
+                    required = true, example = "1")
             @PathVariable long tagId) {
         tagService.deleteTag(tagId);
     }

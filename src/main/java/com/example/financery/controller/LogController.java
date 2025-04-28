@@ -30,7 +30,8 @@ public class LogController {
     )
     @GetMapping("/download")
     public ResponseEntity<Resource> downloadLogFile(
-            @Parameter(description = "Дата логов в формате dd-mm-yyyy", required = true, example = "28-04-2025")
+            @Parameter(description = "Дата логов в формате dd-mm-yyyy",
+                    required = true, example = "28-04-2025")
             @RequestParam String date) {
         Resource resource = logService.downloadLogs(date);
         return ResponseEntity.ok()

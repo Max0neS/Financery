@@ -28,26 +28,28 @@ public class InMemoryCache {
                             List<TransactionDtoResponse>> eldest) {
                 if (size() > maxSize) {
                     logger.info(
-                            "Removing least recently used cache for userId: {}",
+                            "Удаление кеша для пользователя используемого давно userId: {}",
                             eldest.getKey());
                     return true;
                 }
                 return false;
             }
         };
-        logger.info("SimpleLRUCache initialized with max size: {}", maxSize);
+        logger.info("LRU Кеш инициализирован с максимальным размером: {}", maxSize);
     }
 
 
     public List<TransactionDtoResponse> get(Long userId) {
         List<TransactionDtoResponse> transactions = cache.get(userId);
-        logger.info("Cache {} for userId: {}", transactions != null ? "hit" : "miss", userId);
+        logger.info("Кеш {} для пользователя: {}",
+                transactions != null ? "найден" : "не найден", userId);
         return transactions;
     }
 
     public void put(Long userId, List<TransactionDtoResponse> transactions) {
         cache.put(userId, transactions);
-        logger.info("Cached transactions for userId: {}, size: {}", userId, transactions.size());
+        logger.info("Закешированы транзакции для пользователя: {}, размером: {}",
+                userId, transactions.size());
     }
 
     public void updateTransaction(Long userId, TransactionDtoResponse transaction) {
@@ -57,7 +59,7 @@ public class InMemoryCache {
                     t -> t.getId() == transaction.getId());
             transactions.add(transaction);
             cache.put(userId, transactions);
-            logger.info("Updated transaction {} in cache for userId: {}",
+            logger.info("Обновление транзакции {} в кеше для пользователя: {}",
                     transaction.getId(), userId);
         }
     }
@@ -67,18 +69,18 @@ public class InMemoryCache {
         if (transactions != null) {
             transactions.removeIf(t -> t.getId() == transactionId);
             cache.put(userId, transactions);
-            logger.info("Removed transaction {} from cache for userId: {}",
+            logger.info("Удаление транзакции {} из кеша пользователя: {}",
                     transactionId, userId);
         }
     }
 
     public void clearForUser(Long userId) {
         cache.remove(userId);
-        logger.info("Cleared cache for userId: {}", userId);
+        logger.info("Очистка кеша для пользователя: {}", userId);
     }
 
     public void clear() {
         cache.clear();
-        logger.info("Cleared entire cache");
+        logger.info("Очистка всего кеша");
     }
 }

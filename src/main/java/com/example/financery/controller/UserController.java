@@ -54,7 +54,7 @@ public class UserController {
             description = "Создает пользователя"
     )
     @PostMapping("/create")
-    public UserDtoResponse createUser( @Valid @RequestBody UserDtoRequest userDtoRequest) {
+    public UserDtoResponse createUser(@Valid @RequestBody UserDtoRequest userDtoRequest) {
         return userService.createUser(userDtoRequest);
     }
 

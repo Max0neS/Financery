@@ -35,11 +35,15 @@ public class BillController {
 
     @Operation(
             summary = "Получение всех счетов пользователя",
-            description = "Возвращает список всех счетов, принадлежащих пользователю с указанным ID."
+            description =
+                    "Возвращает список всех счетов,"
+                            + " принадлежащих пользователю с указанным ID."
     )
     @GetMapping("/get-all-user-bills/{userId}")
     public List<BillDtoResponse> getAllUserBills(
-            @Parameter(description = "ID пользователя, чьи счета необходимо получить", required = true, example = "1")
+            @Parameter(description =
+                    "ID пользователя, чьи счета необходимо получить",
+                    required = true, example = "1")
             @PathVariable long userId) {
         return billService.getBillsByUserId(userId);
     }
@@ -50,7 +54,9 @@ public class BillController {
     )
     @GetMapping("/get-bill-by-id/{billId}")
     public ResponseEntity<BillDtoResponse> getBillById(
-            @Parameter(description = "ID счета, который необходимо получить", required = true, example = "1")
+            @Parameter(description =
+                    "ID счета, который необходимо получить",
+                    required = true, example = "1")
             @PathVariable long billId) {
         return ResponseEntity.ok(billService.getBillById(billId));
     }
@@ -68,11 +74,14 @@ public class BillController {
 
     @Operation(
             summary = "Обновление счета по ID",
-            description = "Обновляет данные счета с указанным ID на основе переданных данных."
+            description =
+                    "Обновляет данные счета с указанным ID на основе переданных данных."
     )
     @PutMapping("/update-by-id/{billId}")
     public BillDtoResponse updateBillById(
-            @Parameter(description = "ID счета, который необходимо обновить", required = true, example = "1")
+            @Parameter(description =
+                    "ID счета, который необходимо обновить",
+                    required = true, example = "1")
             @PathVariable long billId,
             @Parameter(description = "Обновленные данные счета", required = true)
             @Valid @RequestBody BillDtoRequest billDto) {
@@ -85,7 +94,9 @@ public class BillController {
     )
     @DeleteMapping("/delete-by-id/{billId}")
     public void deleteBillById(
-            @Parameter(description = "ID счета, который необходимо удалить", required = true, example = "1")
+            @Parameter(description =
+                    "ID счета, который необходимо удалить",
+                    required = true, example = "1")
             @PathVariable long billId) {
         billService.deleteBill(billId);
     }

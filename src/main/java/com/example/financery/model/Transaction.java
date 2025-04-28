@@ -54,18 +54,18 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", type=" + type +
-                ", amount=" + amount +
-                ", date=" + date +
-                ", userId=" + (user != null ? user.getId() : null) +
-                ", billId=" + (bill != null ? bill.getId() : null) +
-                ", tags=" + (tags != null ? tags.stream()
+        return "Transaction{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", description='" + description + '\''
+                + ", type=" + type
+                + ", amount=" + amount
+                + ", date=" + date
+                + ", userId=" + (user != null ? user.getId() : null)
+                + ", billId=" + (bill != null ? bill.getId() : null)
+                + ", tags=" + (tags != null ? tags.stream()
                 .map(tag -> "Tag{id=" + tag
-                        .getId() + "}").collect(Collectors.toList()) : null) +
-                '}';
+                        .getId() + "}").collect(Collectors.toList()) : null)
+                + '}';
     }
 }

@@ -82,7 +82,8 @@ public class TransactionServiceImpl implements TransactionService {
                 .map(transactionMapper::toTransactionDto)
                 .collect(Collectors.toList());
 
-        log.info("Mapped {} transactions for userId: {}", transactionsResponse.size(), userId);
+        log.info("Сопоставлено {} транзакций для пользователя: {}",
+                transactionsResponse.size(), userId);
         cache.put(userId, transactionsResponse);
         return transactionsResponse;
     }
@@ -163,7 +164,7 @@ public class TransactionServiceImpl implements TransactionService {
         Transaction existingTransaction = transactionRepository
                 .findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
-                        TRANSACTION_WITH_ID_NOT_FOUND + transactionId ));
+                        TRANSACTION_WITH_ID_NOT_FOUND + transactionId));
 
         if (transactionDto.getAmount() > 1_000_000) {
             throw new InvalidInputException("Сумма транзакции не может превышать 1,000,000");

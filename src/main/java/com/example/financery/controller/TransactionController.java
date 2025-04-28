@@ -39,29 +39,34 @@ public class TransactionController {
     )
     @GetMapping("/get-transaction-by-id/{transactionId}")
     public ResponseEntity<TransactionDtoResponse> getTransactionById(
-            @Parameter(description = "ID транзакции, которую необходимо получить", required = true, example = "1")
+            @Parameter(description = "ID транзакции, которую необходимо получить",
+                    required = true, example = "1")
             @PathVariable long transactionId) {
         return ResponseEntity.ok(transactionService.getTransactionById(transactionId));
     }
 
     @Operation(
             summary = "Получение всех транзакций пользователя",
-            description = "Возвращает список всех транзакций, принадлежащих пользователю с указанным ID."
+            description = "Возвращает список всех транзакций,"
+                    + " принадлежащих пользователю с указанным ID."
     )
     @GetMapping("/get-all-user-transactions/{userId}")
     public List<TransactionDtoResponse> getAllUserTransactions(
-            @Parameter(description = "ID пользователя, чьи транзакции необходимо получить", required = true, example = "1")
+            @Parameter(description = "ID пользователя, чьи транзакции необходимо получить",
+                    required = true, example = "1")
             @PathVariable long userId) {
         return transactionService.getTransactionsByUserId(userId);
     }
 
     @Operation(
             summary = "Получение всех транзакций по счету",
-            description = "Возвращает список всех транзакций, связанных со счетом по указанному ID счета."
+            description = "Возвращает список всех транзакций,"
+                    + " связанных со счетом по указанному ID счета."
     )
     @GetMapping("/get-all-bill-transactions/{billId}")
     public List<TransactionDtoResponse> getAllBillTransactions(
-            @Parameter(description = "ID счета, транзакции которого необходимо получить", required = true, example = "1")
+            @Parameter(description = "ID счета, транзакции которого необходимо получить",
+                    required = true, example = "1")
             @PathVariable long billId) {
         return transactionService.getTransactionsByBillId(billId);
     }
@@ -83,7 +88,8 @@ public class TransactionController {
     )
     @PutMapping("/update-by-id/{transactionId}")
     public TransactionDtoResponse updateTransactionById(
-            @Parameter(description = "ID транзакции, которую необходимо обновить", required = true, example = "1")
+            @Parameter(description = "ID транзакции, которую необходимо обновить",
+                    required = true, example = "1")
             @PathVariable long transactionId,
             @Parameter(description = "Обновленные данные транзакции", required = true)
             @Valid @RequestBody TransactionDtoRequest transasctionDto) {
@@ -96,7 +102,8 @@ public class TransactionController {
     )
     @DeleteMapping("/delete-by-id/{transactionId}")
     public void deleteTransactionById(
-            @Parameter(description = "ID транзакции, которую необходимо удалить", required = true, example = "1")
+            @Parameter(description = "ID транзакции, которую необходимо удалить",
+                    required = true, example = "1")
             @PathVariable long transactionId) {
         transactionService.deleteTransaction(transactionId);
     }
@@ -117,7 +124,8 @@ public class TransactionController {
     )
     @DeleteMapping("/cache/clear/{userId}")
     public ResponseEntity<String> clearCacheForUser(
-            @Parameter(description = "ID пользователя, для которого необходимо очистить кэш", required = true, example = "1")
+            @Parameter(description = "ID пользователя, для которого необходимо очистить кэш",
+                    required = true, example = "1")
             @PathVariable long userId) {
         cache.clearForUser(userId);
         return ResponseEntity.ok("Cache cleared for userId: " + userId);

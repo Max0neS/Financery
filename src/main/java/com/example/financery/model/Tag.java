@@ -33,10 +33,10 @@ public class Tag {
 
     @Override
     public String toString() {
-        return "Tag{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", userId=" + (user != null ? user.getId() : null) +
-                '}';
+        return "Tag{"
+                + "id=" + id
+                + ", title='" + title + '\''
+                + ", userId=" + (user != null ? user.getId() : null)
+                + '}';
     }
 }
