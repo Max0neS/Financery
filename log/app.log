@@ -4209,3 +4209,42 @@ Consider defining a bean of type 'com.example.financery.utils.InMemoryCache' in 
 28-04-2025 09:39:25.207 [http-nio-8080-exec-3] INFO  c.e.financery.utils.InMemoryCache - Удаление кеша для пользователя используемого более userId: 2
 28-04-2025 09:39:25.207 [http-nio-8080-exec-3] INFO  c.e.financery.utils.InMemoryCache - Закешированы транзакции для пользователя: 4, размером: 4
 28-04-2025 09:39:25.207 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.put(..) с результатом: null
+28-04-2025 12:11:04.636 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 10248 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 12:11:04.639 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 12:11:04.640 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 12:11:07.519 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 12:11:08.900 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 12:11:12.993 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 12:11:13.306 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 12:11:14.342 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 12:11:14.381 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 10.653 seconds (process running for 11.952)
+28-04-2025 12:24:19.171 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.get(..)
+28-04-2025 12:24:19.173 [http-nio-8080-exec-2] INFO  c.e.financery.utils.InMemoryCache - Кеш не найден для пользователя: 1
+28-04-2025 12:24:19.174 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.get(..) с результатом: null
+28-04-2025 12:24:19.282 [http-nio-8080-exec-2] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 4 транзакций для пользователя: 1
+28-04-2025 12:24:19.282 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.put(..)
+28-04-2025 12:24:19.284 [http-nio-8080-exec-2] INFO  c.e.financery.utils.InMemoryCache - Закешированы транзакции для пользователя: 1, размером: 4
+28-04-2025 12:24:19.285 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.put(..) с результатом: null
+28-04-2025 12:24:23.876 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.get(..)
+28-04-2025 12:24:23.877 [http-nio-8080-exec-5] INFO  c.e.financery.utils.InMemoryCache - Кеш не найден для пользователя: 2
+28-04-2025 12:24:23.877 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.get(..) с результатом: null
+28-04-2025 12:24:23.884 [http-nio-8080-exec-5] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 4 транзакций для пользователя: 2
+28-04-2025 12:24:23.885 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.put(..)
+28-04-2025 12:24:23.886 [http-nio-8080-exec-5] INFO  c.e.financery.utils.InMemoryCache - Закешированы транзакции для пользователя: 2, размером: 4
+28-04-2025 12:24:23.886 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.put(..) с результатом: null
+28-04-2025 12:24:25.888 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.get(..)
+28-04-2025 12:24:25.888 [http-nio-8080-exec-7] INFO  c.e.financery.utils.InMemoryCache - Кеш не найден для пользователя: 3
+28-04-2025 12:24:25.889 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.get(..) с результатом: null
+28-04-2025 12:24:25.900 [http-nio-8080-exec-7] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 4 транзакций для пользователя: 3
+28-04-2025 12:24:25.901 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.put(..)
+28-04-2025 12:24:25.901 [http-nio-8080-exec-7] INFO  c.e.financery.utils.InMemoryCache - Закешированы транзакции для пользователя: 3, размером: 4
+28-04-2025 12:24:25.902 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.put(..) с результатом: null
+28-04-2025 12:24:45.924 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.get(..)
+28-04-2025 12:24:45.924 [http-nio-8080-exec-9] INFO  c.e.financery.utils.InMemoryCache - Кеш найден для пользователя: 1
+28-04-2025 12:24:45.924 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.get(..) с результатом: [TransactionDtoResponse(id=2, name=fefefe, description=Vision-oriented back-end Rubber, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=1, billId=1), TransactionDtoResponse(id=4, name=fefefe, description=Pa'anga HDD, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=1, billId=1), TransactionDtoResponse(id=1, name=fefefe, description=Persistent transmitting, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=1, billId=1), TransactionDtoResponse(id=3, name=fefefe, description=Checking Kansas deposit Sausages 4th, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=1, billId=1)]
+28-04-2025 12:25:01.592 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.clearForUser(..)
+28-04-2025 12:25:01.593 [http-nio-8080-exec-6] INFO  c.e.financery.utils.InMemoryCache - Очистка кеша для пользователя: 1
+28-04-2025 12:25:01.594 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.clearForUser(..) с результатом: null
+28-04-2025 12:25:09.728 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionServiceImpl.getTransactionsByUserId(..) с причиной: Пользователь с id 1 не найден
+28-04-2025 12:25:09.729 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionController.getAllUserTransactions(..) с причиной: Пользователь с id 1 не найден
+28-04-2025 12:25:09.745 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.NotFoundException: Пользователь с id 1 не найден]

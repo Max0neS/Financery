@@ -14,19 +14,16 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    //    @Before("execution(* com.example.financery..*(..)) "
-    //    + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))")
-    @Before("execution(* com.example.financery.utils.InMemoryCache.*(..))")
+    @Before("execution(* com.example.financery..*(..)) "
+        + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         if (logger.isDebugEnabled()) {
             logger.info("Началось выполнение: {}", joinPoint.getSignature().toShortString());
         }
     }
 
-    //    @AfterReturning(pointcut = "execution(* com.example.financery..*(..)) "
-    //            + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))",
-    //            returning = "result")
-    @AfterReturning(pointcut = "execution(* com.example.financery.utils.InMemoryCache.*(..))",
+    @AfterReturning(pointcut = "execution(* com.example.financery..*(..)) "
+            + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))",
             returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
         if (logger.isDebugEnabled()) {

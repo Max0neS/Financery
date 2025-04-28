@@ -17,6 +17,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             + "LEFT JOIN FETCH t.tags "
             + "WHERE t.user.id "
             + "= :userId")
+
     List<Transaction> findByUserId(@Param("userId") Long userId);
 
     @Query(value = "SELECT * FROM transaction_table WHERE user_id = ?1", nativeQuery = true)
