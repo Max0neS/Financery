@@ -18,10 +18,13 @@ import com.example.financery.service.TransactionService;
 import com.example.financery.utils.InMemoryCache;
 import lombok.AllArgsConstructor;
 import org.hibernate.Hibernate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -37,6 +40,8 @@ public class TransactionServiceImpl implements TransactionService {
     private final TagRepository tagRepository;
 
     private final InMemoryCache cache;
+
+    private static final Logger log = LoggerFactory.getLogger(TransactionServiceImpl.class);
 
     @Override
     public List<TransactionDtoResponse> getAllTransactions() {
@@ -61,9 +66,9 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public List<TransactionDtoResponse> getTransactionsByUserId(long userId) {
 
-        userRepository.findById(userId)
-                .orElseThrow(() -> new NotFoundException(
-                        String.format("Пользователь с id %d не найден", userId)));
+        if (!userRepository.existsById(userId)) {
+            throw new NotFoundException(String.format("Пользователь с id %d не найден", userId));
+        }
 
         //Чекаем есть ли в кеше
         List<TransactionDtoResponse> cachedTransactions = cache.get(userId);
@@ -71,14 +76,19 @@ public class TransactionServiceImpl implements TransactionService {
             return cachedTransactions;
         }
 
-        List<Transaction> transactions = transactionRepository.findByUser(userId);
-        List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
+        List<Transaction> transactions = transactionRepository.findByUserId(userId);
+        List<TransactionDtoResponse> transactionsResponse = transactions.stream()
+                .map(transactionMapper::toTransactionDto)
+                .collect(Collectors.toList());
+//        List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
+//
+//        transactions.forEach(
+//                transaction -> {
+////                    Hibernate.initialize(transaction.getTags());
+//                    transactionsResponse.add(transactionMapper.toTransactionDto(transaction));
+//                });
 
-        transactions.forEach(
-                transaction -> {
-                    Hibernate.initialize(transaction.getTags());
-                    transactionsResponse.add(transactionMapper.toTransactionDto(transaction));
-                });
+        log.info("Mapped {} transactions for userId: {}", transactionsResponse.size(), userId);
         cache.put(userId, transactionsResponse);
         return transactionsResponse;
     }
