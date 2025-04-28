@@ -1,5 +1,6 @@
 package com.example.financery.model;
 
+import com.example.financery.exception.InvalidInputException;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -46,7 +47,7 @@ public class Bill {
                 user.setBalance(user.getBalance() - amount);
             }
         } else {
-            throw new RuntimeException("Insufficient balance in the bill.");
+            throw new InvalidInputException("Недостаточный остаток на счету");
         }
     }
 

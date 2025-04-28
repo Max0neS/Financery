@@ -32,6 +32,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     public static final String TRANSACTION_WITH_ID_NOT_FOUND = "Транзакция с id %d не найдена";
     public static final String USER_WITH_ID_NOT_FOUND = "Пользователь с id %d не найден";
+    public static final String BILL_WITH_ID_NOT_FOUND = "Счет с id %d не найден";
 
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
@@ -58,7 +59,7 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionDtoResponse getTransactionById(long transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Транзакция с id %d не найдена", transactionId)));
+                        String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)));
         Hibernate.initialize(transaction.getTags());
         return transactionMapper.toTransactionDto(transaction);
     }
@@ -67,7 +68,7 @@ public class TransactionServiceImpl implements TransactionService {
     public List<TransactionDtoResponse> getTransactionsByUserId(long userId) {
 
         if (!userRepository.existsById(userId)) {
-            throw new NotFoundException(String.format("Пользователь с id %d не найден", userId));
+            throw new NotFoundException(String.format(USER_WITH_ID_NOT_FOUND, userId));
         }
 
         //Чекаем есть ли в кеше
@@ -79,7 +80,7 @@ public class TransactionServiceImpl implements TransactionService {
         List<Transaction> transactions = transactionRepository.findByUserId(userId);
         List<TransactionDtoResponse> transactionsResponse = transactions.stream()
                 .map(transactionMapper::toTransactionDto)
-                .collect(Collectors.toList());
+                .toList();
 
         log.info("Mapped {} transactions for userId: {}", transactionsResponse.size(), userId);
         cache.put(userId, transactionsResponse);
@@ -90,7 +91,7 @@ public class TransactionServiceImpl implements TransactionService {
     public List<TransactionDtoResponse> getTransactionsByBillId(long billId) {
         billRepository.findById(billId)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Счет с id %d не найден", billId)));
+                        String.format(BILL_WITH_ID_NOT_FOUND, billId)));
 
         List<Transaction> transactions = transactionRepository.findByBill(billId);
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
@@ -107,8 +108,7 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto) {
         User user = userRepository.findById(transactionDto.getUserId())
                 .orElseThrow(() -> new NotFoundException(
-                        "Пользователь с id "
-                                + transactionDto.getUserId() + " не найден"));
+                        USER_WITH_ID_NOT_FOUND + transactionDto.getUserId()));
 
         if (transactionDto.getAmount() > 1_000_000) {
             throw new InvalidInputException("Сумма транзакции не может превышать 1,000,000");
@@ -163,7 +163,7 @@ public class TransactionServiceImpl implements TransactionService {
         Transaction existingTransaction = transactionRepository
                 .findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
-                        "Транзакция с id " + transactionId + " не найдена"));
+                        TRANSACTION_WITH_ID_NOT_FOUND + transactionId ));
 
         if (transactionDto.getAmount() > 1_000_000) {
             throw new InvalidInputException("Сумма транзакции не может превышать 1,000,000");
@@ -182,12 +182,11 @@ public class TransactionServiceImpl implements TransactionService {
 
         User user = userRepository.findById(transactionDto.getUserId())
                 .orElseThrow(() -> new NotFoundException(
-                        "Пользователь с id "
-                                + transactionDto.getUserId() + " не найден"));
+                        USER_WITH_ID_NOT_FOUND + transactionDto.getUserId()));
         Bill bill = billRepository
                 .findByIdAndUserId(transactionDto.getBillId(), transactionDto.getUserId())
                 .orElseThrow(() -> new NotFoundException(
-                        "Счет с id " + transactionDto.getBillId()
+                        "Счет с данным id " + transactionDto.getBillId()
                                 + " не найден или не принадлежит пользователю"));
 
         double oldAmount = existingTransaction.getAmount();
@@ -243,10 +242,10 @@ public class TransactionServiceImpl implements TransactionService {
     public void deleteTransaction(long transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Транзакция с id %d не найдена", transactionId)));
+                        String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)));
         Bill bill = billRepository.findById(transaction.getBill().getId())
                 .orElseThrow(() -> new NotFoundException(
-                        "Счет с id " + transaction.getBill().getId() + " не найден"));
+                        BILL_WITH_ID_NOT_FOUND + transaction.getBill().getId()));
 
         bill.subtractAmount(transaction.getAmount());
 

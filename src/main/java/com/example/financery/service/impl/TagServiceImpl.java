@@ -61,7 +61,7 @@ public class TagServiceImpl implements TagService {
     public TagDtoResponse getTagById(long id) {
         Tag tag = tagRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Тег с id %d не найден", id)));
+                        String.format(TAG_WITH_ID_NOT_FOUND, id)));
         return tagMapper.toTagDto(tag);
     }
 
@@ -77,7 +77,7 @@ public class TagServiceImpl implements TagService {
     public List<TransactionDtoResponse> getTransactionsByTagId(long tagId) {
         tagRepository.findById(tagId)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Тег с id %d не найден", tagId)));
+                        String.format(TAG_WITH_ID_NOT_FOUND, tagId)));
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
         tagRepository.findTransactionsByTag(tagId)
                 .forEach(transaction -> transactionsResponse
@@ -104,7 +104,7 @@ public class TagServiceImpl implements TagService {
     public TagDtoResponse updateTag(long id, TagDtoRequest tagDto) {
         Tag tag = tagRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Тег с id %d не найден", id)));
+                        String.format(TAG_WITH_ID_NOT_FOUND, id)));
         Long userId = tag.getUser().getId();
 
         if (tag.getUser().getId() != tagDto.getUserId()) {
@@ -132,7 +132,7 @@ public class TagServiceImpl implements TagService {
     public void deleteTag(long id) {
         Tag tag = tagRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("Тег с id %d не найден", id)));
+                        String.format(TAG_WITH_ID_NOT_FOUND, id)));
         Long userId = tag.getUser().getId();
 
         List<Transaction> transactions = tagRepository.findTransactionsByTag(id);
