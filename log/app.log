@@ -1,0 +1,264 @@
+28-04-2025 04:13:52.778 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 4824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 04:13:52.781 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 04:13:52.782 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 04:13:55.440 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:13:56.783 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 04:14:00.529 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 04:14:00.594 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: OpenApiConfig.customOpenApi()
+28-04-2025 04:14:00.597 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 04:14:00.852 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 04:14:01.955 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:14:01.990 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 10.267 seconds (process running for 11.436)
+28-04-2025 04:14:45.101 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: GlobalExceptionHandler.handleGenericException(..)
+28-04-2025 04:14:45.106 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@2c8113cf,[]>
+28-04-2025 04:14:45.223 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource test.]
+28-04-2025 04:16:13.416 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: GlobalExceptionHandler.handleHttpMessageNotReadable(..)
+28-04-2025 04:16:13.417 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: GlobalExceptionHandler.handleHttpMessageNotReadable(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@21402a1a,[]>
+28-04-2025 04:16:13.419 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value]
+28-04-2025 04:17:19.812 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogController.downloadLogFile(..)
+28-04-2025 04:17:19.813 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogServiceImpl.downloadLogs(..)
+28-04-2025 04:17:19.817 [http-nio-8080-exec-8] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-4393631070058767190.log
+28-04-2025 04:17:19.817 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-4393631070058767190.log
+28-04-2025 04:17:19.837 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-4393631070058767190.log
+28-04-2025 04:17:19.838 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-4393631070058767190.log
+28-04-2025 04:17:19.838 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 04:17:19.838 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-4393631070058767190.log]
+28-04-2025 04:17:19.841 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-4393631070058767190.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-4393631070058767190.log""]>
+28-04-2025 04:18:34.879 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogController.downloadLogFile(..)
+28-04-2025 04:18:34.879 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogServiceImpl.downloadLogs(..)
+28-04-2025 04:18:34.880 [http-nio-8080-exec-10] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-16749547156936593526.log
+28-04-2025 04:18:34.880 [http-nio-8080-exec-10] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-16749547156936593526.log
+28-04-2025 04:18:34.896 [http-nio-8080-exec-10] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-16749547156936593526.log
+28-04-2025 04:18:34.897 [http-nio-8080-exec-10] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-16749547156936593526.log
+28-04-2025 04:18:34.897 [http-nio-8080-exec-10] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 04:18:34.898 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-16749547156936593526.log]
+28-04-2025 04:18:34.898 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-16749547156936593526.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-16749547156936593526.log""]>
+28-04-2025 04:20:42.889 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:20:42.903 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:20:43.031 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 4824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 04:20:43.032 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 04:20:43.032 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 04:20:44.084 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:20:44.519 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 04:20:45.745 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 04:20:45.811 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: OpenApiConfig.customOpenApi()
+28-04-2025 04:20:45.812 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 04:20:45.984 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 04:20:46.708 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:20:46.724 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.742 seconds (process running for 416.17)
+28-04-2025 04:21:16.954 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..)
+28-04-2025 04:21:16.954 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..)
+28-04-2025 04:21:16.958 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..)
+28-04-2025 04:21:17.082 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..) с результатом: [FAILED toString()]
+28-04-2025 04:21:17.115 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..)
+28-04-2025 04:21:17.115 [http-nio-8080-exec-3] INFO  c.e.financery.utils.InMemoryCache - Cache miss for userId: 3
+28-04-2025 04:21:17.116 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..) с результатом: null
+28-04-2025 04:21:17.116 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionRepository.findByUser(..)
+28-04-2025 04:21:17.213 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionRepository.findByUser(..) с результатом: [FAILED toString()]
+28-04-2025 04:21:17.234 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.237 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.250 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.251 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.252 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.253 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.254 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.254 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.257 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.257 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.259 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.259 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.262 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:21:17.263 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:21:17.263 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.put(..)
+28-04-2025 04:21:17.264 [http-nio-8080-exec-3] INFO  c.e.financery.utils.InMemoryCache - Cached transactions for userId: 3, size: 7
+28-04-2025 04:21:17.265 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.put(..) с результатом: null
+28-04-2025 04:21:17.265 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:21:17.266 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:25:26.994 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..)
+28-04-2025 04:25:26.994 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..)
+28-04-2025 04:25:26.994 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..)
+28-04-2025 04:25:26.998 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..) с результатом: [FAILED toString()]
+28-04-2025 04:25:27.009 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..)
+28-04-2025 04:25:27.010 [http-nio-8080-exec-5] INFO  c.e.financery.utils.InMemoryCache - Cache hit for userId: 3
+28-04-2025 04:25:27.010 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:25:27.010 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:25:27.010 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:28:17.919 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:28:17.934 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:28:18.054 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 4824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 04:28:18.054 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 04:28:18.054 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 04:28:18.403 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type com.example.financery.model.User not present
+28-04-2025 04:28:18.438 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.example.financery.model.User not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:116)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117)
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95)
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1385)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:554)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:502)
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263)
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37)
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327)
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55)
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79)
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93)
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168)
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.ClassNotFoundException: com.example.financery.model.User
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:113)
+	... 39 common frames omitted
+28-04-2025 04:30:04.331 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 23584 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 04:30:04.334 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 04:30:04.335 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 04:30:06.496 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:30:07.691 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 04:30:11.512 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 04:30:11.574 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: OpenApiConfig.customOpenApi()
+28-04-2025 04:30:11.577 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 04:30:11.776 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 04:30:12.636 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 04:30:12.666 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.115 seconds (process running for 10.211)
+28-04-2025 04:30:17.123 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..)
+28-04-2025 04:30:17.123 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..)
+28-04-2025 04:30:17.128 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..)
+28-04-2025 04:30:17.240 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..) с результатом: Optional[User{id=3, name='Hassan', bills=[Bill{id=3}]}]
+28-04-2025 04:30:17.253 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..)
+28-04-2025 04:30:17.253 [http-nio-8080-exec-2] INFO  c.e.financery.utils.InMemoryCache - Cache miss for userId: 3
+28-04-2025 04:30:17.254 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..) с результатом: null
+28-04-2025 04:30:17.254 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionRepository.findByUser(..)
+28-04-2025 04:30:17.319 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionRepository.findByUser(..) с результатом: [Transaction(id=15, name=New, description=New Descr, type=true, amount=486.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[]), Transaction(id=16, name=New, description=New Descr, type=true, amount=667.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[]), Transaction(id=17, name=New, description=New Descr, type=true, amount=618.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[]), Transaction(id=18, name=New, description=New Descr, type=true, amount=200.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[]), Transaction(id=19, name=New, description=New Descr, type=true, amount=306.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[]), Transaction(id=20, name=New, description=New Descr, type=true, amount=306.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[]), Transaction(id=14, name=null, description=NEWNEWQ, type=true, amount=300.0, date=2002-02-19, user=User{id=3, name='Hassan', bills=[Bill{id=3}]}, bill=Bill{id=3, name='NewBill', user=User{id=3}}, tags=[])]
+28-04-2025 04:30:17.337 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.338 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.346 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.346 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.347 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.347 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.347 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.347 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.347 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.348 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.348 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.349 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.349 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..)
+28-04-2025 04:30:17.349 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionMapper.toTransactionDto(..) с результатом: TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)
+28-04-2025 04:30:17.350 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.put(..)
+28-04-2025 04:30:17.351 [http-nio-8080-exec-2] INFO  c.e.financery.utils.InMemoryCache - Cached transactions for userId: 3, size: 7
+28-04-2025 04:30:17.352 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.put(..) с результатом: null
+28-04-2025 04:30:17.352 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:30:17.353 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:34:51.604 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..)
+28-04-2025 04:34:51.605 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..)
+28-04-2025 04:34:51.605 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..)
+28-04-2025 04:34:51.609 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: CrudRepository.findById(..) с результатом: Optional[User{id=3, name='Hassan', bills=[Bill{id=3}]}]
+28-04-2025 04:34:51.611 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..)
+28-04-2025 04:34:51.611 [http-nio-8080-exec-5] INFO  c.e.financery.utils.InMemoryCache - Cache hit for userId: 3
+28-04-2025 04:34:51.611 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: InMemoryCache.get(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:34:51.612 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionServiceImpl.getTransactionsByUserId(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:34:51.612 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: TransactionController.getAllUserTransactions(..) с результатом: [TransactionDtoResponse(id=15, name=New, description=New Descr, tags=[], type=true, amount=486.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=16, name=New, description=New Descr, tags=[], type=true, amount=667.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=17, name=New, description=New Descr, tags=[], type=true, amount=618.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=18, name=New, description=New Descr, tags=[], type=true, amount=200.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=19, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=20, name=New, description=New Descr, tags=[], type=true, amount=306.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=14, name=null, description=NEWNEWQ, tags=[], type=true, amount=300.0, date=2002-02-19, userId=3, billId=3)]
+28-04-2025 04:39:19.187 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogController.downloadLogFile(..)
+28-04-2025 04:39:19.188 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogServiceImpl.downloadLogs(..)
+28-04-2025 04:39:19.192 [http-nio-8080-exec-8] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-12760537577354846939.log
+28-04-2025 04:39:19.192 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-12760537577354846939.log
+28-04-2025 04:39:19.220 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-12760537577354846939.log
+28-04-2025 04:39:19.220 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-12760537577354846939.log
+28-04-2025 04:39:19.221 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 04:39:19.221 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-12760537577354846939.log]
+28-04-2025 04:39:19.224 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Выполняется: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-12760537577354846939.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-12760537577354846939.log""]>

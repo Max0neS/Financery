@@ -49,4 +49,13 @@ public class Bill {
             throw new RuntimeException("Insufficient balance in the bill.");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", user=" + (user != null ? "User{id=" + user.getId() + "}" : null) +
+                '}';
+    }
 }
