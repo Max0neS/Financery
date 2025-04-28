@@ -19,6 +19,9 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             + "= :userId")
     List<Transaction> findByUserId(@Param("userId") Long userId);
 
+    @Query(value = "SELECT * FROM transaction_table WHERE user_id = ?1", nativeQuery = true)
+    List<Transaction> findByUser(long userId);
+
     @Query(value = "SELECT * FROM transaction_table WHERE bill_id = ?1", nativeQuery = true)
     List<Transaction> findByBill(long billId);
 }

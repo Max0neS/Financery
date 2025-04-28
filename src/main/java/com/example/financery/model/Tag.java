@@ -30,4 +30,13 @@ public class Tag {
             inverseJoinColumns = @JoinColumn(name = "transactionId")
     )
     private List<Transaction> transactions = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", userId=" + (user != null ? user.getId() : null) +
+                '}';
+    }
 }

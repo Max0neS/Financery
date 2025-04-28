@@ -8,6 +8,7 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Entity
@@ -50,4 +51,21 @@ public class Transaction {
             inverseJoinColumns = @JoinColumn(name = "tagId")
     )
     private List<Tag> tags = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", type=" + type +
+                ", amount=" + amount +
+                ", date=" + date +
+                ", userId=" + (user != null ? user.getId() : null) +
+                ", billId=" + (bill != null ? bill.getId() : null) +
+                ", tags=" + (tags != null ? tags.stream()
+                .map(tag -> "Tag{id=" + tag
+                        .getId() + "}").collect(Collectors.toList()) : null) +
+                '}';
+    }
 }

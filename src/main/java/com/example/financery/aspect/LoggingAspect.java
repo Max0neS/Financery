@@ -16,6 +16,7 @@ public class LoggingAspect {
 
     @Before("execution(* com.example.financery..*(..)) "
             + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))")
+//    @Before("execution(* com.example.financery.utils.InMemoryCache.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         if (logger.isDebugEnabled()) {
             logger.info("Началось выполнение: {}", joinPoint.getSignature().toShortString());
@@ -25,6 +26,8 @@ public class LoggingAspect {
     @AfterReturning(pointcut = "execution(* com.example.financery..*(..)) "
             + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))",
             returning = "result")
+    //    @AfterReturning(pointcut = "execution(* com.example.financery.utils.InMemoryCache.*(..))",
+    //        returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
         if (logger.isDebugEnabled()) {
             logger.info("Закончилось выполнение: {} с результатом: {}",

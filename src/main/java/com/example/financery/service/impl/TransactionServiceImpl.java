@@ -80,7 +80,7 @@ public class TransactionServiceImpl implements TransactionService {
         List<Transaction> transactions = transactionRepository.findByUserId(userId);
         List<TransactionDtoResponse> transactionsResponse = transactions.stream()
                 .map(transactionMapper::toTransactionDto)
-                .toList();
+                .collect(Collectors.toList());
 
         log.info("Mapped {} transactions for userId: {}", transactionsResponse.size(), userId);
         cache.put(userId, transactionsResponse);
