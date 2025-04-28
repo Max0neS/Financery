@@ -80,13 +80,6 @@ public class TransactionServiceImpl implements TransactionService {
         List<TransactionDtoResponse> transactionsResponse = transactions.stream()
                 .map(transactionMapper::toTransactionDto)
                 .collect(Collectors.toList());
-//        List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
-//
-//        transactions.forEach(
-//                transaction -> {
-////                    Hibernate.initialize(transaction.getTags());
-//                    transactionsResponse.add(transactionMapper.toTransactionDto(transaction));
-//                });
 
         log.info("Mapped {} transactions for userId: {}", transactionsResponse.size(), userId);
         cache.put(userId, transactionsResponse);
@@ -169,23 +162,33 @@ public class TransactionServiceImpl implements TransactionService {
             TransactionDtoRequest transactionDto) {
         Transaction existingTransaction = transactionRepository
                 .findById(transactionId)
-                .orElseThrow(() -> new NotFoundException("Транзакция с id " + transactionId + " не найдена"));
+                .orElseThrow(() -> new NotFoundException(
+                        "Транзакция с id " + transactionId + " не найдена"));
 
         if (transactionDto.getAmount() > 1_000_000) {
             throw new InvalidInputException("Сумма транзакции не может превышать 1,000,000");
         }
 
         if (!existingTransaction.getUser().getId().equals(transactionDto.getUserId())) {
-            throw new InvalidInputException("Нельзя изменить пользователя транзакции, используй: " + existingTransaction.getUser().getId());
+            throw new InvalidInputException(
+                    "Нельзя изменить пользователя транзакции, используй: "
+                            + existingTransaction.getUser().getId());
         }
         if (!existingTransaction.getBill().getId().equals(transactionDto.getBillId())) {
-            throw new InvalidInputException("Нельзя изменить счёт транзакции, используй: " + existingTransaction.getBill().getId());
+            throw new InvalidInputException(
+                    "Нельзя изменить счёт транзакции, используй: "
+                            + existingTransaction.getBill().getId());
         }
 
         User user = userRepository.findById(transactionDto.getUserId())
-                .orElseThrow(() -> new NotFoundException("Пользователь с id " + transactionDto.getUserId() + " не найден"));
-        Bill bill = billRepository.findByIdAndUserId(transactionDto.getBillId(), transactionDto.getUserId())
-                .orElseThrow(() -> new NotFoundException("Счет с id " + transactionDto.getBillId() + " не найден или не принадлежит пользователю"));
+                .orElseThrow(() -> new NotFoundException(
+                        "Пользователь с id "
+                                + transactionDto.getUserId() + " не найден"));
+        Bill bill = billRepository
+                .findByIdAndUserId(transactionDto.getBillId(), transactionDto.getUserId())
+                .orElseThrow(() -> new NotFoundException(
+                        "Счет с id " + transactionDto.getBillId()
+                                + " не найден или не принадлежит пользователю"));
 
         double oldAmount = existingTransaction.getAmount();
         double newAmount = transactionDto.getAmount();
@@ -208,8 +211,10 @@ public class TransactionServiceImpl implements TransactionService {
             List<Tag> tags = transactionDto.getTagIds().isEmpty()
                     ? new ArrayList<>()
                     : tagRepository.findAllById(transactionDto.getTagIds());
-            if (!transactionDto.getTagIds().isEmpty() && tags.size() != transactionDto.getTagIds().size()) {
-                throw new InvalidInputException("Один или несколько тегов не найдены или не принадлежат пользователю");
+            if (!transactionDto.getTagIds().isEmpty()
+                    && tags.size() != transactionDto.getTagIds().size()) {
+                throw new InvalidInputException(
+                        "Один или несколько тегов не найдены или не принадлежат пользователю");
             }
             existingTransaction.setTags(tags);
         }

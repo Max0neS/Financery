@@ -9,7 +9,14 @@ import java.util.List;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 
-    @Query("SELECT t FROM Transaction t JOIN FETCH t.user u JOIN FETCH t.bill b LEFT JOIN FETCH t.tags WHERE t.user.id = :userId")
+    @Query(""
+            + "SELECT t "
+            + "FROM Transaction t "
+            + "JOIN FETCH t.user u "
+            + "JOIN FETCH t.bill b "
+            + "LEFT JOIN FETCH t.tags "
+            + "WHERE t.user.id "
+            + "= :userId")
     List<Transaction> findByUserId(@Param("userId") Long userId);
 
     @Query(value = "SELECT * FROM transaction_table WHERE bill_id = ?1", nativeQuery = true)

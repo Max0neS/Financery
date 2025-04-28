@@ -47,11 +47,17 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", bills=" + (bills != null ? bills.stream().map(bill -> "Bill{id=" + bill.getId() + "}").collect(Collectors.toList()) : null) +
-                '}';
+        return "User{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", bills="
+                + (bills != null
+                ? bills.stream()
+                .map(bill -> "Bill{id="
+                        + bill.getId()
+                        + "}")
+                .collect(Collectors.toList()) : null)
+                + '}';
     }
 
 }
