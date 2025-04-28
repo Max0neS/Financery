@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Tag(name = "Логи", description = "API для работы с логами") // Описание контроллера
 @RequestMapping("/logs")
+@Tag(name = "Логи", description = "API для работы с логами")
 public class LogController {
 
     private final LogService logService;
@@ -24,11 +24,14 @@ public class LogController {
         this.logService = logService;
     }
 
-    @Operation(summary = "Скачать лог-файл",
-            description = "Возвращает .log файл с записями логов за указанную дату")
+    @Operation(
+            summary = "Скачать лог-файл",
+            description = "Возвращает .log файл с записями логов за указанную дату."
+    )
     @GetMapping("/download")
     public ResponseEntity<Resource> downloadLogFile(
-            @Parameter(description = "Дата логов в формате dd-mm-yyyy") @RequestParam String date) {
+            @Parameter(description = "Дата логов в формате dd-mm-yyyy", required = true, example = "28-04-2025")
+            @RequestParam String date) {
         Resource resource = logService.downloadLogs(date);
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)

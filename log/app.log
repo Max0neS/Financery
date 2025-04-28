@@ -1789,3 +1789,1584 @@ Caused by: java.lang.ClassNotFoundException: com.example.financery.model.Transac
 28-04-2025 07:02:41.700 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.updateTransaction(..) с результатом: null
 28-04-2025 07:02:41.700 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TransactionServiceImpl.updateTransaction(..) с результатом: TransactionDtoResponse(id=11, name=nnnnneww, description=NEWNEWQ, tags=[], type=true, amount=5000.0, date=2002-02-19, userId=2, billId=2)
 28-04-2025 07:02:41.700 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TransactionController.updateTransactionById(..) с результатом: TransactionDtoResponse(id=11, name=nnnnneww, description=NEWNEWQ, tags=[], type=true, amount=5000.0, date=2002-02-19, userId=2, billId=2)
+28-04-2025 07:16:21.272 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:21.290 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:21.499 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:16:21.500 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:16:21.500 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:16:22.527 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:22.909 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:16:24.313 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:16:24.412 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:16:24.413 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:16:24.699 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:16:25.580 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:25.589 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 4.179 seconds (process running for 903.851)
+28-04-2025 07:16:27.035 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:27.052 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:27.199 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:16:27.199 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:16:27.199 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:16:27.818 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:28.118 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:16:29.267 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:16:29.326 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:16:29.327 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:16:29.471 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:16:30.117 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:16:30.128 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.976 seconds (process running for 908.39)
+28-04-2025 07:18:14.285 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:14.300 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:14.444 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:18:14.445 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:18:14.445 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:18:15.052 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:15.410 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:18:16.675 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:18:16.713 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:18:16.714 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:18:16.922 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:18:17.791 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:17.800 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.424 seconds (process running for 1016.061)
+28-04-2025 07:18:19.221 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:19.234 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:19.408 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:18:19.409 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:18:19.410 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:18:20.045 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:20.426 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:18:21.494 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:18:21.542 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:18:21.542 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:18:21.694 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:18:22.478 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:22.484 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.132 seconds (process running for 1020.746)
+28-04-2025 07:18:37.415 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:37.628 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 802 ms
+28-04-2025 07:18:37.676 [Thread-19] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:37.847 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:18:37.847 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:18:37.848 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:18:38.456 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:38.725 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:18:40.399 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:18:40.465 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:18:40.466 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:18:40.685 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:18:41.735 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:41.745 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.965 seconds (process running for 1040.007)
+28-04-2025 07:18:43.181 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:43.193 [Thread-23] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:43.294 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:18:43.295 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:18:43.295 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:18:43.829 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:44.108 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:18:45.200 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:18:45.250 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:18:45.251 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:18:45.374 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:18:46.052 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:18:46.063 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.803 seconds (process running for 1044.324)
+28-04-2025 07:22:22.542 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 455 ms
+28-04-2025 07:22:24.459 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:24.474 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:24.582 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:22:24.583 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:22:24.583 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:22:25.122 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:25.442 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:22:27.380 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:22:27.462 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:22:27.462 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:22:27.688 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:22:28.487 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:28.502 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.956 seconds (process running for 1266.763)
+28-04-2025 07:22:28.987 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 212 ms
+28-04-2025 07:22:29.919 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:29.932 [Thread-31] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:30.054 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:22:30.054 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:22:30.054 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:22:30.650 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:31.001 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:22:32.134 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:22:32.232 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:22:32.232 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:22:32.380 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:22:33.237 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:22:33.249 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.252 seconds (process running for 1271.511)
+28-04-2025 07:22:35.944 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 311 ms
+28-04-2025 07:24:33.850 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:33.865 [Thread-35] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:34.041 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:24:34.041 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:24:34.042 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:24:34.717 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:34.988 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:24:36.202 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:24:36.294 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:24:36.295 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:24:36.439 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:24:37.215 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:37.223 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.236 seconds (process running for 1395.485)
+28-04-2025 07:24:38.665 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:38.678 [Thread-39] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:38.788 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:24:38.788 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:24:38.788 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:24:39.277 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:39.525 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:24:40.512 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:24:40.559 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:24:40.559 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:24:40.676 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:24:41.297 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:24:41.304 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.552 seconds (process running for 1399.566)
+28-04-2025 07:26:23.986 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 384 ms
+28-04-2025 07:26:24.370 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:24.383 [Thread-43] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:24.506 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:26:24.506 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:26:24.506 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:26:25.075 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:25.331 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:26:26.566 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:26:26.644 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:26:26.644 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:26:26.781 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:26:27.502 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:27.509 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.043 seconds (process running for 1505.771)
+28-04-2025 07:26:28.962 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:28.976 [Thread-47] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:29.114 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:26:29.114 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:26:29.115 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:26:29.679 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:29.917 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:26:31.192 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:26:31.276 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:26:31.276 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:26:31.507 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:26:32.187 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:26:32.194 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.127 seconds (process running for 1510.455)
+28-04-2025 07:26:33.173 [http-nio-8080-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 377 ms
+28-04-2025 07:28:18.380 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:18.394 [Thread-51] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:18.517 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:28:18.518 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:28:18.518 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:28:19.066 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:19.314 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:28:20.396 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:28:20.491 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:28:20.491 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:28:20.620 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:28:21.277 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:21.287 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.806 seconds (process running for 1619.548)
+28-04-2025 07:28:22.734 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:22.746 [Thread-55] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:22.847 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:28:22.847 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:28:22.847 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:28:23.378 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:23.618 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:28:24.591 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:28:24.641 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:28:24.641 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:28:24.764 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:28:25.394 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:28:25.402 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.59 seconds (process running for 1623.664)
+28-04-2025 07:29:38.324 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:38.338 [Thread-59] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:38.455 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:29:38.455 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:29:38.455 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:29:39.188 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:39.543 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:29:40.983 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:29:41.055 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:29:41.056 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:29:41.217 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:29:42.057 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:42.068 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.652 seconds (process running for 1700.33)
+28-04-2025 07:29:43.505 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:43.517 [Thread-63] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:43.643 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:29:43.643 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:29:43.643 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:29:44.331 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:44.691 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:29:46.180 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:29:46.225 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:29:46.226 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:29:46.343 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:29:46.991 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:29:46.997 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.403 seconds (process running for 1705.259)
+28-04-2025 07:30:55.881 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:30:55.894 [Thread-67] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:30:56.006 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:30:56.007 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:30:56.007 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:30:56.547 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:30:56.802 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:30:57.901 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:30:57.951 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:30:57.951 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:30:58.079 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:30:58.743 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:30:58.750 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.785 seconds (process running for 1777.012)
+28-04-2025 07:31:00.187 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:00.199 [Thread-71] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:00.299 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:31:00.300 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:31:00.300 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:31:00.793 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:01.129 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:31:02.085 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:31:02.130 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:31:02.131 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:31:02.242 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:31:02.906 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:02.912 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.646 seconds (process running for 1781.174)
+28-04-2025 07:31:57.313 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:57.329 [Thread-75] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:57.484 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:31:57.485 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:31:57.485 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:31:58.446 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:31:58.721 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:32:00.019 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:32:00.086 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:32:00.087 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:32:00.269 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:32:01.107 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:32:01.116 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.688 seconds (process running for 1839.378)
+28-04-2025 07:32:02.542 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:32:02.554 [Thread-79] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:32:02.651 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:32:02.652 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:32:02.652 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:32:03.198 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:32:03.444 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:32:04.374 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:32:04.420 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:32:04.420 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:32:04.544 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:32:05.311 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:32:05.321 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.701 seconds (process running for 1843.583)
+28-04-2025 07:32:29.579 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 545 ms
+28-04-2025 07:34:25.724 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:34:25.737 [Thread-83] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:34:25.857 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:34:25.858 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:34:25.858 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:34:26.161 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type com.example.financery.model.User not present
+28-04-2025 07:34:26.191 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.example.financery.model.User not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:116)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117)
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95)
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1385)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:554)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:502)
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263)
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37)
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327)
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55)
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79)
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93)
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168)
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.ClassNotFoundException: com.example.financery.model.User
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:113)
+	... 39 common frames omitted
+28-04-2025 07:34:28.727 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:34:28.727 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:34:28.727 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:34:29.355 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:34:29.624 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:34:30.692 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:34:30.740 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:34:30.740 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:34:30.855 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:34:31.524 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:34:31.532 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.837 seconds (process running for 1989.794)
+28-04-2025 07:35:41.249 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:35:41.261 [Thread-87] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:35:41.387 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:35:41.388 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:35:41.388 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:35:41.811 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type com.example.financery.model.Tag not present
+28-04-2025 07:35:41.820 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.example.financery.model.Tag not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:116)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117)
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95)
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1385)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:554)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:502)
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263)
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37)
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327)
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55)
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79)
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93)
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168)
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.ClassNotFoundException: com.example.financery.model.Tag
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:113)
+	... 39 common frames omitted
+28-04-2025 07:35:43.342 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:35:43.342 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:35:43.343 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:35:44.055 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:35:44.325 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:35:45.391 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:35:45.436 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:35:45.436 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:35:45.599 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:35:46.316 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:35:46.326 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.031 seconds (process running for 2064.588)
+28-04-2025 07:36:11.636 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:36:11.651 [Thread-94] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:36:11.792 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:36:11.792 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:36:11.792 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:36:12.127 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type com.example.financery.model.Bill not present
+28-04-2025 07:36:12.139 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.example.financery.model.Bill not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:116)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117)
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95)
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1385)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:554)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:502)
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263)
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37)
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327)
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55)
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79)
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93)
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168)
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.ClassNotFoundException: com.example.financery.model.Bill
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:113)
+	... 39 common frames omitted
+28-04-2025 07:36:21.944 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:36:21.944 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:36:21.944 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:36:22.536 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:36:22.758 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:36:23.724 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:36:23.772 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:36:23.772 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:36:23.880 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:36:24.486 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:36:24.495 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.59 seconds (process running for 2102.757)
+28-04-2025 07:38:08.749 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:38:08.762 [Thread-101] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:38:08.883 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:38:08.884 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:38:08.884 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:38:09.463 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:38:09.841 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:38:11.230 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:38:11.296 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:38:11.297 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:38:11.435 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:38:12.652 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:38:12.661 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.813 seconds (process running for 2210.922)
+28-04-2025 07:39:20.622 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:20.638 [Thread-108] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:20.751 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:39:20.752 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:39:20.752 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:39:21.326 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:21.636 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:39:23.238 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:39:23.336 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:39:23.336 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:39:23.510 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:39:24.234 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:24.242 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.526 seconds (process running for 2282.504)
+28-04-2025 07:39:39.329 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:39.344 [Thread-112] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:39.467 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:39:39.467 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:39:39.467 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:39:40.070 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:40.339 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:39:41.218 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'billController': Lookup method resolution failed
+28-04-2025 07:39:41.382 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'billController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.financery.controller.BillController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@514f46c5]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476)
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/financery/dto/BillDtoRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3650)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2735)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.financery.dto.BillDtoRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 30 common frames omitted
+28-04-2025 07:39:42.893 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:39:42.894 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:39:42.894 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:39:43.417 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:43.659 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:39:44.705 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:39:44.760 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:39:44.761 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:39:44.869 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:39:45.481 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:39:45.488 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.626 seconds (process running for 2303.75)
+28-04-2025 07:40:31.460 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:40:31.472 [Thread-116] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:40:31.585 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:40:31.586 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:40:31.586 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:40:31.918 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type com.example.financery.model.Tag not present
+28-04-2025 07:40:31.926 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.example.financery.model.Tag not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:116)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117)
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95)
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1385)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:554)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:502)
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263)
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37)
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327)
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55)
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79)
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93)
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168)
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.ClassNotFoundException: com.example.financery.model.Tag
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:113)
+	... 39 common frames omitted
+28-04-2025 07:40:34.510 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:40:34.510 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:40:34.510 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:40:35.235 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:40:35.565 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:40:36.751 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:40:36.800 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:40:36.801 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:40:36.931 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:40:37.625 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:40:37.632 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.163 seconds (process running for 2355.894)
+28-04-2025 07:41:14.275 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:41:14.302 [Thread-123] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:41:14.481 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:41:14.481 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:41:14.482 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:41:15.390 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:41:15.637 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:41:16.887 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:41:16.943 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:41:16.943 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:41:17.073 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:41:17.818 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:41:17.827 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.404 seconds (process running for 2396.088)
+28-04-2025 07:42:18.472 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:42:18.485 [Thread-130] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:42:18.660 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:42:18.660 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:42:18.660 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:42:19.592 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:42:19.950 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:42:21.186 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\BillController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'billServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\BillServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper': Lookup method resolution failed
+28-04-2025 07:42:21.233 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\BillController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'billServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\BillServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\BillServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 51 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.financery.mapper.TransactionMapper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6064ecdb]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476)
+	... 64 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/financery/dto/TransactionDtoRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3650)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2735)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 66 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.financery.dto.TransactionDtoRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 70 common frames omitted
+28-04-2025 07:42:22.801 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:42:22.801 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:42:22.801 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:42:23.444 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:42:23.728 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:42:24.711 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:42:24.782 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:42:24.783 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:42:24.928 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:42:25.558 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:42:25.565 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.8 seconds (process running for 2463.826)
+28-04-2025 07:43:47.068 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:43:47.080 [Thread-134] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:43:47.191 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:43:47.191 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:43:47.191 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:43:47.757 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:43:48.154 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:43:49.331 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:43:49.393 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:43:49.393 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:43:49.516 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:43:50.167 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:43:50.175 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.018 seconds (process running for 2548.436)
+28-04-2025 07:45:03.105 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:03.119 [Thread-141] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:03.240 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:45:03.241 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:45:03.241 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:45:04.029 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:04.402 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:45:06.059 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:45:06.148 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:45:06.149 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:45:06.313 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:45:07.129 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:07.141 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.937 seconds (process running for 2625.402)
+28-04-2025 07:45:37.605 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:37.618 [Thread-145] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:37.749 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 22848 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:45:37.749 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:45:37.749 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:45:38.420 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:38.721 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:45:40.166 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:45:40.229 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:45:40.229 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:45:40.351 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:45:41.048 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:45:41.057 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.351 seconds (process running for 2659.319)
+28-04-2025 07:45:51.439 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.createUser(..)
+28-04-2025 07:45:51.439 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.createUser(..)
+28-04-2025 07:45:51.439 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toEntity(..)
+28-04-2025 07:45:51.439 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toEntity(..) с результатом: User{id=null, name='Pearlie', bills=[]}
+28-04-2025 07:45:51.446 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.save(..)
+28-04-2025 07:45:51.485 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.save(..) с результатом: User{id=11, name='Pearlie', bills=[]}
+28-04-2025 07:45:51.485 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+28-04-2025 07:45:51.486 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=11, name=Pearlie, email=Lelah_Carter@gmail.com, balance=0.0, bills=[])
+28-04-2025 07:45:51.491 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.createUser(..) с результатом: UserDtoResponse(id=11, name=Pearlie, email=Lelah_Carter@gmail.com, balance=0.0, bills=[])
+28-04-2025 07:45:51.491 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.createUser(..) с результатом: UserDtoResponse(id=11, name=Pearlie, email=Lelah_Carter@gmail.com, balance=0.0, bills=[])
+28-04-2025 07:46:10.892 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.createUser(..)
+28-04-2025 07:46:10.892 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.createUser(..)
+28-04-2025 07:46:10.892 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toEntity(..)
+28-04-2025 07:46:10.892 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toEntity(..) с результатом: User{id=null, name='Fred', bills=[]}
+28-04-2025 07:46:10.892 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.save(..)
+28-04-2025 07:46:10.900 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.save(..) с результатом: User{id=12, name='Fred', bills=[]}
+28-04-2025 07:46:10.900 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+28-04-2025 07:46:10.900 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=12, name=Fred, email=dejiowe@, balance=0.0, bills=[])
+28-04-2025 07:46:10.900 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.createUser(..) с результатом: UserDtoResponse(id=12, name=Fred, email=dejiowe@, balance=0.0, bills=[])
+28-04-2025 07:46:10.901 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.createUser(..) с результатом: UserDtoResponse(id=12, name=Fred, email=dejiowe@, balance=0.0, bills=[])
+28-04-2025 07:46:19.970 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..)
+28-04-2025 07:46:19.971 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@58412a15,[]>
+28-04-2025 07:46:19.978 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value]
+28-04-2025 07:46:48.227 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 26164 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:46:48.230 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:46:48.231 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:46:50.980 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:46:52.345 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:46:56.088 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:46:56.157 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:46:56.160 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:46:56.388 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:46:57.479 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:46:57.510 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 10.214 seconds (process running for 11.749)
+28-04-2025 07:50:49.905 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 25432 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 07:50:49.907 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 07:50:49.908 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 07:50:52.674 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:50:53.977 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 07:50:57.574 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - SimpleLRUCache initialized with max size: 3
+28-04-2025 07:50:57.644 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 07:50:57.647 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 07:50:57.905 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 07:50:59.144 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 07:50:59.220 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 10.136 seconds (process running for 11.512)
+28-04-2025 07:51:06.331 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 07:51:06.334 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@22844ee0,[]>
+28-04-2025 07:51:06.385 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.UserDtoResponse com.example.financery.controller.UserController.createUser(com.example.financery.dto.UserDtoRequest): [Field error in object 'userDtoRequest' on field 'email': rejected value [djiuew@]; codes [Email.userDtoRequest.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDtoRequest.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@479aeb4d,.*]; default message [Электронная почта задана неверно]] ]
+28-04-2025 07:51:26.974 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 07:51:26.975 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@43ab9fbe,[]>
+28-04-2025 07:51:26.977 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'amount': rejected value [-1000.0]; codes [Min.transactionDtoRequest.amount,Min.amount,Min.double,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.amount,amount]; arguments []; default message [amount],0]; default message [Значение транзакции не может быть меньше 0]] ]
+28-04-2025 07:51:38.408 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..)
+28-04-2025 07:51:38.409 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@56000d29,[]>
+28-04-2025 07:51:38.411 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value]
+28-04-2025 07:51:45.659 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..)
+28-04-2025 07:51:45.659 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@55ec31a4,[]>
+28-04-2025 07:51:45.660 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'tr': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')]
+28-04-2025 07:51:58.770 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TransactionController.createBill(..)
+28-04-2025 07:51:58.771 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TransactionServiceImpl.createTransaction(..)
+28-04-2025 07:51:58.776 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+28-04-2025 07:51:58.898 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User{id=2, name='Mack', bills=[Bill{id=2}]}]
+28-04-2025 07:51:58.914 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillRepository.findByIdAndUserId(..)
+28-04-2025 07:51:58.988 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillRepository.findByIdAndUserId(..) с результатом: Optional[Bill{id=2, name='NewBill', user=User{id=2}}]
+28-04-2025 07:51:58.991 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAllById(..)
+28-04-2025 07:51:59.025 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAllById(..) с результатом: [Tag{id=4, title='new', userId=2}]
+28-04-2025 07:51:59.027 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.save(..)
+28-04-2025 07:51:59.114 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.save(..) с результатом: Transaction{id=47, name='fefefe', description='Gloves Ethiopian Fresh', type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2, tags=[Tag{id=4}]}
+28-04-2025 07:51:59.121 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+28-04-2025 07:51:59.122 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=4, title=new, userId=2)
+28-04-2025 07:51:59.125 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.updateTransaction(..)
+28-04-2025 07:51:59.127 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.updateTransaction(..) с результатом: null
+28-04-2025 07:51:59.127 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+28-04-2025 07:51:59.127 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=4, title=new, userId=2)
+28-04-2025 07:51:59.127 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TransactionServiceImpl.createTransaction(..) с результатом: TransactionDtoResponse(id=47, name=fefefe, description=Gloves Ethiopian Fresh, tags=[TagDtoResponse(id=4, title=new, userId=2)], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2)
+28-04-2025 07:51:59.132 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TransactionController.createBill(..) с результатом: TransactionDtoResponse(id=47, name=fefefe, description=Gloves Ethiopian Fresh, tags=[TagDtoResponse(id=4, title=new, userId=2)], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2)
+28-04-2025 07:52:03.334 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..)
+28-04-2025 07:52:03.335 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleHttpMessageNotReadable(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@4459405d,[]>
+28-04-2025 07:52:03.336 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value]
+28-04-2025 07:52:12.490 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 07:52:12.490 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@296155fc,[]>
+28-04-2025 07:52:12.491 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'userId': rejected value [0]; codes [Min.transactionDtoRequest.userId,Min.userId,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.userId,userId]; arguments []; default message [userId],1]; default message [Id не может быть меньше 1]] ]
