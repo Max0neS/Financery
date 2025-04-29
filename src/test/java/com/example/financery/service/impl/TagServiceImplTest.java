@@ -398,4 +398,45 @@ class TagServiceImplTest {
         verify(tagRepository).findById(1L);
         verify(tagRepository, never()).delete(any());
     }
+
+    @Test
+    void updateTag_transactionNotFound_throwsNotFoundException() {
+        tagDtoRequest.setTitle("Updated Tag");
+        when(tagRepository.findById(1L)).thenReturn(Optional.of(tag));
+        when(tagRepository.findTransactionsByTag(1L)).thenReturn(List.of(transaction));
+        when(transactionMapper.toTransactionDto(transaction)).thenReturn(transactionDtoResponse);
+        when(transactionRepository.findById(1L)).thenReturn(Optional.empty());
+
+        NotFoundException exception = assertThrows(NotFoundException.class,
+                () -> tagService.updateTag(1L, tagDtoRequest));
+
+        assertEquals("Транзакция не найдена", exception.getMessage());
+        verify(tagRepository, times(2)).findById(1L);
+        verify(tagRepository).findTransactionsByTag(1L);
+        verify(transactionMapper).toTransactionDto(transaction);
+        verify(transactionRepository).findById(1L);
+        verify(cache, never()).updateTransaction(anyLong(), any());
+        verify(tagRepository).save(tag);
+    }
+
+    @Test
+    void saveAll_nullTitle_filteredOut() {
+        TagDtoRequest nullTitleTag = new TagDtoRequest();
+        nullTitleTag.setTitle(null);
+        nullTitleTag.setUserId(1L);
+        List<TagDtoRequest> tagList = List.of(tagDtoRequest, nullTitleTag);
+
+        when(userRepository.findAllById(List.of(1L))).thenReturn(List.of(user));
+        when(tagMapper.toTag(tagDtoRequest)).thenReturn(tag);
+        when(tagRepository.saveAll(any())).thenReturn(List.of(tag));
+
+        List<Tag> result = tagService.saveAll(tagList);
+
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals(tag, result.get(0));
+        verify(userRepository).findAllById(List.of(1L));
+        verify(tagMapper).toTag(tagDtoRequest);
+        verify(tagRepository).saveAll(any());
+    }
 }
