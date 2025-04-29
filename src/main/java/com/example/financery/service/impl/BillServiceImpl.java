@@ -75,7 +75,7 @@ public class BillServiceImpl implements BillService {
                 .orElseThrow(() -> new NotFoundException(
                         String.format(USER_NOT_FOUND, billDto.getUserId())));
 
-        Bill bill = BillMapper.toBill(billDto);
+        Bill bill = billMapper.toBill(billDto);
 
         user.setBalance(user.getBalance() + bill.getBalance());
         bill.setUser(user);

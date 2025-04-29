@@ -31,7 +31,7 @@ public class BillMapper {
         return billDtoResponse;
     }
 
-    public static Bill toBill(BillDtoRequest billDtoRequest) {
+    public Bill toBill(BillDtoRequest billDtoRequest) {
         Bill bill = new Bill();
 
         bill.setName(billDtoRequest.getName());
