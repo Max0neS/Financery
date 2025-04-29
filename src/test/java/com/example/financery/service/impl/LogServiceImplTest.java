@@ -408,4 +408,18 @@ class LogServiceImplTest {
         assertThrows(MalformedURLException.class,
                 () -> logServiceSpy.createUrlResource(invalidUri));
     }
+
+    @Test
+    void createUrlResource_success() throws IOException {
+        URI validUri = URI.create("file:///D:/documents/JavaLabs/temp/log-2025-04-28.log");
+
+        LogServiceImpl logServiceSpy = Mockito.spy(logService);
+        doCallRealMethod().when(logServiceSpy).createUrlResource(validUri);
+
+        Resource result = logServiceSpy.createUrlResource(validUri);
+
+        assertNotNull(result);
+        assertTrue(result instanceof UrlResource);
+        assertEquals(validUri, ((UrlResource) result).getURI());
+    }
 }

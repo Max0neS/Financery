@@ -911,3 +911,252 @@
 30-04-2025 00:46:13.052 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 702110324
 30-04-2025 00:46:13.053 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
 30-04-2025 00:46:14.031 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 01:07:08.492 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 13972 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 01:07:08.495 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 01:07:08.496 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 01:07:13.368 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 01:07:20.489 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 01:07:20.739 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 01:07:20.747 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 01:07:24.195 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 16.812 seconds (process running for 19.705)
+30-04-2025 01:07:27.303 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1564362873
+30-04-2025 01:07:27.323 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 669612428: 0 байт
+30-04-2025 01:07:27.492 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:07:27.513 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: Mock for File, hashCode: 835479534
+30-04-2025 01:07:27.514 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:07:27.871 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1791404506: 100 байт
+30-04-2025 01:07:27.873 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 1791404506
+30-04-2025 01:07:27.890 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:07:27.892 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 85339123
+30-04-2025 01:07:27.893 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 85339123: 0 байт
+30-04-2025 01:07:27.911 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:07:27.915 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 372624133
+30-04-2025 01:07:27.916 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 372624133: 100 байт
+30-04-2025 01:07:27.918 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 372624133
+30-04-2025 01:07:27.919 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 01:07:28.942 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 01:13:32.973 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 17868 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 01:13:32.976 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 01:13:32.977 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 01:13:37.815 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 01:13:43.512 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 01:13:43.647 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 01:13:43.651 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 01:13:45.570 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.699 seconds (process running for 16.889)
+30-04-2025 01:13:47.852 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1993359803
+30-04-2025 01:13:47.863 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 528614370: 0 байт
+30-04-2025 01:13:47.983 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:13:48.000 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: Mock for File, hashCode: 1763485772
+30-04-2025 01:13:48.000 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:13:48.250 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 80649159: 100 байт
+30-04-2025 01:13:48.251 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 80649159
+30-04-2025 01:13:48.265 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:13:48.266 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 353004719
+30-04-2025 01:13:48.267 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 353004719: 0 байт
+30-04-2025 01:13:48.280 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:13:48.283 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 927440602
+30-04-2025 01:13:48.284 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 927440602: 100 байт
+30-04-2025 01:13:48.284 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 927440602
+30-04-2025 01:13:48.285 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 01:13:48.947 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 01:16:07.286 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 17344 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 01:16:07.289 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 01:16:07.290 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 01:16:12.913 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 01:16:18.986 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 01:16:19.123 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 01:16:19.127 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 01:16:21.067 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 14.98 seconds (process running for 17.963)
+30-04-2025 01:16:23.438 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1819391652
+30-04-2025 01:16:23.449 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 2000319738: 0 байт
+30-04-2025 01:16:23.565 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:16:23.590 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: Mock for File, hashCode: 690096328
+30-04-2025 01:16:23.591 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:16:23.850 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 820392653: 100 байт
+30-04-2025 01:16:23.851 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 820392653
+30-04-2025 01:16:23.902 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:16:23.903 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1318650648
+30-04-2025 01:16:23.904 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1318650648: 0 байт
+30-04-2025 01:16:23.915 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:16:23.919 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 414406905
+30-04-2025 01:16:23.919 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 414406905: 100 байт
+30-04-2025 01:16:23.920 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 414406905
+30-04-2025 01:16:23.920 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 01:16:24.582 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 01:20:44.834 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 17572 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 01:20:44.844 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 01:20:44.859 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 01:20:53.136 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 01:21:00.566 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 01:21:00.770 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 01:21:00.774 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 01:21:03.408 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 20.585 seconds (process running for 25.229)
+30-04-2025 01:21:07.823 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 01:23:39.580 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 9404 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 01:23:39.585 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 01:23:39.586 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 01:23:49.108 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 01:24:00.269 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 01:24:00.462 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 01:24:00.468 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 01:24:03.971 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 25.986 seconds (process running for 30.343)
+30-04-2025 01:24:08.654 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 743828807
+30-04-2025 01:24:08.679 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 7146251: 0 байт
+30-04-2025 01:24:09.014 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:24:09.084 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: Mock for File, hashCode: 1233582163
+30-04-2025 01:24:09.088 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:24:09.641 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 544840308: 100 байт
+30-04-2025 01:24:09.644 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 544840308
+30-04-2025 01:24:09.669 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:24:09.674 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 220871824
+30-04-2025 01:24:09.676 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 220871824: 0 байт
+30-04-2025 01:24:09.699 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:24:09.705 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 2069965376
+30-04-2025 01:24:09.707 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 2069965376: 100 байт
+30-04-2025 01:24:09.708 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 2069965376
+30-04-2025 01:24:09.709 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 01:24:11.179 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 01:25:50.165 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 17296 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 01:25:50.167 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 01:25:50.168 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 01:25:54.991 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 01:26:00.621 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 01:26:00.757 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 01:26:00.761 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 01:26:03.044 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.978 seconds (process running for 16.805)
+30-04-2025 01:26:05.309 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 6178694
+30-04-2025 01:26:05.318 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1721703138: 0 байт
+30-04-2025 01:26:05.433 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:26:05.446 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: Mock for File, hashCode: 913158792
+30-04-2025 01:26:05.447 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:26:05.689 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1092171278: 100 байт
+30-04-2025 01:26:05.690 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 1092171278
+30-04-2025 01:26:05.699 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:26:05.701 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1212340094
+30-04-2025 01:26:05.701 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1212340094: 0 байт
+30-04-2025 01:26:05.713 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 01:26:05.717 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1056736689
+30-04-2025 01:26:05.718 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1056736689: 100 байт
+30-04-2025 01:26:05.719 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 1056736689
+30-04-2025 01:26:05.719 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 01:26:06.402 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
