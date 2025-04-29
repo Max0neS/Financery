@@ -15,6 +15,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.dao.DataAccessException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,7 +69,6 @@ class UserServiceImplTest {
 
     @Test
     void getAllUsers_success() {
-        // Проверяет успешное получение всех пользователей
         try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
             mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
@@ -87,7 +87,6 @@ class UserServiceImplTest {
 
     @Test
     void getAllUsers_emptyList() {
-        // Проверяет поведение, когда список пользователей пуст
         try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
             mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
@@ -102,8 +101,41 @@ class UserServiceImplTest {
     }
 
     @Test
+    void getAllUsers_hibernateInitializeThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any()))
+                    .thenThrow(new RuntimeException("Hibernate initialization failed"));
+
+            when(userRepository.findAll()).thenReturn(List.of(user));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> userService.getAllUsers());
+
+            assertEquals("Hibernate initialization failed", exception.getMessage());
+            verify(userRepository).findAll();
+            verify(userMapper, never()).toDto(any());
+        }
+    }
+
+    @Test
+    void getAllUsers_userMapperThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
+
+            when(userRepository.findAll()).thenReturn(List.of(user));
+            when(userMapper.toDto(user)).thenThrow(new RuntimeException("Mapping failed"));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> userService.getAllUsers());
+
+            assertEquals("Mapping failed", exception.getMessage());
+            verify(userRepository).findAll();
+            verify(userMapper).toDto(user);
+        }
+    }
+
+    @Test
     void createUser_success() {
-        // Проверяет успешное создание пользователя
         when(userMapper.toEntity(userDtoRequest)).thenReturn(user);
         when(userRepository.save(user)).thenReturn(user);
         when(userMapper.toDto(user)).thenReturn(userDtoResponse);
@@ -112,15 +144,28 @@ class UserServiceImplTest {
 
         assertNotNull(result);
         assertEquals(userDtoResponse, result);
-        assertEquals(0.0, user.getBalance()); // Проверяем, что баланс установлен в 0.0
+        assertEquals(0.0, user.getBalance());
         verify(userMapper).toEntity(userDtoRequest);
         verify(userRepository).save(user);
         verify(userMapper).toDto(user);
     }
 
     @Test
+    void createUser_saveThrowsException() {
+        when(userMapper.toEntity(userDtoRequest)).thenReturn(user);
+        when(userRepository.save(user)).thenThrow(new DataAccessException("Database error") {});
+
+        DataAccessException exception = assertThrows(DataAccessException.class,
+                () -> userService.createUser(userDtoRequest));
+
+        assertEquals("Database error", exception.getMessage());
+        verify(userMapper).toEntity(userDtoRequest);
+        verify(userRepository).save(user);
+        verify(userMapper, never()).toDto(any());
+    }
+
+    @Test
     void getUserById_success() {
-        // Проверяет успешное получение пользователя по ID
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
         when(userMapper.toDto(user)).thenReturn(userDtoResponse);
 
@@ -134,7 +179,6 @@ class UserServiceImplTest {
 
     @Test
     void getUserById_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -147,7 +191,6 @@ class UserServiceImplTest {
 
     @Test
     void getUserByEmail_success() {
-        // Проверяет успешное получение пользователя по email
         when(userRepository.findByEmail("test@example.com")).thenReturn(user);
 
         User result = userService.getUserByEmail("test@example.com");
@@ -159,7 +202,6 @@ class UserServiceImplTest {
 
     @Test
     void getUserByEmail_notFound() {
-        // Проверяет поведение, если пользователь не найден по email
         when(userRepository.findByEmail("test@example.com")).thenReturn(null);
 
         User result = userService.getUserByEmail("test@example.com");
@@ -170,7 +212,6 @@ class UserServiceImplTest {
 
     @Test
     void updateUser_success() {
-        // Проверяет успешное обновление пользователя
         userDtoRequest.setName("Updated User");
         userDtoRequest.setEmail("updated@example.com");
 
@@ -205,7 +246,6 @@ class UserServiceImplTest {
 
     @Test
     void updateUser_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -217,8 +257,21 @@ class UserServiceImplTest {
     }
 
     @Test
+    void updateUser_saveThrowsException() {
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(userRepository.save(user)).thenThrow(new DataAccessException("Database error") {});
+
+        DataAccessException exception = assertThrows(DataAccessException.class,
+                () -> userService.updateUser(1L, userDtoRequest));
+
+        assertEquals("Database error", exception.getMessage());
+        verify(userRepository).findById(1L);
+        verify(userRepository).save(user);
+        verify(userMapper, never()).toDto(any());
+    }
+
+    @Test
     void deleteUser_success() {
-        // Проверяет успешное удаление пользователя
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
 
         userService.deleteUser(1L);
@@ -230,7 +283,6 @@ class UserServiceImplTest {
 
     @Test
     void deleteUser_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -240,5 +292,19 @@ class UserServiceImplTest {
         verify(userRepository).findById(1L);
         verify(userRepository, never()).deleteById(anyLong());
         verify(cache, never()).clearForUser(anyLong());
+    }
+
+    @Test
+    void deleteUser_cacheClearThrowsException() {
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        doThrow(new RuntimeException("Cache clear failed")).when(cache).clearForUser(1L);
+
+        RuntimeException exception = assertThrows(RuntimeException.class,
+                () -> userService.deleteUser(1L));
+
+        assertEquals("Cache clear failed", exception.getMessage());
+        verify(userRepository).findById(1L);
+        verify(userRepository).deleteById(1L);
+        verify(cache).clearForUser(1L);
     }
 }

@@ -9,12 +9,15 @@ import com.example.financery.model.Bill;
 import com.example.financery.model.User;
 import com.example.financery.repository.BillRepository;
 import com.example.financery.repository.UserRepository;
+import org.hibernate.Hibernate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.dao.DataAccessException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,52 +74,96 @@ class BillServiceImplTest {
 
     @Test
     void getAllBills_success() {
-        // Проверяет успешное получение всех счетов
-        List<Bill> bills = List.of(bill);
-        when(billRepository.findAll()).thenReturn(bills);
-        when(billMapper.toBillDto(bill)).thenReturn(billDtoResponse);
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
-        List<BillDtoResponse> result = billService.getAllBills();
+            List<Bill> bills = List.of(bill);
+            when(billRepository.findAll()).thenReturn(bills);
+            when(billMapper.toBillDto(bill)).thenReturn(billDtoResponse);
 
-        assertNotNull(result);
-        assertEquals(1, result.size());
-        assertEquals(billDtoResponse, result.get(0));
-        verify(billRepository).findAll();
-        verify(billMapper).toBillDto(bill);
+            List<BillDtoResponse> result = billService.getAllBills();
+
+            assertNotNull(result);
+            assertEquals(1, result.size());
+            assertEquals(billDtoResponse, result.get(0));
+            verify(billRepository).findAll();
+            verify(billMapper).toBillDto(bill);
+        }
     }
 
     @Test
     void getAllBills_emptyList() {
-        // Проверяет поведение, когда список счетов пуст
-        when(billRepository.findAll()).thenReturn(new ArrayList<>());
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
-        List<BillDtoResponse> result = billService.getAllBills();
+            when(billRepository.findAll()).thenReturn(new ArrayList<>());
 
-        assertNotNull(result);
-        assertTrue(result.isEmpty());
-        verify(billRepository).findAll();
+            List<BillDtoResponse> result = billService.getAllBills();
+
+            assertNotNull(result);
+            assertTrue(result.isEmpty());
+            verify(billRepository).findAll();
+        }
+    }
+
+    @Test
+    void getAllBills_hibernateInitializeThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any()))
+                    .thenThrow(new RuntimeException("Hibernate initialization failed"));
+
+            List<Bill> bills = List.of(bill);
+            when(billRepository.findAll()).thenReturn(bills);
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> billService.getAllBills());
+
+            assertEquals("Hibernate initialization failed", exception.getMessage());
+            verify(billRepository).findAll();
+            verify(billMapper, never()).toBillDto(any());
+        }
+    }
+
+    @Test
+    void getAllBills_billMapperThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
+
+            List<Bill> bills = List.of(bill);
+            when(billRepository.findAll()).thenReturn(bills);
+            when(billMapper.toBillDto(bill)).thenThrow(new RuntimeException("Mapping failed"));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> billService.getAllBills());
+
+            assertEquals("Mapping failed", exception.getMessage());
+            verify(billRepository).findAll();
+            verify(billMapper).toBillDto(bill);
+        }
     }
 
     @Test
     void getBillsByUserId_success() {
-        // Проверяет успешное получение счетов по ID пользователя
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(billRepository.findByUser(1L)).thenReturn(List.of(bill));
-        when(billMapper.toBillDto(bill)).thenReturn(billDtoResponse);
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
-        List<BillDtoResponse> result = billService.getBillsByUserId(1L);
+            when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+            when(billRepository.findByUser(1L)).thenReturn(List.of(bill));
+            when(billMapper.toBillDto(bill)).thenReturn(billDtoResponse);
 
-        assertNotNull(result);
-        assertEquals(1, result.size());
-        assertEquals(billDtoResponse, result.get(0));
-        verify(userRepository).findById(1L);
-        verify(billRepository).findByUser(1L);
-        verify(billMapper).toBillDto(bill);
+            List<BillDtoResponse> result = billService.getBillsByUserId(1L);
+
+            assertNotNull(result);
+            assertEquals(1, result.size());
+            assertEquals(billDtoResponse, result.get(0));
+            verify(userRepository).findById(1L);
+            verify(billRepository).findByUser(1L);
+            verify(billMapper).toBillDto(bill);
+        }
     }
 
     @Test
     void getBillsByUserId_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -128,22 +175,62 @@ class BillServiceImplTest {
     }
 
     @Test
+    void getBillsByUserId_hibernateInitializeThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any()))
+                    .thenThrow(new RuntimeException("Hibernate initialization failed"));
+
+            when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+            when(billRepository.findByUser(1L)).thenReturn(List.of(bill));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> billService.getBillsByUserId(1L));
+
+            assertEquals("Hibernate initialization failed", exception.getMessage());
+            verify(userRepository).findById(1L);
+            verify(billRepository).findByUser(1L);
+            verify(billMapper, never()).toBillDto(any());
+        }
+    }
+
+    @Test
+    void getBillsByUserId_billMapperThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
+
+            when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+            when(billRepository.findByUser(1L)).thenReturn(List.of(bill));
+            when(billMapper.toBillDto(bill)).thenThrow(new RuntimeException("Mapping failed"));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> billService.getBillsByUserId(1L));
+
+            assertEquals("Mapping failed", exception.getMessage());
+            verify(userRepository).findById(1L);
+            verify(billRepository).findByUser(1L);
+            verify(billMapper).toBillDto(bill);
+        }
+    }
+
+    @Test
     void getBillById_success() {
-        // Проверяет успешное получение счета по ID
-        when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
-        when(billMapper.toBillDto(bill)).thenReturn(billDtoResponse);
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
-        BillDtoResponse result = billService.getBillById(1L);
+            when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
+            when(billMapper.toBillDto(bill)).thenReturn(billDtoResponse);
 
-        assertNotNull(result);
-        assertEquals(billDtoResponse, result);
-        verify(billRepository).findById(1L);
-        verify(billMapper).toBillDto(bill);
+            BillDtoResponse result = billService.getBillById(1L);
+
+            assertNotNull(result);
+            assertEquals(billDtoResponse, result);
+            verify(billRepository).findById(1L);
+            verify(billMapper).toBillDto(bill);
+        }
     }
 
     @Test
     void getBillById_billNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если счет не найден
         when(billRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -154,8 +241,41 @@ class BillServiceImplTest {
     }
 
     @Test
+    void getBillById_hibernateInitializeThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any()))
+                    .thenThrow(new RuntimeException("Hibernate initialization failed"));
+
+            when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> billService.getBillById(1L));
+
+            assertEquals("Hibernate initialization failed", exception.getMessage());
+            verify(billRepository).findById(1L);
+            verify(billMapper, never()).toBillDto(any());
+        }
+    }
+
+    @Test
+    void getBillById_billMapperThrowsException() {
+        try (MockedStatic<Hibernate> mockHibernate = mockStatic(Hibernate.class)) {
+            mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
+
+            when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
+            when(billMapper.toBillDto(bill)).thenThrow(new RuntimeException("Mapping failed"));
+
+            RuntimeException exception = assertThrows(RuntimeException.class,
+                    () -> billService.getBillById(1L));
+
+            assertEquals("Mapping failed", exception.getMessage());
+            verify(billRepository).findById(1L);
+            verify(billMapper).toBillDto(bill);
+        }
+    }
+
+    @Test
     void createBill_success() {
-        // Проверяет успешное создание счета
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
         when(billMapper.toBill(billDtoRequest)).thenReturn(bill);
         when(billRepository.save(bill)).thenReturn(bill);
@@ -165,7 +285,7 @@ class BillServiceImplTest {
 
         assertNotNull(result);
         assertEquals(billDtoResponse, result);
-        assertEquals(1500.0, user.getBalance()); // Проверяем, что баланс пользователя увеличился
+        assertEquals(1500.0, user.getBalance());
         verify(userRepository).findById(1L);
         verify(billRepository).save(bill);
         verify(billMapper).toBill(billDtoRequest);
@@ -174,7 +294,6 @@ class BillServiceImplTest {
 
     @Test
     void createBill_negativeBalance_throwsInvalidInputException() {
-        // Проверяет, что выбрасывается исключение при отрицательном балансе
         billDtoRequest.setBalance(-100.0);
 
         InvalidInputException exception = assertThrows(InvalidInputException.class,
@@ -185,8 +304,18 @@ class BillServiceImplTest {
     }
 
     @Test
+    void createBill_nullName_throwsInvalidInputException() {
+        billDtoRequest.setName(null);
+
+        InvalidInputException exception = assertThrows(InvalidInputException.class,
+                () -> billService.createBill(billDtoRequest));
+
+        assertEquals("Имя счёта не может быть пустым", exception.getMessage());
+        verify(userRepository, never()).findById(anyLong());
+    }
+
+    @Test
     void createBill_emptyName_throwsInvalidInputException() {
-        // Проверяет, что выбрасывается исключение при пустом имени счета
         billDtoRequest.setName("");
 
         InvalidInputException exception = assertThrows(InvalidInputException.class,
@@ -198,7 +327,6 @@ class BillServiceImplTest {
 
     @Test
     void createBill_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -210,8 +338,23 @@ class BillServiceImplTest {
     }
 
     @Test
+    void createBill_saveThrowsException() {
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(billMapper.toBill(billDtoRequest)).thenReturn(bill);
+        when(billRepository.save(bill)).thenThrow(new DataAccessException("Database error") {});
+
+        DataAccessException exception = assertThrows(DataAccessException.class,
+                () -> billService.createBill(billDtoRequest));
+
+        assertEquals("Database error", exception.getMessage());
+        verify(userRepository).findById(1L);
+        verify(billRepository).save(bill);
+        verify(billMapper).toBill(billDtoRequest);
+        verify(billMapper, never()).toBillDto(any());
+    }
+
+    @Test
     void updateBill_success() {
-        // Проверяет успешное обновление счета
         billDtoRequest.setBalance(600.0);
         when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
@@ -223,7 +366,7 @@ class BillServiceImplTest {
 
         assertNotNull(result);
         assertEquals(billDtoResponse, result);
-        assertEquals(1100.0, user.getBalance()); // Проверяем, что баланс пользователя обновлен
+        assertEquals(1100.0, user.getBalance());
         verify(billRepository).findById(1L);
         verify(userRepository).findById(1L);
         verify(billRepository).save(bill);
@@ -233,7 +376,6 @@ class BillServiceImplTest {
 
     @Test
     void updateBill_negativeBalance_throwsInvalidInputException() {
-        // Проверяет, что выбрасывается исключение при отрицательном балансе
         billDtoRequest.setBalance(-100.0);
 
         InvalidInputException exception = assertThrows(InvalidInputException.class,
@@ -244,8 +386,18 @@ class BillServiceImplTest {
     }
 
     @Test
+    void updateBill_nullName_throwsInvalidInputException() {
+        billDtoRequest.setName(null);
+
+        InvalidInputException exception = assertThrows(InvalidInputException.class,
+                () -> billService.updateBill(1L, billDtoRequest));
+
+        assertEquals("Имя счёта не может быть пустым", exception.getMessage());
+        verify(billRepository, never()).findById(anyLong());
+    }
+
+    @Test
     void updateBill_emptyName_throwsInvalidInputException() {
-        // Проверяет, что выбрасывается исключение при пустом имени счета
         billDtoRequest.setName("");
 
         InvalidInputException exception = assertThrows(InvalidInputException.class,
@@ -257,7 +409,6 @@ class BillServiceImplTest {
 
     @Test
     void updateBill_billNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если счет не найден
         when(billRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -269,7 +420,6 @@ class BillServiceImplTest {
 
     @Test
     void updateBill_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
@@ -282,15 +432,50 @@ class BillServiceImplTest {
     }
 
     @Test
+    void updateBill_saveBillThrowsException() {
+        billDtoRequest.setBalance(600.0);
+        when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(billRepository.save(bill)).thenThrow(new DataAccessException("Database error") {});
+        when(userRepository.save(user)).thenReturn(user);
+
+        DataAccessException exception = assertThrows(DataAccessException.class,
+                () -> billService.updateBill(1L, billDtoRequest));
+
+        assertEquals("Database error", exception.getMessage());
+        verify(billRepository).findById(1L);
+        verify(userRepository).findById(1L);
+        verify(billRepository).save(bill);
+        verify(userRepository).save(user);
+        verify(billMapper, never()).toBillDto(any());
+    }
+
+    @Test
+    void updateBill_saveUserThrowsException() {
+        billDtoRequest.setBalance(600.0);
+        when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(userRepository.save(user)).thenThrow(new DataAccessException("Database error") {});
+
+        DataAccessException exception = assertThrows(DataAccessException.class,
+                () -> billService.updateBill(1L, billDtoRequest));
+
+        assertEquals("Database error", exception.getMessage());
+        verify(billRepository).findById(1L);
+        verify(userRepository).findById(1L);
+        verify(userRepository).save(user);
+        verify(billRepository, never()).save(any());
+    }
+
+    @Test
     void deleteBill_success() {
-        // Проверяет успешное удаление счета
         when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
         when(userRepository.save(user)).thenReturn(user);
 
         billService.deleteBill(1L);
 
-        assertEquals(500.0, user.getBalance()); // Проверяем, что баланс пользователя уменьшен
+        assertEquals(500.0, user.getBalance());
         verify(billRepository).findById(1L);
         verify(userRepository).findById(1L);
         verify(userRepository).save(user);
@@ -299,7 +484,6 @@ class BillServiceImplTest {
 
     @Test
     void deleteBill_billNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если счет не найден
         when(billRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -312,7 +496,6 @@ class BillServiceImplTest {
 
     @Test
     void deleteBill_userNotFound_throwsNotFoundException() {
-        // Проверяет, что выбрасывается исключение, если пользователь не найден
         when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
         when(userRepository.findById(1L)).thenReturn(Optional.empty());
 
@@ -322,5 +505,21 @@ class BillServiceImplTest {
         assertEquals("Пользователь с id 1 не найден", exception.getMessage());
         verify(billRepository).findById(1L);
         verify(userRepository).findById(1L);
+    }
+
+    @Test
+    void deleteBill_saveUserThrowsException() {
+        when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(userRepository.save(user)).thenThrow(new DataAccessException("Database error") {});
+
+        DataAccessException exception = assertThrows(DataAccessException.class,
+                () -> billService.deleteBill(1L));
+
+        assertEquals("Database error", exception.getMessage());
+        verify(billRepository).findById(1L);
+        verify(userRepository).findById(1L);
+        verify(userRepository).save(user);
+        verify(billRepository, never()).deleteById(anyLong());
     }
 }
