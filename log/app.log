@@ -5616,3 +5616,90 @@ Consider defining a bean of type 'com.example.financery.service.TagService' in y
     components: null
 }
 29-04-2025 19:38:26.202 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 19.775 seconds (process running for 23.725)
+29-04-2025 19:42:11.793 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 13692 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+29-04-2025 19:42:11.795 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+29-04-2025 19:42:11.796 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+29-04-2025 19:42:16.579 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+29-04-2025 19:42:22.276 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+29-04-2025 19:42:22.408 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+29-04-2025 19:42:22.413 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+29-04-2025 19:42:24.314 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.625 seconds (process running for 16.405)
+29-04-2025 19:42:26.727 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+29-04-2025 20:25:09.303 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 3984 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+29-04-2025 20:25:09.308 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+29-04-2025 20:25:09.310 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+29-04-2025 20:25:19.697 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+29-04-2025 20:25:28.937 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+29-04-2025 20:25:29.141 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+29-04-2025 20:25:29.148 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+29-04-2025 20:25:31.871 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 24.429 seconds (process running for 29.584)
+29-04-2025 20:25:35.429 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+29-04-2025 20:30:48.532 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 15712 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+29-04-2025 20:30:48.534 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+29-04-2025 20:30:48.535 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+29-04-2025 20:30:53.447 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+29-04-2025 20:30:59.072 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+29-04-2025 20:30:59.225 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+29-04-2025 20:30:59.230 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+29-04-2025 20:31:01.180 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.715 seconds (process running for 16.448)
+29-04-2025 20:31:03.645 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1

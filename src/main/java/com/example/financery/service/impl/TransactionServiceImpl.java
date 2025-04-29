@@ -107,22 +107,23 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto) {
-        User user = userRepository.findById(transactionDto.getUserId())
-                .orElseThrow(() -> new NotFoundException(
-                        USER_WITH_ID_NOT_FOUND + transactionDto.getUserId()));
-
+        // Проверяем сумму транзакции перед обращением к репозиториям
         if (transactionDto.getAmount() > 1_000_000) {
             throw new InvalidInputException("Сумма транзакции не может превышать 1,000,000");
         }
+
+        User user = userRepository.findById(transactionDto.getUserId())
+                .orElseThrow(() -> new NotFoundException(
+                        String.format(USER_WITH_ID_NOT_FOUND, transactionDto.getUserId())));
+
         Bill bill = billRepository
                 .findByIdAndUserId(
-                        transactionDto
-                                .getBillId(),
+                        transactionDto.getBillId(),
                         transactionDto.getUserId())
                 .orElseThrow(() -> new NotFoundException(
                         "Счет с id "
-                        + transactionDto.getBillId()
-                        + " не найден или не принадлежит пользователю"));
+                                + transactionDto.getBillId()
+                                + " не найден или не принадлежит пользователю"));
 
         Transaction transaction = TransactionMapper.toTransaction(transactionDto);
 
@@ -132,7 +133,7 @@ public class TransactionServiceImpl implements TransactionService {
 
         if (transaction.isType()) {
             bill.addAmount(transaction.getAmount());
-        }  else {
+        } else {
             bill.subtractAmount(transaction.getAmount());
         }
 
@@ -147,7 +148,7 @@ public class TransactionServiceImpl implements TransactionService {
             }
             if (tags.stream().anyMatch(tag -> tag.getUser().getId() != user.getId())) {
                 throw new InvalidInputException(
-                "Один или несколько тегов не найдены или не принадлежат пользователю");
+                        "Один или несколько тегов не найдены или не принадлежат пользователю");
             }
             transaction.setTags(tags);
         }
@@ -164,7 +165,10 @@ public class TransactionServiceImpl implements TransactionService {
         Transaction existingTransaction = transactionRepository
                 .findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
-                        TRANSACTION_WITH_ID_NOT_FOUND + transactionId));
+                        // *** ИЗМЕНЕНИЕ: Исправлено формирование строки исключения ***
+                        // Было: TRANSACTION_WITH_ID_NOT_FOUND + transactionId
+                        // Стало: String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)
+                        String.format(TRANSACTION_WITH_ID_NOT_FOUND, transactionId)));
 
         if (transactionDto.getAmount() > 1_000_000) {
             throw new InvalidInputException("Сумма транзакции не может превышать 1,000,000");
@@ -183,7 +187,7 @@ public class TransactionServiceImpl implements TransactionService {
 
         User user = userRepository.findById(transactionDto.getUserId())
                 .orElseThrow(() -> new NotFoundException(
-                        USER_WITH_ID_NOT_FOUND + transactionDto.getUserId()));
+                        String.format(USER_WITH_ID_NOT_FOUND, transactionDto.getUserId())));
         Bill bill = billRepository
                 .findByIdAndUserId(transactionDto.getBillId(), transactionDto.getUserId())
                 .orElseThrow(() -> new NotFoundException(
@@ -205,7 +209,6 @@ public class TransactionServiceImpl implements TransactionService {
         existingTransaction.setType(transactionDto.isType());
         existingTransaction.setAmount(newAmount);
         existingTransaction.setDate(transactionDto.getDate());
-
 
         if (transactionDto.getTagIds() != null) {
             List<Tag> tags = transactionDto.getTagIds().isEmpty()
