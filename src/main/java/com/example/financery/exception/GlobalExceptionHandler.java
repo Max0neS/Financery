@@ -1,5 +1,7 @@
 package com.example.financery.exception;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import com.example.financery.model.ErrorResponse;
@@ -13,8 +15,11 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
     @ExceptionHandler(InvalidInputException.class)
     public ResponseEntity<ErrorResponse> handleValidationExceptions(InvalidInputException ex) {
+        logger.warn("Ошибка валидации (InvalidInputException): {}", ex.getMessage());
         ErrorResponse errorResponse = new ErrorResponse(
                 HttpStatus.BAD_REQUEST.value(),
                 ex.getMessage());
@@ -27,7 +32,7 @@ public class GlobalExceptionHandler {
         String errorMessage = ex.getBindingResult().getAllErrors().stream()
                 .map(error -> error.getDefaultMessage())
                 .collect(Collectors.joining("; "));
-
+        logger.warn("Ошибка валидации (MethodArgumentNotValidException): {}", errorMessage);
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST.value(),
                 errorMessage);
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
@@ -36,6 +41,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ErrorResponse> handleNotFoundException(
             NotFoundException ex) {
+        logger.warn("Ресурс не найден (NotFoundException): {}", ex.getMessage());
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND.value(),
                 ex.getMessage());
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);

@@ -7,6 +7,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -26,7 +28,15 @@ public class LoggingAspect {
             + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))",
             returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
-        if (logger.isDebugEnabled()) {
+        if (logger.isDebugEnabled()) { 
+            if (result instanceof ResponseEntity) {
+                ResponseEntity<?> responseEntity = (ResponseEntity<?>) result;
+                if (responseEntity.getStatusCode() == HttpStatus.BAD_REQUEST) {
+                    logger.warn("Закончилось выполнение: {} с результатом: {}",
+                            joinPoint.getSignature().toShortString(), result);
+                    return;
+                }
+            }
             logger.info("Закончилось выполнение: {} с результатом: {}",
                     joinPoint.getSignature().toShortString(), result);
         }

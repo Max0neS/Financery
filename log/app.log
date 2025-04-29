@@ -4248,3 +4248,561 @@ Consider defining a bean of type 'com.example.financery.utils.InMemoryCache' in 
 28-04-2025 12:25:09.728 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionServiceImpl.getTransactionsByUserId(..) с причиной: Пользователь с id 1 не найден
 28-04-2025 12:25:09.729 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionController.getAllUserTransactions(..) с причиной: Пользователь с id 1 не найден
 28-04-2025 12:25:09.745 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.NotFoundException: Пользователь с id 1 не найден]
+28-04-2025 13:12:19.509 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 2472 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 13:12:19.512 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 13:12:19.513 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 13:12:22.506 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 13:12:23.900 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 13:12:28.473 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 13:12:28.549 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 13:12:28.553 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 13:12:28.809 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 13:12:30.002 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 13:12:30.035 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 11.38 seconds (process running for 13.424)
+28-04-2025 13:12:32.624 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 670 ms
+28-04-2025 13:13:01.552 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 13:13:01.553 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@81c50b1,[]>
+28-04-2025 13:13:01.560 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'amount': rejected value [-1000.0]; codes [Min.transactionDtoRequest.amount,Min.amount,Min.double,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.amount,amount]; arguments []; default message [amount],0]; default message [Значение транзакции не может быть меньше 0]] ]
+28-04-2025 13:14:01.190 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.downloadLogFile(..)
+28-04-2025 13:14:01.191 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadLogs(..)
+28-04-2025 13:14:01.194 [http-nio-8080-exec-2] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-11677993834074890163.log
+28-04-2025 13:14:01.194 [http-nio-8080-exec-2] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-11677993834074890163.log
+28-04-2025 13:14:01.228 [http-nio-8080-exec-2] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-11677993834074890163.log
+28-04-2025 13:14:01.228 [http-nio-8080-exec-2] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-11677993834074890163.log
+28-04-2025 13:14:01.228 [http-nio-8080-exec-2] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 13:14:01.229 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-11677993834074890163.log]
+28-04-2025 13:14:01.230 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-11677993834074890163.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-11677993834074890163.log""]>
+28-04-2025 14:31:20.405 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 5740 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:31:20.408 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:31:20.409 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:31:24.620 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:31:26.414 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:31:31.355 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:31:31.484 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:31:31.490 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:31:31.861 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:31:33.537 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:31:33.591 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 14.267 seconds (process running for 22.209)
+28-04-2025 14:31:55.138 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1296 ms
+28-04-2025 14:39:49.097 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 7616 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:39:49.100 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:39:49.101 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:39:52.027 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:39:53.503 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:39:57.471 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:39:57.539 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:39:57.544 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:39:57.794 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:39:58.906 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:39:58.937 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 10.71 seconds (process running for 12.799)
+28-04-2025 14:40:01.385 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 977 ms
+28-04-2025 14:41:00.081 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.downloadLogFile(..)
+28-04-2025 14:41:00.082 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadLogs(..)
+28-04-2025 14:41:00.085 [http-nio-8080-exec-5] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-10343070209710618276.log
+28-04-2025 14:41:00.086 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-10343070209710618276.log
+28-04-2025 14:41:00.121 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-10343070209710618276.log
+28-04-2025 14:41:00.122 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-10343070209710618276.log
+28-04-2025 14:41:00.122 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 14:41:00.122 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-10343070209710618276.log]
+28-04-2025 14:41:00.124 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-10343070209710618276.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-10343070209710618276.log""]>
+28-04-2025 14:42:39.471 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:42:39.473 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:42:39.474 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:42:41.550 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:42:42.637 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:42:45.824 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:42:45.884 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:42:45.886 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:42:46.100 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:42:47.086 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:42:47.115 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 8.331 seconds (process running for 9.214)
+28-04-2025 14:43:50.010 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 629 ms
+28-04-2025 14:44:20.705 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 14:44:20.708 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@63b5e165,[]>
+28-04-2025 14:44:20.715 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'amount': rejected value [-1000.0]; codes [Min.transactionDtoRequest.amount,Min.amount,Min.double,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.amount,amount]; arguments []; default message [amount],0]; default message [Значение транзакции не может быть меньше 0]] ]
+28-04-2025 14:44:31.915 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.downloadLogFile(..)
+28-04-2025 14:44:31.915 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadLogs(..)
+28-04-2025 14:44:31.917 [http-nio-8080-exec-8] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-7787903154136374021.log
+28-04-2025 14:44:31.917 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-7787903154136374021.log
+28-04-2025 14:44:31.948 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-7787903154136374021.log
+28-04-2025 14:44:31.948 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-7787903154136374021.log
+28-04-2025 14:44:31.949 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 14:44:31.949 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-7787903154136374021.log]
+28-04-2025 14:44:31.950 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-7787903154136374021.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-7787903154136374021.log""]>
+28-04-2025 14:53:29.167 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:53:29.181 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:53:29.352 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:53:29.352 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:53:29.352 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:53:30.390 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:53:30.631 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:53:31.670 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:53:31.714 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:53:31.714 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:53:31.846 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:53:32.655 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:53:32.662 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.384 seconds (process running for 654.761)
+28-04-2025 14:54:16.478 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:16.491 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:16.616 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:54:16.617 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:54:16.617 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:54:17.165 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:17.392 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:54:18.353 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:54:18.405 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:54:18.405 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:54:18.533 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:54:19.116 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:19.123 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.55 seconds (process running for 701.221)
+28-04-2025 14:54:40.286 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:40.299 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:40.402 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:54:40.403 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:54:40.403 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:54:40.908 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:41.283 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:54:42.285 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:54:42.325 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:54:42.325 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:54:42.440 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:54:43.091 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:43.099 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.734 seconds (process running for 725.198)
+28-04-2025 14:54:44.529 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:44.542 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:44.643 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16824 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:54:44.644 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:54:44.644 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:54:45.141 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:45.370 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:54:46.297 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:54:46.354 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:54:46.354 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:54:46.464 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:54:47.058 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:54:47.072 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.467 seconds (process running for 729.171)
+28-04-2025 14:55:04.376 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 19008 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:55:04.378 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:55:04.379 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:55:06.513 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:55:07.621 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:55:10.819 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:55:10.881 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:55:10.884 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:55:11.106 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:55:12.107 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:55:12.136 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 8.457 seconds (process running for 10.007)
+28-04-2025 14:55:24.126 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 14:55:24.126 [http-nio-8080-exec-1] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (MethodArgumentNotValidException): Значение транзакции не может быть меньше 0
+28-04-2025 14:55:24.128 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@10e8ac8b,[]>
+28-04-2025 14:55:24.163 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'amount': rejected value [-1000.0]; codes [Min.transactionDtoRequest.amount,Min.amount,Min.double,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.amount,amount]; arguments []; default message [amount],0]; default message [Значение транзакции не может быть меньше 0]] ]
+28-04-2025 14:55:31.476 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.downloadLogFile(..)
+28-04-2025 14:55:31.477 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadLogs(..)
+28-04-2025 14:55:31.479 [http-nio-8080-exec-8] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-5870642569212975303.log
+28-04-2025 14:55:31.479 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-5870642569212975303.log
+28-04-2025 14:55:31.511 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-5870642569212975303.log
+28-04-2025 14:55:31.512 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-5870642569212975303.log
+28-04-2025 14:55:31.512 [http-nio-8080-exec-8] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 14:55:31.512 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-5870642569212975303.log]
+28-04-2025 14:55:31.514 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-5870642569212975303.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-5870642569212975303.log""]>
+28-04-2025 14:59:51.686 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:51.702 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:51.829 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 19008 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:59:51.829 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:59:51.829 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:59:52.357 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:52.569 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:59:53.471 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:59:53.544 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:59:53.754 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:53.762 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 1.981 seconds (process running for 291.632)
+28-04-2025 14:59:55.196 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:55.209 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:55.341 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 19008 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 14:59:55.342 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 14:59:55.342 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 14:59:55.922 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:56.183 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 14:59:57.160 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 14:59:57.213 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 14:59:57.214 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 14:59:57.331 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 14:59:57.936 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 14:59:57.953 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.659 seconds (process running for 295.824)
+28-04-2025 15:00:06.829 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16268 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 15:00:06.831 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 15:00:06.831 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 15:00:08.974 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 15:00:10.168 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 15:00:13.631 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 15:00:13.701 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 15:00:13.704 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 15:00:13.934 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 15:00:14.997 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 15:00:15.026 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 8.916 seconds (process running for 9.898)
+28-04-2025 15:00:23.271 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 15:00:23.272 [http-nio-8080-exec-1] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (MethodArgumentNotValidException): Значение транзакции не может быть меньше 0
+28-04-2025 15:00:23.273 [http-nio-8080-exec-1] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@4112fde1,[]>
+28-04-2025 15:00:23.309 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'amount': rejected value [-1000.0]; codes [Min.transactionDtoRequest.amount,Min.amount,Min.double,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.amount,amount]; arguments []; default message [amount],0]; default message [Значение транзакции не может быть меньше 0]] ]
+28-04-2025 15:00:29.920 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.downloadLogFile(..)
+28-04-2025 15:00:29.920 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadLogs(..)
+28-04-2025 15:00:29.922 [http-nio-8080-exec-5] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-12544017003417275913.log
+28-04-2025 15:00:29.922 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-12544017003417275913.log
+28-04-2025 15:00:29.954 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-12544017003417275913.log
+28-04-2025 15:00:29.955 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-12544017003417275913.log
+28-04-2025 15:00:29.955 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 15:00:29.955 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-12544017003417275913.log]
+28-04-2025 15:00:29.957 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-12544017003417275913.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-12544017003417275913.log""]>
+28-04-2025 15:01:33.809 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 18508 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 15:01:33.812 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 15:01:33.812 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 15:01:36.390 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 15:01:37.577 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 15:01:41.032 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 15:01:41.097 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 15:01:41.100 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 15:01:41.328 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 15:01:42.389 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 15:01:42.426 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.427 seconds (process running for 10.445)
+28-04-2025 15:16:09.001 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 9552 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+28-04-2025 15:16:09.003 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+28-04-2025 15:16:09.004 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+28-04-2025 15:16:12.191 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+28-04-2025 15:16:13.789 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28-04-2025 15:16:17.891 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+28-04-2025 15:16:17.963 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+28-04-2025 15:16:17.967 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+28-04-2025 15:16:18.219 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2025 15:16:19.530 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+28-04-2025 15:16:19.571 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 11.471 seconds (process running for 18.014)
+28-04-2025 15:20:34.575 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+28-04-2025 15:20:34.577 [http-nio-8080-exec-1] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (MethodArgumentNotValidException): Значение транзакции не может быть меньше 0
+28-04-2025 15:20:34.578 [http-nio-8080-exec-1] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@1efc284,[]>
+28-04-2025 15:20:34.618 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.financery.dto.TransactionDtoResponse com.example.financery.controller.TransactionController.createBill(com.example.financery.dto.TransactionDtoRequest): [Field error in object 'transactionDtoRequest' on field 'amount': rejected value [-1000.0]; codes [Min.transactionDtoRequest.amount,Min.amount,Min.double,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDtoRequest.amount,amount]; arguments []; default message [amount],0]; default message [Значение транзакции не может быть меньше 0]] ]
+28-04-2025 15:20:42.011 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.downloadLogFile(..)
+28-04-2025 15:20:42.011 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadLogs(..)
+28-04-2025 15:20:42.019 [http-nio-8080-exec-4] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-14049629957387133982.log
+28-04-2025 15:20:42.019 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:\documents\JavaLabs\temp\log-2025-04-28-14049629957387133982.log
+28-04-2025 15:20:42.056 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл D:\documents\JavaLabs\temp\log-2025-04-28-14049629957387133982.log
+28-04-2025 15:20:42.057 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: D:\documents\JavaLabs\temp\log-2025-04-28-14049629957387133982.log
+28-04-2025 15:20:42.057 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+28-04-2025 15:20:42.057 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadLogs(..) с результатом: URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-14049629957387133982.log]
+28-04-2025 15:20:42.058 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.downloadLogFile(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/log-2025-04-28-14049629957387133982.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="log-2025-04-28-14049629957387133982.log""]>
+29-04-2025 13:34:32.708 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 5644 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+29-04-2025 13:34:32.711 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+29-04-2025 13:34:32.713 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+29-04-2025 13:34:38.621 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+29-04-2025 13:34:45.159 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+29-04-2025 13:34:45.338 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+29-04-2025 13:34:45.343 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+29-04-2025 13:34:45.943 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-04-2025 13:34:47.410 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 16.138 seconds (process running for 19.86)
+29-04-2025 13:36:58.459 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 11136 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+29-04-2025 13:36:58.461 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+29-04-2025 13:36:58.462 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+29-04-2025 13:37:03.423 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+29-04-2025 13:37:09.934 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+29-04-2025 13:37:10.070 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+29-04-2025 13:37:10.075 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+29-04-2025 13:37:10.753 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-04-2025 13:37:12.161 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 14.815 seconds (process running for 17.357)
