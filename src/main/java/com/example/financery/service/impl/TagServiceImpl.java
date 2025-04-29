@@ -23,6 +23,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -83,6 +85,30 @@ public class TagServiceImpl implements TagService {
                 .forEach(transaction -> transactionsResponse
                         .add(transactionMapper.toTransactionDto(transaction)));
         return transactionsResponse;
+    }
+
+    @Override
+    public List<Tag> saveAll(List<TagDtoRequest> tagList) {
+        List<Long> userIds = tagList.stream()
+                .map(TagDtoRequest::getUserId)
+                .distinct()
+                .toList();
+        List<User> users = userRepository.findAllById(userIds);
+        if (users.size() != userIds.size()) {
+            throw new NotFoundException("Один или несколько пользователей не найдены");
+        }
+        Map<Long, User> userMap = users.stream()
+                .collect(Collectors.toMap(User::getId, user -> user));
+
+        List<Tag> tags = tagList.stream()
+                .filter(dto -> dto.getTitle() != null && dto.getTitle().length() >= 3)
+                .map(dto -> {
+                    Tag tag = tagMapper.toTag(dto);
+                    tag.setUser(userMap.get(dto.getUserId()));
+                    return tag;
+                })
+                .toList();
+        return tagRepository.saveAll(tags);
     }
 
     @Override

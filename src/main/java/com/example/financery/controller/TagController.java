@@ -2,10 +2,12 @@ package com.example.financery.controller;
 
 import com.example.financery.dto.TagDtoRequest;
 import com.example.financery.dto.TagDtoResponse;
+import com.example.financery.mapper.TagMapper;
+import com.example.financery.model.Tag;
 import com.example.financery.service.TagService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +18,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/tags")
 @AllArgsConstructor
-@Tag(name = "Теги", description = "Управление тегами пользователя")
+@io.swagger.v3.oas.annotations.tags.Tag(name = "Теги", description = "Управление тегами пользователя")
 public class TagController {
 
     private final TagService tagService;
+    private final TagMapper tagMapper;
 
     @Operation(
             summary = "Получение всех существующих тегов",
@@ -65,6 +68,20 @@ public class TagController {
                     required = true, example = "1")
             @PathVariable long transactionId) {
         return tagService.getTagsByTransactionId(transactionId);
+    }
+
+    @PostMapping("/add-many")
+    @Operation(summary = "Создаёт большое количество категорий",
+            description = "Создаёт категории из передаваемого множества")
+    @ApiResponse(responseCode = "200", description = "Категории созданы")
+    @ApiResponse(responseCode = "400", description = "Некоторые категории уже есть")
+    public ResponseEntity<List<TagDtoResponse>> createBulk(
+            @RequestBody @Valid List<TagDtoRequest> tagList) {
+        List<Tag> savedTags = tagService.saveAll(tagList);
+        List<TagDtoResponse> response = savedTags.stream()
+                .map(tagMapper::toTagDto)
+                .toList();
+        return ResponseEntity.ok(response);
     }
 
     @Operation(
