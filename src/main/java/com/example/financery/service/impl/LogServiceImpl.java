@@ -5,6 +5,8 @@ import com.example.financery.exception.NotFoundException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -68,8 +70,8 @@ public class LogServiceImpl implements LogService {
 
     public Path createTempFile(LocalDate logDate) {
         try {
-            File tempFile = Files.createTempFile(TEMP_DIR, "log-"
-                    + logDate + "-", ".log").toFile();
+            Path tempFilePath = Files.createTempFile(TEMP_DIR, "log-" + logDate + "-", ".log");
+            File tempFile = tempFilePath.toFile();
             if (!tempFile.setReadable(true, true)) {
                 throw new IllegalStateException("Не удалось установить права на чтение "
                         + "для временного файла: " + tempFile);
@@ -84,7 +86,7 @@ public class LogServiceImpl implements LogService {
                         tempFile);
             }
             log.info("Создан защищённый временный файл: {}", tempFile.getAbsolutePath());
-            return tempFile.toPath();
+            return tempFilePath;
         } catch (IOException e) {
             throw new IllegalStateException("Ошибка при создании временного файла: "
                     + e.getMessage());
@@ -104,12 +106,18 @@ public class LogServiceImpl implements LogService {
         }
     }
 
+    protected Resource createUrlResource(URI uri) throws MalformedURLException {
+        return new UrlResource(uri);
+    }
+
     public Resource createResourceFromTempFile(Path tempFilePath, String date) {
         try {
-            if (Files.size(tempFilePath) == 0) {
+            long size = Files.size(tempFilePath);
+            log.debug("Размер временного файла {}: {} байт", tempFilePath, size);
+            if (size == 0) {
                 throw new NotFoundException("Нет логов за указанную дату: " + date);
             }
-            Resource resource = new UrlResource(tempFilePath.toUri());
+            Resource resource = createUrlResource(tempFilePath.toUri());
             tempFilePath.toFile().deleteOnExit();
             log.info("Создан загружаемый ресурс из временного файла: {}", tempFilePath);
             return resource;
@@ -118,5 +126,4 @@ public class LogServiceImpl implements LogService {
                     + e.getMessage());
         }
     }
-
 }
