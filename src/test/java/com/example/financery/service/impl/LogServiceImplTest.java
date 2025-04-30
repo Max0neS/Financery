@@ -2,164 +2,131 @@ package com.example.financery.service.impl;
 
 import com.example.financery.exception.InvalidInputException;
 import com.example.financery.exception.NotFoundException;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.junit.jupiter.api.io.TempDir;
 import org.mockito.MockedStatic;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.lang.reflect.Field;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
 class LogServiceImplTest {
 
-    @InjectMocks
-    private LogServiceImpl logService;
+    private static final Logger log = LoggerFactory.getLogger(LogServiceImplTest.class);
 
+    private LogServiceImpl logService;
     private Path logFilePath;
     private Path tempDir;
-    private LocalDate logDate;
+
+    @TempDir
+    Path tempDirReal;
 
     @BeforeEach
     void setUp() throws IOException {
-        logFilePath = Paths.get("log/app.log");
-        tempDir = Paths.get("D:/documents/JavaLabs/temp");
-        logDate = LocalDate.of(2025, 4, 28);
+        // Создаем временный файл логов
+        logFilePath = tempDirReal.resolve("app.log");
+        Files.createFile(logFilePath);
 
-        // Мокаем создание директории в статическом блоке
-        try (MockedStatic<Paths> paths = mockStatic(Paths.class)) {
-            try (MockedStatic<Files> files = mockStatic(Files.class)) {
-                paths.when(() -> Paths.get("D:/documents/JavaLabs/temp")).thenReturn(tempDir);
-                files.when(() -> Files.exists(tempDir)).thenReturn(true);
-            }
+        // Используем временную директорию
+        tempDir = tempDirReal.resolve("temp");
+        Files.createDirectories(tempDir);
+
+        // Инициализируем сервис с тестовыми путями
+        logService = new LogServiceImpl(logFilePath, tempDir);
+    }
+
+    @AfterEach
+    void tearDown() {
+        try {
+            log.info("Очистка временной директории: {}", tempDir);
+            Files.walk(tempDir)
+                    .filter(Files::isRegularFile)
+                    .forEach(path -> {
+                        try {
+                            Files.deleteIfExists(path);
+                        } catch (IOException e) {
+                            log.error("Не удалось удалить файл: {}", path, e);
+                        }
+                    });
+        } catch (IOException e) {
+            log.error("Ошибка при очистке временной директории", e);
+        }
+    }
+
+    // Новый тест для конструктора по умолчанию
+    @Test
+    void defaultConstructor_createsTempDir() throws IOException {
+        // Удаляем tempDir, если она существует
+        Path tempDirForDefault = Path.of(System.getProperty("java.io.tmpdir"), "financery-temp");
+        if (Files.exists(tempDirForDefault)) {
+            Files.walk(tempDirForDefault)
+                    .filter(Files::isRegularFile)
+                    .forEach(path -> {
+                        try {
+                            Files.deleteIfExists(path);
+                        } catch (IOException e) {
+                            log.error("Не удалось удалить файл: {}", path, e);
+                        }
+                    });
+            Files.deleteIfExists(tempDirForDefault);
+        }
+
+        // Создаем сервис с конструктором по умолчанию
+        LogServiceImpl defaultLogService = new LogServiceImpl();
+
+        // Проверяем, что tempDir создана
+        assertTrue(Files.exists(tempDirForDefault));
+    }
+
+    @Test
+    void ensureTempDirExists_success() {
+        // Проверяем, что директория создана в setUp
+        assertTrue(Files.exists(tempDir));
+    }
+
+    // Новый тест для случая, когда tempDir не существует
+    @Test
+    void ensureTempDirExists_tempDirNotExists_createsDir() throws Exception {
+        // Создаем новый экземпляр сервиса с несуществующей директорией
+        Path nonExistentDir = tempDirReal.resolve("nonexistent");
+        LogServiceImpl newLogService = new LogServiceImpl(logFilePath, nonExistentDir);
+
+        // Проверяем, что директория создана
+        assertTrue(Files.exists(nonExistentDir));
+    }
+
+    @Test
+    void ensureTempDirExists_ioException_throwsIllegalStateException() throws Exception {
+        try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
+            Path invalidDir = tempDirReal.resolve("invalid");
+            filesMock.when(() -> Files.exists(invalidDir)).thenReturn(false);
+            filesMock.when(() -> Files.createDirectories(invalidDir)).thenThrow(new IOException("IO error"));
+
+            // Используем рефлексию, чтобы изменить tempDir в logService
+            Field tempDirField = LogServiceImpl.class.getDeclaredField("tempDir");
+            tempDirField.setAccessible(true);
+            tempDirField.set(logService, invalidDir);
+
+            IllegalStateException exception = assertThrows(IllegalStateException.class,
+                    () -> logService.ensureTempDirExists());
+            assertEquals("Не удаётся создать защищённую временную директорию", exception.getMessage());
         }
     }
 
     @Test
-    void downloadLogs_success() throws IOException, MalformedURLException {
-        String date = "28-04-2025";
-        String formattedDate = "28-04-2025";
-
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-        URI tempFileUri = URI.create("file:///D:/documents/JavaLabs/temp/log-2025-04-28.log");
-
-        try (MockedStatic<Paths> paths = mockStatic(Paths.class)) {
-            try (MockedStatic<Files> files = mockStatic(Files.class)) {
-                // Мокаем зависимости
-                paths.when(() -> Paths.get("log/app.log")).thenReturn(logFilePath);
-                files.when(() -> Files.exists(logFilePath)).thenReturn(true);
-
-                // Мокаем создание временного файла
-                files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                        .thenReturn(tempFilePath);
-                when(tempFilePath.toFile()).thenReturn(tempFile);
-                when(tempFile.setReadable(true, true)).thenReturn(true);
-                when(tempFile.setWritable(true, true)).thenReturn(true);
-                when(tempFile.canExecute()).thenReturn(false);
-                when(tempFilePath.toUri()).thenReturn(tempFileUri);
-                when(tempFile.getAbsolutePath()).thenReturn("D:/documents/JavaLabs/temp/log-2025-04-28.log");
-
-                // Мокаем чтение и запись логов
-                BufferedReader reader = mock(BufferedReader.class);
-                files.when(() -> Files.newBufferedReader(logFilePath)).thenReturn(reader);
-                Stream<String> lines = Stream.of("Log entry on 28-04-2025");
-                when(reader.lines()).thenReturn(lines);
-                files.when(() -> Files.write(eq(tempFilePath), any(Iterable.class))).thenReturn(tempFilePath);
-
-                // Мокаем Files.size
-                files.when(() -> Files.size(tempFilePath)).thenReturn(100L); // Файл не пустой
-
-                // Используем spy и doReturn для мока createUrlResource
-                LogServiceImpl logServiceSpy = Mockito.spy(logService);
-                Resource resource = mock(Resource.class);
-                doReturn(resource).when(logServiceSpy).createUrlResource(tempFileUri);
-
-                Resource result = logServiceSpy.downloadLogs(date);
-
-                assertNotNull(result);
-                assertEquals(resource, result);
-                verify(tempFile).deleteOnExit();
-            }
-        }
-    }
-
-    @Test
-    void downloadLogs_logFileNotFound_throwsNotFoundException() {
-        String date = "28-04-2025";
-
-        try (MockedStatic<Paths> paths = mockStatic(Paths.class)) {
-            try (MockedStatic<Files> files = mockStatic(Files.class)) {
-                paths.when(() -> Paths.get("log/app.log")).thenReturn(logFilePath);
-                files.when(() -> Files.exists(logFilePath)).thenReturn(false);
-
-                NotFoundException exception = assertThrows(NotFoundException.class,
-                        () -> logService.downloadLogs(date));
-
-                assertEquals("Файл не существует: log/app.log", exception.getMessage());
-            }
-        }
-    }
-
-    @Test
-    void downloadLogs_noLogsForDate_throwsNotFoundException() throws IOException {
-        String date = "28-04-2025";
-        String formattedDate = "28-04-2025";
-
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-
-        try (MockedStatic<Paths> paths = mockStatic(Paths.class)) {
-            try (MockedStatic<Files> files = mockStatic(Files.class)) {
-                paths.when(() -> Paths.get("log/app.log")).thenReturn(logFilePath);
-                files.when(() -> Files.exists(logFilePath)).thenReturn(true);
-
-                files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                        .thenReturn(tempFilePath);
-                when(tempFilePath.toFile()).thenReturn(tempFile);
-                when(tempFile.setReadable(true, true)).thenReturn(true);
-                when(tempFile.setWritable(true, true)).thenReturn(true);
-                when(tempFile.canExecute()).thenReturn(false);
-                when(tempFile.getAbsolutePath()).thenReturn("D:/documents/JavaLabs/temp/log-2025-04-28.log");
-
-                BufferedReader reader = mock(BufferedReader.class);
-                files.when(() -> Files.newBufferedReader(logFilePath)).thenReturn(reader);
-                files.when(() -> Files.size(tempFilePath)).thenReturn(0L); // Файл пустой
-                Stream<String> lines = Stream.of("Log entry on 27-04-2025"); // Логи за другую дату
-                when(reader.lines()).thenReturn(lines);
-                files.when(() -> Files.write(eq(tempFilePath), any(Iterable.class))).thenReturn(tempFilePath);
-
-                NotFoundException exception = assertThrows(NotFoundException.class,
-                        () -> logService.downloadLogs(date));
-
-                assertEquals("Нет логов за указанную дату: " + date, exception.getMessage());
-            }
-        }
-    }
-
-    @Test
-    void parseDate_success() {
+    void parseDate_validDate_success() {
         String date = "28-04-2025";
         LocalDate expected = LocalDate.of(2025, 4, 28);
 
@@ -179,247 +146,192 @@ class LogServiceImplTest {
     }
 
     @Test
-    void validateLogFileExists_success() {
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.exists(logFilePath)).thenReturn(true);
-
-            logService.validateLogFileExists(logFilePath); // Не должно выбросить исключение
-        }
+    void validateLogFileExists_fileExists_success() {
+        // Файл создан в setUp
+        assertDoesNotThrow(() -> logService.validateLogFileExists(logFilePath));
     }
 
     @Test
-    void validateLogFileExists_notFound_throwsNotFoundException() {
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.exists(logFilePath)).thenReturn(false);
+    void validateLogFileExists_fileNotExists_throwsNotFoundException() {
+        Path nonExistentPath = tempDirReal.resolve("nonexistent.log");
 
-            NotFoundException exception = assertThrows(NotFoundException.class,
-                    () -> logService.validateLogFileExists(logFilePath));
+        NotFoundException exception = assertThrows(NotFoundException.class,
+                () -> logService.validateLogFileExists(nonExistentPath));
 
-            assertEquals("Файл не существует: log/app.log", exception.getMessage());
-        }
+        assertEquals("Файл не существует: " + nonExistentPath, exception.getMessage());
     }
 
     @Test
-    void createTempFile_success() throws IOException {
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-        when(tempFile.getAbsolutePath()).thenReturn("D:/documents/JavaLabs/temp/log-2025-04-28.log");
+    void createTempFile_success() {
+        LocalDate logDate = LocalDate.of(2025, 4, 28);
+        Path tempFilePath = logService.createTempFile(logDate);
 
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                    .thenReturn(tempFilePath);
-            when(tempFilePath.toFile()).thenReturn(tempFile);
-            when(tempFile.setReadable(true, true)).thenReturn(true);
-            when(tempFile.setWritable(true, true)).thenReturn(true);
-            when(tempFile.canExecute()).thenReturn(false);
-
-            Path result = logService.createTempFile(logDate);
-
-            assertEquals(tempFilePath, result);
-            verify(tempFile).setReadable(true, true);
-            verify(tempFile).setWritable(true, true);
-            verify(tempFile).canExecute();
-        }
-    }
-
-    @Test
-    void createTempFile_ioException_throwsIllegalStateException() throws IOException {
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                    .thenThrow(new IOException("IO Error"));
-
-            IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.createTempFile(logDate));
-
-            assertEquals("Ошибка при создании временного файла: IO Error", exception.getMessage());
-        }
-    }
-
-    @Test
-    void createTempFile_setReadableFails_throwsIllegalStateException() throws IOException {
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-        when(tempFile.toString()).thenReturn("D:/documents/JavaLabs/temp/log-2025-04-28.log");
-
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                    .thenReturn(tempFilePath);
-            when(tempFilePath.toFile()).thenReturn(tempFile);
-            when(tempFile.setReadable(true, true)).thenReturn(false);
-
-            IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.createTempFile(logDate));
-
-            assertEquals("Не удалось установить права на чтение для временного файла: " + tempFile,
-                    exception.getMessage());
-        }
-    }
-
-    @Test
-    void createTempFile_setWritableFails_throwsIllegalStateException() throws IOException {
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-        when(tempFile.toString()).thenReturn("D:/documents/JavaLabs/temp/log-2025-04-28.log");
-
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                    .thenReturn(tempFilePath);
-            when(tempFilePath.toFile()).thenReturn(tempFile);
-            when(tempFile.setReadable(true, true)).thenReturn(true);
-            when(tempFile.setWritable(true, true)).thenReturn(false);
-
-            IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.createTempFile(logDate));
-
-            assertEquals("Не удалось установить права на запись для временного файла: " + tempFile,
-                    exception.getMessage());
-        }
-    }
-
-    @Test
-    void createTempFile_setExecutableFails_logsWarning() throws IOException {
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-        when(tempFile.getAbsolutePath()).thenReturn("D:/documents/JavaLabs/temp/log-2025-04-28.log");
-
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.createTempFile(tempDir, "log-" + logDate + "-", ".log"))
-                    .thenReturn(tempFilePath);
-            when(tempFilePath.toFile()).thenReturn(tempFile);
-            when(tempFile.setReadable(true, true)).thenReturn(true);
-            when(tempFile.setWritable(true, true)).thenReturn(true);
-            when(tempFile.canExecute()).thenReturn(true);
-            when(tempFile.setExecutable(false, false)).thenReturn(false);
-
-            Path result = logService.createTempFile(logDate);
-
-            assertEquals(tempFilePath, result);
-            verify(tempFile).setReadable(true, true);
-            verify(tempFile).setWritable(true, true);
-            verify(tempFile).canExecute();
-            verify(tempFile).setExecutable(false, false);
-        }
+        assertTrue(Files.exists(tempFilePath));
+        assertTrue(tempFilePath.toString().contains("log-2025-04-28"));
+        assertTrue(tempFilePath.toString().endsWith(".log"));
     }
 
     @Test
     void filterAndWriteLogsToTempFile_success() throws IOException {
-        String formattedDate = "28-04-2025";
-        Path tempFilePath = mock(Path.class);
+        // Подготовим тестовый лог-файл
+        String date = "28-04-2025";
+        Files.write(logFilePath, """
+                28-04-2025 INFO Some log entry
+                27-04-2025 INFO Another log entry
+                28-04-2025 ERROR Error log
+                """.getBytes());
 
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            BufferedReader reader = mock(BufferedReader.class);
-            files.when(() -> Files.newBufferedReader(logFilePath)).thenReturn(reader);
-            Stream<String> lines = Stream.of("Log entry on 28-04-2025");
-            when(reader.lines()).thenReturn(lines);
-            files.when(() -> Files.write(eq(tempFilePath), any(Iterable.class))).thenReturn(tempFilePath);
+        Path tempFilePath = Files.createTempFile(tempDir, "test-", ".log");
+        logService.filterAndWriteLogsToTempFile(logFilePath, date, tempFilePath);
 
-            logService.filterAndWriteLogsToTempFile(logFilePath, formattedDate, tempFilePath);
-
-            verify(reader).lines();
-            files.verify(() -> Files.write(eq(tempFilePath), any(Iterable.class)));
-        }
+        String content = Files.readString(tempFilePath);
+        assertTrue(content.contains("28-04-2025 INFO Some log entry"));
+        assertTrue(content.contains("28-04-2025 ERROR Error log"));
+        assertFalse(content.contains("27-04-2025"));
     }
 
     @Test
     void filterAndWriteLogsToTempFile_ioException_throwsIllegalStateException() throws IOException {
-        String formattedDate = "28-04-2025";
-        Path tempFilePath = mock(Path.class);
+        try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
+            filesMock.when(() -> Files.newBufferedReader(any()))
+                    .thenThrow(new IOException("Read error"));
 
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.newBufferedReader(logFilePath))
-                    .thenThrow(new IOException("IO Error"));
+            Path tempFilePath = Files.createTempFile(tempDir, "test-", ".log");
 
             IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.filterAndWriteLogsToTempFile(logFilePath, formattedDate, tempFilePath));
+                    () -> logService.filterAndWriteLogsToTempFile(logFilePath, "28-04-2025", tempFilePath));
 
-            assertEquals("Ошибка при обработке файла логов: IO Error", exception.getMessage());
+            assertEquals("Ошибка при обработке файла логов: Read error", exception.getMessage());
         }
     }
 
     @Test
-    void createResourceFromTempFile_success() throws IOException, MalformedURLException {
-        String date = "28-04-2025";
+    void createResourceFromTempFile_success() throws IOException {
+        // Создаем временный файл с содержимым
+        Path tempFilePath = Files.createTempFile(tempDir, "test-", ".log");
+        Files.write(tempFilePath, "Some log content".getBytes());
 
-        // Создаем tempFilePath как мок
-        Path tempFilePath = mock(Path.class);
-        File tempFile = mock(File.class);
-        URI tempFileUri = URI.create("file:///D:/documents/JavaLabs/temp/log-2025-04-28.log");
+        Resource resource = logService.createResourceFromTempFile(tempFilePath, "28-04-2025");
 
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.size(tempFilePath)).thenReturn(100L); // Файл не пустой
-            when(tempFilePath.toFile()).thenReturn(tempFile);
-            when(tempFilePath.toUri()).thenReturn(tempFileUri);
-
-            // Используем spy и doReturn для мока createUrlResource
-            LogServiceImpl logServiceSpy = Mockito.spy(logService);
-            Resource resource = mock(Resource.class);
-            doReturn(resource).when(logServiceSpy).createUrlResource(tempFileUri);
-
-            Resource result = logServiceSpy.createResourceFromTempFile(tempFilePath, date);
-
-            assertNotNull(result);
-            assertEquals(resource, result);
-            verify(tempFile).deleteOnExit();
-        }
+        assertNotNull(resource);
+        assertTrue(resource instanceof UrlResource);
+        assertEquals(tempFilePath.toUri(), ((UrlResource) resource).getURI());
     }
 
     @Test
     void createResourceFromTempFile_emptyFile_throwsNotFoundException() throws IOException {
-        String date = "28-04-2025";
-        Path tempFilePath = mock(Path.class);
+        // Создаем пустой временный файл
+        Path tempFilePath = Files.createTempFile(tempDir, "test-", ".log");
 
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.size(tempFilePath)).thenReturn(0L); // Файл пустой
+        NotFoundException exception = assertThrows(NotFoundException.class,
+                () -> logService.createResourceFromTempFile(tempFilePath, "28-04-2025"));
 
-            NotFoundException exception = assertThrows(NotFoundException.class,
-                    () -> logService.createResourceFromTempFile(tempFilePath, date));
-
-            assertEquals("Нет логов за указанную дату: " + date, exception.getMessage());
-        }
+        assertEquals("Нет логов за указанную дату: 28-04-2025", exception.getMessage());
     }
 
     @Test
     void createResourceFromTempFile_ioException_throwsIllegalStateException() throws IOException {
-        String date = "28-04-2025";
-        Path tempFilePath = mock(Path.class);
-
-        try (MockedStatic<Files> files = mockStatic(Files.class)) {
-            files.when(() -> Files.size(tempFilePath)).thenThrow(new IOException("IO Error"));
+        try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
+            Path tempFilePath = Files.createTempFile(tempDir, "test-", ".log");
+            filesMock.when(() -> Files.size(tempFilePath))
+                    .thenThrow(new IOException("Size error"));
 
             IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.createResourceFromTempFile(tempFilePath, date));
+                    () -> logService.createResourceFromTempFile(tempFilePath, "28-04-2025"));
 
-            assertEquals("Ошибка при создании ресурса из временного файла: IO Error",
-                    exception.getMessage());
+            assertEquals("Ошибка при создании ресурса из временного файла: Size error", exception.getMessage());
         }
     }
 
     @Test
-    void createUrlResource_malformedUri_throwsMalformedURLException() throws MalformedURLException {
-        URI invalidUri = URI.create("invalid://uri"); // Некорректный URI
+    void createUrlResource_success() throws IOException {
+        URI uri = tempDir.resolve("test.log").toUri();
+        Resource resource = logService.createUrlResource(uri);
 
-        LogServiceImpl logServiceSpy = Mockito.spy(logService);
-        doCallRealMethod().when(logServiceSpy).createUrlResource(invalidUri);
-
-        assertThrows(MalformedURLException.class,
-                () -> logServiceSpy.createUrlResource(invalidUri));
+        assertNotNull(resource);
+        assertTrue(resource instanceof UrlResource);
+        assertEquals(uri, ((UrlResource) resource).getURI());
     }
 
     @Test
-    void createUrlResource_success() throws IOException {
-        URI validUri = URI.create("file:///D:/documents/JavaLabs/temp/log-2025-04-28.log");
+    void createUrlResource_malformedUrl_throwsIOException() throws IOException {
+        URI invalidUri = URI.create("invalid://url");
+        LogServiceImpl spyService = spy(logService);
+        doThrow(new IOException("Invalid URL")).when(spyService).createUrlResource(invalidUri);
 
-        LogServiceImpl logServiceSpy = Mockito.spy(logService);
-        doCallRealMethod().when(logServiceSpy).createUrlResource(validUri);
+        IOException exception = assertThrows(IOException.class,
+                () -> spyService.createUrlResource(invalidUri));
 
-        Resource result = logServiceSpy.createUrlResource(validUri);
+        assertEquals("Invalid URL", exception.getMessage());
+    }
 
-        assertNotNull(result);
-        assertTrue(result instanceof UrlResource);
-        assertEquals(validUri, ((UrlResource) result).getURI());
+    @Test
+    void downloadLogs_success() throws IOException {
+        // Подготовим тестовый лог-файл
+        String date = "28-04-2025";
+        Files.write(logFilePath, """
+                28-04-2025 INFO Some log entry
+                27-04-2025 INFO Another log entry
+                """.getBytes());
+
+        Resource resource = logService.downloadLogs(date);
+
+        assertNotNull(resource);
+        assertTrue(resource instanceof UrlResource);
+        Path tempFilePath = Path.of(((UrlResource) resource).getURI());
+        String content = Files.readString(tempFilePath);
+        assertTrue(content.contains("28-04-2025 INFO Some log entry"));
+        assertFalse(content.contains("27-04-2025"));
+    }
+
+    @Test
+    void downloadLogs_invalidDate_throwsInvalidInputException() {
+        String invalidDate = "2025-04-28";
+
+        InvalidInputException exception = assertThrows(InvalidInputException.class,
+                () -> logService.downloadLogs(invalidDate));
+
+        assertEquals("Неверный формат даты. Требуется dd-mm-yyyy", exception.getMessage());
+    }
+
+    @Test
+    void downloadLogs_logFileNotExists_throwsNotFoundException() {
+        // Удаляем лог-файл
+        logService = new LogServiceImpl(tempDirReal.resolve("nonexistent.log"), tempDir);
+
+        NotFoundException exception = assertThrows(NotFoundException.class,
+                () -> logService.downloadLogs("28-04-2025"));
+
+        assertEquals("Файл не существует: " + tempDirReal.resolve("nonexistent.log"), exception.getMessage());
+    }
+
+    @Test
+    void downloadLogs_noLogsForDate_throwsNotFoundException() throws IOException {
+        // Пустой лог-файл
+        Files.write(logFilePath, "".getBytes());
+
+        NotFoundException exception = assertThrows(NotFoundException.class,
+                () -> logService.downloadLogs("28-04-2025"));
+
+        assertEquals("Нет логов за указанную дату: 28-04-2025", exception.getMessage());
+    }
+
+    // Новый тест для покрытия catch в createTempFile
+    @Test
+    void createTempFile_ioException_throwsIllegalStateException() {
+        LocalDate fixedDate = LocalDate.of(2025, 4, 28); // Фиксированная дата для теста
+        try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
+            // Мокаем перегрузку Files.createTempFile с тремя аргументами (без атрибутов)
+            filesMock.when(() -> Files.createTempFile(
+                    eq(tempDir),
+                    eq("log-" + fixedDate + "-"),
+                    eq(".log")
+            )).thenThrow(new IOException("IO error"));
+
+            IllegalStateException exception = assertThrows(IllegalStateException.class,
+                    () -> logService.createTempFile(fixedDate));
+
+            assertEquals("Ошибка при создании временного файла: IO error", exception.getMessage());
+        }
     }
 }

@@ -1160,3 +1160,243 @@
 30-04-2025 01:26:05.719 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 1056736689
 30-04-2025 01:26:05.719 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
 30-04-2025 01:26:06.402 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:27:47.717 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 20044 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:27:47.723 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:27:47.726 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:27:56.415 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:28:06.923 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:28:07.202 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:28:07.211 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:28:10.349 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 25.062 seconds (process running for 29.968)
+30-04-2025 04:28:13.954 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 24030905
+30-04-2025 04:28:13.973 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 477844812: 0 байт
+30-04-2025 04:28:14.187 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 04:28:14.214 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: Mock for File, hashCode: 1674303201
+30-04-2025 04:28:14.215 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 04:28:14.626 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1940144509: 100 байт
+30-04-2025 04:28:14.629 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 1940144509
+30-04-2025 04:28:14.653 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 04:28:14.656 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 219756370
+30-04-2025 04:28:14.657 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 219756370: 0 байт
+30-04-2025 04:28:14.681 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: D:/documents/JavaLabs/temp/log-2025-04-28.log
+30-04-2025 04:28:14.684 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл Mock for Path, hashCode: 1513460326
+30-04-2025 04:28:14.685 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла Mock for Path, hashCode: 1513460326: 100 байт
+30-04-2025 04:28:14.687 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: Mock for Path, hashCode: 1513460326
+30-04-2025 04:28:14.688 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:28:15.892 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:28:59.182 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 13028 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:28:59.184 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:28:59.185 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:29:01.533 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:29:02.761 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:29:06.317 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:29:06.391 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:29:06.395 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:29:07.747 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:29:07.778 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.359 seconds (process running for 10.353)
+30-04-2025 04:29:22.250 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getAllUsers()
+30-04-2025 04:29:22.251 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getAllUsers()
+30-04-2025 04:29:22.261 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 04:29:22.573 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: [FAILED toString()]
+30-04-2025 04:29:22.588 [http-nio-8080-exec-1] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 04:29:22.589 [http-nio-8080-exec-1] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 04:29:22.594 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 04:29:22.602 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@4c6798e4,[]>
+30-04-2025 04:29:22.845 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 04:32:31.965 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:31.979 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:32.136 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 13028 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:32:32.137 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:32:32.137 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:32:32.572 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:32.782 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:32:33.084 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:33.092 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 1.011 seconds (process running for 215.668)
+30-04-2025 04:32:36.395 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:36.410 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:36.555 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 13028 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:32:36.556 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:32:36.556 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:32:37.397 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:37.684 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:32:39.824 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:32:39.939 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:32:39.941 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:32:40.757 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:32:40.764 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 4.268 seconds (process running for 223.34)
+30-04-2025 04:33:32.100 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:33:32.116 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:33:32.323 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 13028 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:33:32.324 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:33:32.324 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:33:33.418 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 04:33:33.976 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:33:35.688 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\LogController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.LogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+30-04-2025 04:33:35.893 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.LogController required a bean of type 'com.example.financery.service.LogService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.LogService' in your configuration.
+
+30-04-2025 04:33:37.500 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 13028 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:33:37.500 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:33:37.501 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:33:38.981 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:33:40.632 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:33:40.696 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:33:40.697 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:33:41.579 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 4.179 seconds (process running for 284.155)
+30-04-2025 04:34:01.975 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 20400 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:34:01.977 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:34:01.978 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:34:06.792 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:34:12.338 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:34:12.486 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:34:12.492 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:34:14.376 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.459 seconds (process running for 16.314)
+30-04-2025 04:34:16.488 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14539165297705110865\temp
+30-04-2025 04:34:16.509 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-5990077391657370602\temp\test-4833812722880281451.log
+30-04-2025 04:34:16.512 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5990077391657370602\temp
+30-04-2025 04:34:16.521 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-4254916652530704949\temp\test-199442643559800634.log: 0 байт
+30-04-2025 04:34:16.522 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4254916652530704949\temp
+30-04-2025 04:34:16.531 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-14379882445915452630\temp\log-2025-04-28-9575541459249146770.log
+30-04-2025 04:34:16.532 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14379882445915452630\temp
+30-04-2025 04:34:16.615 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6687360114975396358\temp
+30-04-2025 04:34:16.623 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7606311101121997065\temp
+30-04-2025 04:34:16.632 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10965311359575109327\temp
+30-04-2025 04:34:16.638 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1802674240336687959\temp
+30-04-2025 04:34:16.644 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10439382671428062157\temp
+30-04-2025 04:34:16.653 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14065710514781375819\temp
+30-04-2025 04:34:16.659 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12785712734613638248\temp
+30-04-2025 04:34:16.667 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-15938109703260710313\temp
+30-04-2025 04:34:16.675 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\financery-temp
+30-04-2025 04:34:16.676 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16182532221206900599\temp
+30-04-2025 04:34:16.682 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5504959204314649589\temp
+30-04-2025 04:34:16.688 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11073246888051428949\temp
+30-04-2025 04:34:16.695 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16267418846000717191\temp
+30-04-2025 04:34:16.702 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-3654003578655171535\temp\test-4545963303237688916.log: 16 байт
+30-04-2025 04:34:16.703 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-3654003578655171535\temp\test-4545963303237688916.log
+30-04-2025 04:34:16.704 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3654003578655171535\temp
+30-04-2025 04:34:16.712 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\junit-16794342077645294057\nonexistent
+30-04-2025 04:34:16.712 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16794342077645294057\temp
+30-04-2025 04:34:16.719 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-14052819517283154837\temp\log-2025-04-28-17390210403386229676.log
+30-04-2025 04:34:16.720 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-14052819517283154837\temp\log-2025-04-28-17390210403386229676.log
+30-04-2025 04:34:16.721 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-14052819517283154837\temp\log-2025-04-28-17390210403386229676.log: 0 байт
+30-04-2025 04:34:16.721 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14052819517283154837\temp
+30-04-2025 04:34:16.730 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-2889377426093973465\temp\log-2025-04-28-1037259622763729965.log
+30-04-2025 04:34:16.733 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-2889377426093973465\temp\log-2025-04-28-1037259622763729965.log
+30-04-2025 04:34:16.733 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-2889377426093973465\temp\log-2025-04-28-1037259622763729965.log: 32 байт
+30-04-2025 04:34:16.734 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-2889377426093973465\temp\log-2025-04-28-1037259622763729965.log
+30-04-2025 04:34:16.734 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:34:16.736 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2889377426093973465\temp
+30-04-2025 04:34:16.744 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7514766700008580052\temp
+30-04-2025 04:34:17.464 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
