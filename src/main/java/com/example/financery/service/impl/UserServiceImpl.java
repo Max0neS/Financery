@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.financery.utils.InMemoryCache;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ public class UserServiceImpl implements UserService {
     private final InMemoryCache cache;
 
     @Override
+    @Transactional
     public List<UserDtoResponse> getAllUsers() {
         List<UserDtoResponse> userDtoResponses = new ArrayList<>();
         userRepository.findAll().forEach(user -> {
@@ -45,6 +47,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserDtoResponse getUserById(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException(
@@ -53,11 +56,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
     @Override
+    @Transactional
     public UserDtoResponse updateUser(long id, UserDtoRequest userDtoRequest) {
         User newUser = userRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Пользователь с id " + id + " не найден"));

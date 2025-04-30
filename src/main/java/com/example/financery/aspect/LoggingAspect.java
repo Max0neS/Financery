@@ -11,6 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.Optional;
+
 @Aspect
 @Component
 public class LoggingAspect {
@@ -28,17 +31,44 @@ public class LoggingAspect {
             + "&& !execution(* com.example.financery.mapper.TransactionMapper.*(..))",
             returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
-        if (logger.isDebugEnabled()) { 
+        if (logger.isDebugEnabled()) {
+            String resultString = safeToString(result); // Используем безопасный метод
             if (result instanceof ResponseEntity) {
                 ResponseEntity<?> responseEntity = (ResponseEntity<?>) result;
                 if (responseEntity.getStatusCode() == HttpStatus.BAD_REQUEST) {
                     logger.warn("Закончилось выполнение: {} с результатом: {}",
-                            joinPoint.getSignature().toShortString(), result);
+                            joinPoint.getSignature().toShortString(), resultString);
                     return;
                 }
             }
             logger.info("Закончилось выполнение: {} с результатом: {}",
-                    joinPoint.getSignature().toShortString(), result);
+                    joinPoint.getSignature().toShortString(), resultString);
+        }
+    }
+
+    private String safeToString(Object obj) {
+        if (obj == null) {
+            return "null";
+        }
+        try {
+            // Избегаем вызова toString() на сущностях Hibernate
+            if (obj.getClass().getPackageName().startsWith("com.example.financery.model")) {
+                return obj.getClass().getSimpleName() + "@"
+                        + Integer.toHexString(System.identityHashCode(obj));
+            }
+            if (obj instanceof Collection) {
+                return "Collection[size=" + ((Collection<?>) obj).size() + "]";
+            }
+            if (obj instanceof Optional) {
+                Optional<?> optional = (Optional<?>) obj;
+                return "Optional["
+                        + (optional.isPresent()
+                        ? safeToString(optional.get())
+                        : "empty") + "]";
+            }
+            return String.valueOf(obj);
+        } catch (Exception e) {
+            return "FAILED toString(): " + e.getMessage();
         }
     }
 

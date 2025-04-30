@@ -118,7 +118,12 @@ class TransactionServiceImplTest {
 
     @AfterEach
     void tearDown() {
-        Mockito.reset(transactionRepository, userRepository, billRepository, tagRepository, transactionMapper, cache);
+        Mockito.reset(transactionRepository,
+                userRepository,
+                billRepository,
+                tagRepository,
+                transactionMapper,
+                cache);
     }
 
     @Test
@@ -127,9 +132,12 @@ class TransactionServiceImplTest {
             mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
             when(transactionRepository.findAll()).thenReturn(List.of(transaction));
-            when(transactionMapper.toTransactionDto(transaction)).thenReturn(transactionDtoResponse);
+            when(transactionMapper
+                    .toTransactionDto(transaction))
+                    .thenReturn(transactionDtoResponse);
 
-            List<TransactionDtoResponse> result = transactionService.getAllTransactions();
+            List<TransactionDtoResponse> result = transactionService
+                    .getAllTransactions();
 
             assertNotNull(result);
             assertEquals(1, result.size());
@@ -160,7 +168,9 @@ class TransactionServiceImplTest {
             mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
             when(transactionRepository.findById(1L)).thenReturn(Optional.of(transaction));
-            when(transactionMapper.toTransactionDto(transaction)).thenReturn(transactionDtoResponse);
+            when(transactionMapper
+                    .toTransactionDto(transaction))
+                    .thenReturn(transactionDtoResponse);
 
             TransactionDtoResponse result = transactionService.getTransactionById(1L);
 
@@ -234,8 +244,12 @@ class TransactionServiceImplTest {
             mockHibernate.when(() -> Hibernate.initialize(any())).thenAnswer(invocation -> null);
 
             when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
-            when(transactionRepository.findByBill(1L)).thenReturn(List.of(transaction));
-            when(transactionMapper.toTransactionDto(transaction)).thenReturn(transactionDtoResponse);
+            when(transactionRepository
+                    .findByBill(1L))
+                    .thenReturn(List.of(transaction));
+            when(transactionMapper
+                    .toTransactionDto(transaction))
+                    .thenReturn(transactionDtoResponse);
 
             List<TransactionDtoResponse> result = transactionService.getTransactionsByBillId(1L);
 
@@ -318,7 +332,8 @@ class TransactionServiceImplTest {
         NotFoundException exception = assertThrows(NotFoundException.class,
                 () -> transactionService.createTransaction(transactionDtoRequest));
 
-        assertEquals("Счет с id 1 не найден или не принадлежит пользователю", exception.getMessage());
+        assertEquals("Счет с id 1 не найден или не принадлежит пользователю",
+                exception.getMessage());
         verify(userRepository).findById(1L);
         verify(billRepository).findByIdAndUserId(1L, 1L);
     }
@@ -353,8 +368,11 @@ class TransactionServiceImplTest {
     @Test
     void createTransaction_tagNotFound_throwsInvalidInputException() {
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(billRepository.findByIdAndUserId(1L, 1L)).thenReturn(Optional.of(bill));
-        when(tagRepository.findAllById(List.of(1L))).thenReturn(Collections.emptyList()); // Тег не найден
+        when(billRepository
+                .findByIdAndUserId(1L, 1L))
+                .thenReturn(Optional.of(bill));
+        when(tagRepository.findAllById(List.of(1L)))
+                .thenReturn(Collections.emptyList()); // Тег не найден
 
         InvalidInputException exception = assertThrows(InvalidInputException.class,
                 () -> transactionService.createTransaction(transactionDtoRequest));
@@ -380,7 +398,8 @@ class TransactionServiceImplTest {
         InvalidInputException exception = assertThrows(InvalidInputException.class,
                 () -> transactionService.createTransaction(transactionDtoRequest));
 
-        assertEquals("Один или несколько тегов не найдены или не принадлежат пользователю", exception.getMessage());
+        assertEquals("Один или несколько тегов не найдены или не принадлежат пользователю",
+                exception.getMessage());
         verify(userRepository).findById(1L);
         verify(billRepository).findByIdAndUserId(1L, 1L);
         verify(tagRepository).findAllById(List.of(1L));
@@ -420,13 +439,16 @@ class TransactionServiceImplTest {
             when(billRepository.findByIdAndUserId(1L, 1L)).thenReturn(Optional.of(bill));
             when(tagRepository.findAllById(List.of(1L))).thenReturn(List.of(tag));
             when(transactionRepository.save(any(Transaction.class))).thenReturn(updatedTransaction);
-            when(transactionMapper.toTransactionDto(any(Transaction.class))).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(any(Transaction.class)))
+                    .thenReturn(updatedResponse);
 
-            TransactionDtoResponse result = transactionService.updateTransaction(1L, transactionDtoRequest);
+            TransactionDtoResponse result = transactionService
+                    .updateTransaction(1L, transactionDtoRequest);
 
             assertNotNull(result);
             assertEquals(updatedResponse, result);
-            assertEquals(700.0, bill.getBalance()); // 1000 - 100 (отмена дохода) - 200 (новый расход)
+            assertEquals(700.0, bill.getBalance());
             verify(transactionRepository).findById(1L);
             verify(userRepository).findById(1L);
             verify(billRepository).findByIdAndUserId(1L, 1L);
@@ -472,9 +494,12 @@ class TransactionServiceImplTest {
             when(billRepository.findByIdAndUserId(1L, 1L)).thenReturn(Optional.of(bill));
             when(tagRepository.findAllById(List.of(1L))).thenReturn(List.of(tag));
             when(transactionRepository.save(any(Transaction.class))).thenReturn(updatedTransaction);
-            when(transactionMapper.toTransactionDto(any(Transaction.class))).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(any(Transaction.class)))
+                    .thenReturn(updatedResponse);
 
-            TransactionDtoResponse result = transactionService.updateTransaction(1L, transactionDtoRequest);
+            TransactionDtoResponse result = transactionService
+                    .updateTransaction(1L, transactionDtoRequest);
 
             assertNotNull(result);
             assertEquals(updatedResponse, result);
@@ -525,9 +550,12 @@ class TransactionServiceImplTest {
             when(billRepository.findByIdAndUserId(1L, 1L)).thenReturn(Optional.of(bill));
             when(tagRepository.findAllById(List.of(1L))).thenReturn(List.of(tag));
             when(transactionRepository.save(any(Transaction.class))).thenReturn(updatedTransaction);
-            when(transactionMapper.toTransactionDto(any(Transaction.class))).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(any(Transaction.class)))
+                    .thenReturn(updatedResponse);
 
-            TransactionDtoResponse result = transactionService.updateTransaction(1L, transactionDtoRequest);
+            TransactionDtoResponse result = transactionService
+                    .updateTransaction(1L, transactionDtoRequest);
 
             assertNotNull(result);
             assertEquals(updatedResponse, result);
@@ -578,13 +606,16 @@ class TransactionServiceImplTest {
             when(billRepository.findByIdAndUserId(1L, 1L)).thenReturn(Optional.of(bill));
             when(tagRepository.findAllById(List.of(1L))).thenReturn(List.of(tag));
             when(transactionRepository.save(any(Transaction.class))).thenReturn(updatedTransaction);
-            when(transactionMapper.toTransactionDto(any(Transaction.class))).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(any(Transaction.class)))
+                    .thenReturn(updatedResponse);
 
-            TransactionDtoResponse result = transactionService.updateTransaction(1L, transactionDtoRequest);
+            TransactionDtoResponse result = transactionService
+                    .updateTransaction(1L, transactionDtoRequest);
 
             assertNotNull(result);
             assertEquals(updatedResponse, result);
-            assertEquals(1300.0, bill.getBalance()); // 1000 + 100 (отмена расхода) + 200 (новый доход)
+            assertEquals(1300.0, bill.getBalance());
             verify(transactionRepository).findById(1L);
             verify(userRepository).findById(1L);
             verify(billRepository).findByIdAndUserId(1L, 1L);
@@ -634,9 +665,12 @@ class TransactionServiceImplTest {
                 savedTransaction.setTags(new ArrayList<>());
                 return savedTransaction;
             });
-            when(transactionMapper.toTransactionDto(any(Transaction.class))).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(any(Transaction.class)))
+                    .thenReturn(updatedResponse);
 
-            TransactionDtoResponse result = transactionService.updateTransaction(1L, transactionDtoRequest);
+            TransactionDtoResponse result = transactionService
+                    .updateTransaction(1L, transactionDtoRequest);
 
             assertNotNull(result);
             assertEquals(updatedResponse, result);
@@ -690,9 +724,12 @@ class TransactionServiceImplTest {
                 savedTransaction.setTags(new ArrayList<>());
                 return savedTransaction;
             });
-            when(transactionMapper.toTransactionDto(any(Transaction.class))).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(any(Transaction.class)))
+                    .thenReturn(updatedResponse);
 
-            TransactionDtoResponse result = transactionService.updateTransaction(1L, transactionDtoRequest);
+            TransactionDtoResponse result = transactionService
+                    .updateTransaction(1L, transactionDtoRequest);
 
             assertNotNull(result);
             assertEquals(updatedResponse, result);
@@ -724,7 +761,8 @@ class TransactionServiceImplTest {
         InvalidInputException exception = assertThrows(InvalidInputException.class,
                 () -> transactionService.updateTransaction(1L, transactionDtoRequest));
 
-        assertEquals("Один или несколько тегов не найдены или не принадлежат пользователю", exception.getMessage());
+        assertEquals("Один или несколько тегов не найдены или не принадлежат пользователю",
+                exception.getMessage());
         verify(transactionRepository).findById(1L);
         verify(userRepository).findById(1L);
         verify(billRepository).findByIdAndUserId(1L, 1L);
@@ -741,7 +779,8 @@ class TransactionServiceImplTest {
         InvalidInputException exception = assertThrows(InvalidInputException.class,
                 () -> transactionService.updateTransaction(1L, transactionDtoRequest));
 
-        assertEquals("Один или несколько тегов не найдены или не принадлежат пользователю", exception.getMessage());
+        assertEquals("Один или несколько тегов не найдены или не принадлежат пользователю",
+                exception.getMessage());
         verify(transactionRepository).findById(1L);
         verify(userRepository).findById(1L);
         verify(billRepository).findByIdAndUserId(1L, 1L);
@@ -760,7 +799,8 @@ class TransactionServiceImplTest {
         InvalidInputException exception = assertThrows(InvalidInputException.class,
                 () -> transactionService.updateTransaction(1L, transactionDtoRequest));
 
-        assertEquals("Недостаточно средств на счете для новой суммы транзакции", exception.getMessage());
+        assertEquals("Недостаточно средств на счете для новой суммы транзакции",
+                exception.getMessage());
         verify(transactionRepository).findById(1L);
         verify(userRepository).findById(1L);
         verify(billRepository).findByIdAndUserId(1L, 1L);
@@ -801,7 +841,8 @@ class TransactionServiceImplTest {
         NotFoundException exception = assertThrows(NotFoundException.class,
                 () -> transactionService.updateTransaction(1L, transactionDtoRequest));
 
-        assertEquals("Счет с данным id 1 не найден или не принадлежит пользователю", exception.getMessage());
+        assertEquals("Счет с данным id 1 не найден или не принадлежит пользователю",
+                exception.getMessage());
         verify(transactionRepository).findById(1L);
         verify(userRepository).findById(1L);
         verify(billRepository).findByIdAndUserId(1L, 1L);
@@ -855,7 +896,9 @@ class TransactionServiceImplTest {
         when(tagRepository.findAllById(List.of(1L))).thenReturn(List.of(tag));
         when(userRepository.save(user)).thenReturn(user);
         when(billRepository.save(bill)).thenReturn(bill);
-        when(transactionRepository.save(transaction)).thenThrow(new DataAccessException("Database error") {});
+        when(transactionRepository
+                .save(transaction))
+                .thenThrow(new DataAccessException("Database error") {});
 
         DataAccessException exception = assertThrows(DataAccessException.class,
                 () -> transactionService.updateTransaction(1L, transactionDtoRequest));
@@ -929,7 +972,9 @@ class TransactionServiceImplTest {
             when(billRepository.findByIdAndUserId(1L, 1L)).thenReturn(Optional.of(bill));
             when(tagRepository.findAllById(List.of(1L))).thenReturn(List.of(tag));
             when(transactionRepository.save(transaction)).thenReturn(updatedTransaction);
-            when(transactionMapper.toTransactionDto(updatedTransaction)).thenReturn(updatedResponse);
+            when(transactionMapper
+                    .toTransactionDto(updatedTransaction))
+                    .thenReturn(updatedResponse);
             doThrow(new RuntimeException("Cache update failed")).when(cache)
                     .updateTransaction(1L, updatedResponse);
 
@@ -968,7 +1013,8 @@ class TransactionServiceImplTest {
         InvalidInputException exception = assertThrows(InvalidInputException.class,
                 () -> transactionService.updateTransaction(1L, transactionDtoRequest));
 
-        assertEquals("Нельзя изменить пользователя транзакции, используй: 1", exception.getMessage());
+        assertEquals("Нельзя изменить пользователя транзакции, используй: 1",
+                exception.getMessage());
         verify(transactionRepository).findById(1L);
     }
 

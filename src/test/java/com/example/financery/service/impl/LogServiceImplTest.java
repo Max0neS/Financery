@@ -114,12 +114,14 @@ class LogServiceImplTest {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             Path invalidDir = tempDirReal.resolve("invalid");
             filesMock.when(() -> Files.exists(invalidDir)).thenReturn(false);
-            filesMock.when(() -> Files.createDirectories(invalidDir)).thenThrow(new IOException("IO error"));
+            filesMock.when(() -> Files.createDirectories(invalidDir))
+                    .thenThrow(new IOException("IO error"));
 
             IllegalStateException exception = assertThrows(IllegalStateException.class,
                     () -> new LogServiceImpl(logFilePath, invalidDir));
 
-            assertEquals("Не удаётся создать защищённую временную директорию", exception.getMessage());
+            assertEquals("Не удаётся создать защищённую временную директорию",
+                    exception.getMessage());
         }
     }
 
@@ -197,7 +199,8 @@ class LogServiceImplTest {
             Path tempFilePath = Files.createTempFile(tempDir, "test-", ".log");
 
             IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.filterAndWriteLogsToTempFile(logFilePath, "28-04-2025", tempFilePath));
+                    () -> logService.filterAndWriteLogsToTempFile(logFilePath,
+                            "28-04-2025", tempFilePath));
 
             assertEquals("Ошибка при обработке файла логов: Read error", exception.getMessage());
         }
@@ -235,9 +238,11 @@ class LogServiceImplTest {
                     .thenThrow(new IOException("Size error"));
 
             IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.createResourceFromTempFile(tempFilePath, "28-04-2025"));
+                    () -> logService.createResourceFromTempFile(tempFilePath,
+                            "28-04-2025"));
 
-            assertEquals("Ошибка при создании ресурса из временного файла: Size error", exception.getMessage());
+            assertEquals("Ошибка при создании ресурса из временного файла: Size error",
+                    exception.getMessage());
         }
     }
 
@@ -252,10 +257,11 @@ class LogServiceImplTest {
     }
 
     @Test
-    void createUrlResource_malformedUrl_throwsIOException() throws IOException {
+    void createUrlResource_malformedUrl_throwsIoException() throws IOException {
         URI invalidUri = URI.create("invalid://url");
         LogServiceImpl spyService = spy(logService);
-        doThrow(new MalformedURLException("Invalid URL")).when(spyService).createUrlResource(invalidUri);
+        doThrow(new MalformedURLException("Invalid URL"))
+                .when(spyService).createUrlResource(invalidUri);
 
         MalformedURLException exception = assertThrows(MalformedURLException.class,
                 () -> spyService.createUrlResource(invalidUri));
@@ -297,10 +303,11 @@ class LogServiceImplTest {
         // Удаляем лог-файл
         logService = new LogServiceImpl(tempDirReal.resolve("nonexistent.log"), tempDir);
 
-        NotFoundException exception = assertThrows(NotFoundException.class,
-                () -> logService.downloadLogs("28-04-2025"));
+        NotFoundException exception = assertThrows(NotFoundException
+                        .class, () -> logService.downloadLogs("28-04-2025"));
 
-        assertEquals("Файл не существует: " + tempDirReal.resolve("nonexistent.log"), exception.getMessage());
+        assertEquals("Файл не существует: "
+                + tempDirReal.resolve("nonexistent.log"), exception.getMessage());
     }
 
     @Test
@@ -341,21 +348,24 @@ class LogServiceImplTest {
 
         // Создаём замоканный объект File
         File mockFile = mock(File.class);
-        when(mockFile.setReadable(true, true)).thenReturn(false); // Симулируем неудачу при установке прав на чтение
+        when(mockFile.setReadable(true, true))
+                .thenReturn(false); // Симулируем неудачу при установке прав на чтение
 
         // Настраиваем mockPath, чтобы метод toFile() возвращал mockFile
         when(mockPath.toFile()).thenReturn(mockFile);
 
         // Мокаем Files.createTempFile, чтобы он возвращал mockPath
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
-            filesMock.when(() -> Files.createTempFile(eq(tempDir), eq("log-" + logDate + "-"), eq(".log")))
-                    .thenReturn(mockPath);
+            filesMock.when(() -> Files.createTempFile(eq(tempDir),
+                            eq("log-" + logDate + "-"),
+                    eq(".log"))).thenReturn(mockPath);
 
             // Проверяем, что выбрасывается исключение
             IllegalStateException exception = assertThrows(IllegalStateException.class,
                     () -> logService.createTempFile(logDate));
 
-            assertEquals("Не удалось установить права на чтение для временного файла: " + mockFile, exception.getMessage());
+            assertEquals("Не удалось установить права на чтение для временного файла: "
+                    + mockFile, exception.getMessage());
         }
     }
 
@@ -368,22 +378,26 @@ class LogServiceImplTest {
 
         // Создаём замоканный объект File
         File mockFile = mock(File.class);
-        when(mockFile.setReadable(true, true)).thenReturn(true); // Успешная установка прав на чтение
-        when(mockFile.setWritable(true, true)).thenReturn(false); // Симулируем неудачу при установке прав на запись
+        when(mockFile.setReadable(true, true))
+                .thenReturn(true); // Успешная установка прав на чтение
+        when(mockFile.setWritable(true, true))
+                .thenReturn(false); // Симулируем неудачу при установке прав на запись
 
         // Настраиваем mockPath, чтобы метод toFile() возвращал mockFile
         when(mockPath.toFile()).thenReturn(mockFile);
 
         // Мокаем Files.createTempFile, чтобы он возвращал mockPath
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
-            filesMock.when(() -> Files.createTempFile(eq(tempDir), eq("log-" + logDate + "-"), eq(".log")))
-                    .thenReturn(mockPath);
+            filesMock.when(() -> Files.createTempFile(eq(tempDir),
+                            eq("log-" + logDate + "-"),
+                            eq(".log"))).thenReturn(mockPath);
 
             // Проверяем, что выбрасывается исключение
             IllegalStateException exception = assertThrows(IllegalStateException.class,
                     () -> logService.createTempFile(logDate));
 
-            assertEquals("Не удалось установить права на запись для временного файла: " + mockFile, exception.getMessage());
+            assertEquals("Не удалось установить права на запись для временного файла: "
+                    + mockFile, exception.getMessage());
         }
     }
 }

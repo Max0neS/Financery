@@ -1743,3 +1743,913 @@ Consider defining a bean of type 'com.example.financery.service.LogService' in y
 30-04-2025 04:58:52.457 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3938568380662984822\temp
 30-04-2025 04:58:52.467 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16326868019619840111\temp
 30-04-2025 04:58:53.158 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 05:00:21.890 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 18568 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:00:21.894 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:00:21.895 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:00:24.600 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:00:25.926 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:00:29.888 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:00:29.990 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:00:29.994 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:00:32.716 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:00:32.772 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 11.748 seconds (process running for 13.006)
+30-04-2025 05:01:16.714 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.createBulk(..)
+30-04-2025 05:01:16.714 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.saveAll(..)
+30-04-2025 05:01:16.721 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAllById(..)
+30-04-2025 05:01:16.996 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAllById(..) с результатом: []
+30-04-2025 05:01:16.998 [http-nio-8080-exec-1] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TagServiceImpl.saveAll(..) с причиной: Один или несколько пользователей не найдены
+30-04-2025 05:01:16.998 [http-nio-8080-exec-1] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TagController.createBulk(..) с причиной: Один или несколько пользователей не найдены
+30-04-2025 05:01:17.004 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleNotFoundException(..)
+30-04-2025 05:01:17.005 [http-nio-8080-exec-1] WARN  c.e.f.e.GlobalExceptionHandler - Ресурс не найден (NotFoundException): Один или несколько пользователей не найдены
+30-04-2025 05:01:17.007 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleNotFoundException(..) с результатом: <404 NOT_FOUND Not Found,com.example.financery.model.ErrorResponse@ee4032f,[]>
+30-04-2025 05:01:17.094 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.NotFoundException: Один или несколько пользователей не найдены]
+30-04-2025 05:01:24.033 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.createBulk(..)
+30-04-2025 05:01:24.035 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.saveAll(..)
+30-04-2025 05:01:24.036 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAllById(..)
+30-04-2025 05:01:24.079 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAllById(..) с результатом: [FAILED toString()]
+30-04-2025 05:01:24.088 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTag(..)
+30-04-2025 05:01:24.088 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTag(..) с результатом: Tag{id=null, title='каакака', userId=null}
+30-04-2025 05:01:24.089 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTag(..)
+30-04-2025 05:01:24.089 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTag(..) с результатом: Tag{id=null, title='hjkl', userId=null}
+30-04-2025 05:01:24.091 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.saveAll(..)
+30-04-2025 05:01:24.215 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.saveAll(..) с результатом: [Tag{id=19, title='каакака', userId=5}, Tag{id=20, title='hjkl', userId=5}]
+30-04-2025 05:01:24.216 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.saveAll(..) с результатом: [Tag{id=19, title='каакака', userId=5}, Tag{id=20, title='hjkl', userId=5}]
+30-04-2025 05:01:24.219 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:01:24.220 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=19, title=каакака, userId=5)
+30-04-2025 05:01:24.225 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:01:24.226 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=20, title=hjkl, userId=5)
+30-04-2025 05:01:24.227 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.createBulk(..) с результатом: <200 OK OK,[TagDtoResponse(id=19, title=каакака, userId=5), TagDtoResponse(id=20, title=hjkl, userId=5)],[]>
+30-04-2025 05:01:29.748 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleHandlerMethodValidationException(..)
+30-04-2025 05:01:29.751 [http-nio-8080-exec-4] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (HandlerMethodValidationException): Название не должно быть пустым; Длина названия тега должна быть в пределах от 3 до 15 символов
+30-04-2025 05:01:29.752 [http-nio-8080-exec-4] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleHandlerMethodValidationException(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@48722b86,[]>
+30-04-2025 05:01:29.755 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.HandlerMethodValidationException: 400 BAD_REQUEST "Validation failure"]
+30-04-2025 05:09:48.198 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.createUser(..)
+30-04-2025 05:09:48.198 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.createUser(..)
+30-04-2025 05:09:48.199 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toEntity(..)
+30-04-2025 05:09:48.199 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toEntity(..) с результатом: User{id=null, name='Edwardo', bills=[]}
+30-04-2025 05:09:48.206 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.save(..)
+30-04-2025 05:09:48.219 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.save(..) с результатом: User{id=7, name='Edwardo', bills=[]}
+30-04-2025 05:09:48.220 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:09:48.221 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=7, name=Edwardo, email=Alicia_Rath@hotmail.com, balance=0.0, bills=[])
+30-04-2025 05:09:48.224 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.createUser(..) с результатом: UserDtoResponse(id=7, name=Edwardo, email=Alicia_Rath@hotmail.com, balance=0.0, bills=[])
+30-04-2025 05:09:48.225 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.createUser(..) с результатом: UserDtoResponse(id=7, name=Edwardo, email=Alicia_Rath@hotmail.com, balance=0.0, bills=[])
+30-04-2025 05:09:53.919 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getUserById(..)
+30-04-2025 05:09:53.920 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getUserById(..)
+30-04-2025 05:09:53.921 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:09:53.937 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: [FAILED toString()]
+30-04-2025 05:09:53.940 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:09:53.940 [http-nio-8080-exec-7] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserMapper.toDto(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:09:53.940 [http-nio-8080-exec-7] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getUserById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:09:53.940 [http-nio-8080-exec-7] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getUserById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:09:53.941 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:09:53.941 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@7a17ac9b,[]>
+30-04-2025 05:09:53.942 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 05:10:07.297 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getAllUsers()
+30-04-2025 05:10:07.297 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getAllUsers()
+30-04-2025 05:10:07.299 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:10:07.305 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: [FAILED toString()]
+30-04-2025 05:10:07.311 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:10:07.311 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:10:07.313 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:10:07.313 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@78fad0a3,[]>
+30-04-2025 05:10:07.315 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 05:16:55.552 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillController.createBill(..)
+30-04-2025 05:16:55.553 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillServiceImpl.createBill(..)
+30-04-2025 05:16:55.554 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:16:55.558 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: [FAILED toString()]
+30-04-2025 05:16:55.561 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBill(..)
+30-04-2025 05:16:55.561 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBill(..) с результатом: Bill{id=null, name='NewBill', user=null}
+30-04-2025 05:16:55.568 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.save(..)
+30-04-2025 05:16:55.581 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.save(..) с результатом: Bill{id=6, name='NewBill', user=User{id=5}}
+30-04-2025 05:16:55.581 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:16:55.582 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])
+30-04-2025 05:16:55.587 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillServiceImpl.createBill(..) с результатом: BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])
+30-04-2025 05:16:55.587 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillController.createBill(..) с результатом: BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])
+30-04-2025 05:16:59.967 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillController.getAllBills()
+30-04-2025 05:16:59.968 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillServiceImpl.getAllBills()
+30-04-2025 05:16:59.969 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:16:59.983 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: [Bill{id=2, name='NewBill', user=User{id=2}}, Bill{id=3, name='NewBill', user=User{id=3}}, Bill{id=4, name='NewBill', user=User{id=4}}, Bill{id=5, name='NewBill', user=User{id=5}}, Bill{id=6, name='NewBill', user=User{id=5}}]
+30-04-2025 05:16:59.984 [http-nio-8080-exec-1] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: BillServiceImpl.getAllBills() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session
+30-04-2025 05:16:59.985 [http-nio-8080-exec-1] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: BillController.getAllBills() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session
+30-04-2025 05:16:59.985 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:16:59.985 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@48c79fe3,[]>
+30-04-2025 05:16:59.986 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session]
+30-04-2025 05:18:27.617 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 1488 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:18:27.620 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:18:27.620 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:18:29.931 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:18:31.236 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:18:34.745 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:18:34.812 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:18:34.815 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:18:36.099 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:18:36.139 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.291 seconds (process running for 10.451)
+30-04-2025 05:18:51.716 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.createUser(..)
+30-04-2025 05:18:51.717 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.createUser(..)
+30-04-2025 05:18:51.717 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toEntity(..)
+30-04-2025 05:18:51.717 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toEntity(..) с результатом: User{id=null, name='Kyler', bills=[]}
+30-04-2025 05:18:51.723 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.save(..)
+30-04-2025 05:18:51.885 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.save(..) с результатом: User{id=8, name='Kyler', bills=[]}
+30-04-2025 05:18:51.886 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:18:51.887 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=8, name=Kyler, email=Jedediah32@gmail.com, balance=0.0, bills=[])
+30-04-2025 05:18:51.892 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.createUser(..) с результатом: UserDtoResponse(id=8, name=Kyler, email=Jedediah32@gmail.com, balance=0.0, bills=[])
+30-04-2025 05:18:51.893 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.createUser(..) с результатом: UserDtoResponse(id=8, name=Kyler, email=Jedediah32@gmail.com, balance=0.0, bills=[])
+30-04-2025 05:18:59.661 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getAllUsers()
+30-04-2025 05:18:59.662 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getAllUsers()
+30-04-2025 05:18:59.663 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:18:59.783 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: [FAILED toString()]
+30-04-2025 05:18:59.791 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:18:59.792 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:18:59.795 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:18:59.800 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@39d42e44,[]>
+30-04-2025 05:18:59.817 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 05:19:13.226 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TransactionController.createBill(..)
+30-04-2025 05:19:13.226 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TransactionServiceImpl.createTransaction(..)
+30-04-2025 05:19:13.228 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:19:13.243 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: [FAILED toString()]
+30-04-2025 05:19:13.248 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillRepository.findByIdAndUserId(..)
+30-04-2025 05:19:13.363 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillRepository.findByIdAndUserId(..) с результатом: Optional[Bill{id=5, name='NewBill', user=User{id=5}}]
+30-04-2025 05:19:13.366 [http-nio-8080-exec-10] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionServiceImpl.createTransaction(..) с причиной: Could not initialize proxy [com.example.financery.model.User#5] - no session
+30-04-2025 05:19:13.366 [http-nio-8080-exec-10] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionController.createBill(..) с причиной: Could not initialize proxy [com.example.financery.model.User#5] - no session
+30-04-2025 05:19:13.368 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:19:13.368 [http-nio-8080-exec-10] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@660f3781,[]>
+30-04-2025 05:19:13.369 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: Could not initialize proxy [com.example.financery.model.User#5] - no session]
+30-04-2025 05:21:27.436 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 5232 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:21:27.438 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:21:27.439 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:21:29.769 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:21:31.010 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:21:34.724 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:21:34.798 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:21:34.801 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:21:36.144 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:21:36.177 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.528 seconds (process running for 10.549)
+30-04-2025 05:21:50.237 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getAllUsers()
+30-04-2025 05:21:50.237 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getAllUsers()
+30-04-2025 05:21:50.243 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:21:50.462 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: Collection[size=7]
+30-04-2025 05:21:50.469 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:21:50.470 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getAllUsers() с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:21:50.475 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:21:50.484 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@1ac8e2a9,[]>
+30-04-2025 05:21:50.629 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 05:23:54.908 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TransactionController.createBill(..)
+30-04-2025 05:23:54.909 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TransactionServiceImpl.createTransaction(..)
+30-04-2025 05:23:54.915 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:23:54.939 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@4fc8aa0c]
+30-04-2025 05:23:54.941 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillRepository.findByIdAndUserId(..)
+30-04-2025 05:23:55.057 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillRepository.findByIdAndUserId(..) с результатом: Optional[Bill@1589b7ab]
+30-04-2025 05:23:55.059 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionServiceImpl.createTransaction(..) с причиной: Could not initialize proxy [com.example.financery.model.User#5] - no session
+30-04-2025 05:23:55.060 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: TransactionController.createBill(..) с причиной: Could not initialize proxy [com.example.financery.model.User#5] - no session
+30-04-2025 05:23:55.061 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:23:55.062 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@bff3024,[]>
+30-04-2025 05:23:55.063 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: Could not initialize proxy [com.example.financery.model.User#5] - no session]
+30-04-2025 05:26:10.034 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getUserById(..)
+30-04-2025 05:26:10.034 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getUserById(..)
+30-04-2025 05:26:10.035 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:26:10.039 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@544ce868]
+30-04-2025 05:26:10.041 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:26:10.043 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserMapper.toDto(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:26:10.044 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getUserById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:26:10.044 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getUserById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:26:10.045 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:26:10.046 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@20325c82,[]>
+30-04-2025 05:26:10.048 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 05:26:52.588 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:26:52.591 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:26:52.591 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:26:54.955 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:26:56.180 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:26:59.889 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:26:59.964 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:26:59.968 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:27:01.364 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:27:01.417 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.684 seconds (process running for 10.743)
+30-04-2025 05:27:08.667 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getAllUsers()
+30-04-2025 05:27:08.677 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getAllUsers()
+30-04-2025 05:27:08.682 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:27:08.875 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: Collection[size=7]
+30-04-2025 05:27:08.901 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.904 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:27:08.930 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=2, name=NewBill, balance=5000.0, userId=2, transactions=[TransactionDtoResponse(id=5, name=fefefe, description=Outdoors Mayotte, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=6, name=fefefe, description=monitor Tennessee withdrawal Rubber, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=7, name=fefefe, description=driver calculating SDD hacking, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=8, name=fefefe, description=Fantastic Corporate mission-critical, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2)])
+30-04-2025 05:27:08.933 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=2, name=Darron, email=Lina83@yahoo.com, balance=5000.0, bills=[BillDtoResponse(id=2, name=NewBill, balance=5000.0, userId=2, transactions=[TransactionDtoResponse(id=5, name=fefefe, description=Outdoors Mayotte, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=6, name=fefefe, description=monitor Tennessee withdrawal Rubber, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=7, name=fefefe, description=driver calculating SDD hacking, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=8, name=fefefe, description=Fantastic Corporate mission-critical, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2)])])
+30-04-2025 05:27:08.936 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.936 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:27:08.942 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=3, name=NewBill, balance=5000.0, userId=3, transactions=[TransactionDtoResponse(id=9, name=fefefe, description=Handmade hacking, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=10, name=fefefe, description=Pizza Generic online Island Card, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=11, name=fefefe, description=Automotive interface reboot Extended Outdoors, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=12, name=fefefe, description=payment Handcrafted, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3)])
+30-04-2025 05:27:08.943 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=3, name=Keanu, email=Taya.Bailey@hotmail.com, balance=5000.0, bills=[BillDtoResponse(id=3, name=NewBill, balance=5000.0, userId=3, transactions=[TransactionDtoResponse(id=9, name=fefefe, description=Handmade hacking, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=10, name=fefefe, description=Pizza Generic online Island Card, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=11, name=fefefe, description=Automotive interface reboot Extended Outdoors, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=12, name=fefefe, description=payment Handcrafted, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3)])])
+30-04-2025 05:27:08.948 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.949 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:27:08.955 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=4, name=NewBill, balance=5000.0, userId=4, transactions=[TransactionDtoResponse(id=13, name=fefefe, description=infrastructures Secured Intuitive Metal Mobility, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=14, name=fefefe, description=Associate application, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=15, name=fefefe, description=Books compelling, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=16, name=fefefe, description=hack EXE Fresh coherent Web, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4)])
+30-04-2025 05:27:08.956 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=4, name=Avis, email=Haleigh_Bogisich@hotmail.com, balance=5000.0, bills=[BillDtoResponse(id=4, name=NewBill, balance=5000.0, userId=4, transactions=[TransactionDtoResponse(id=13, name=fefefe, description=infrastructures Secured Intuitive Metal Mobility, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=14, name=fefefe, description=Associate application, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=15, name=fefefe, description=Books compelling, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=16, name=fefefe, description=hack EXE Fresh coherent Web, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4)])])
+30-04-2025 05:27:08.959 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.959 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:27:08.967 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=5, name=NewBill, balance=6000.0, userId=5, transactions=[TransactionDtoResponse(id=17, name=fefefe, description=Litas Dollar time-frame teal, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=18, name=fefefe, description=seamless Security Monitored analyzer e-commerce, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=19, name=fefefe, description=hub high-level intangible dynamic Markets, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=20, name=fefefe, description=Niger Gloves, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=21, name=fefefe, description=AGP Progressive, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5)])
+30-04-2025 05:27:08.968 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:27:08.969 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])
+30-04-2025 05:27:08.970 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=5, name=Royal, email=Armani.Hessel@yahoo.com, balance=6000.0, bills=[BillDtoResponse(id=5, name=NewBill, balance=6000.0, userId=5, transactions=[TransactionDtoResponse(id=17, name=fefefe, description=Litas Dollar time-frame teal, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=18, name=fefefe, description=seamless Security Monitored analyzer e-commerce, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=19, name=fefefe, description=hub high-level intangible dynamic Markets, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=20, name=fefefe, description=Niger Gloves, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=21, name=fefefe, description=AGP Progressive, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5)]), BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])])
+30-04-2025 05:27:08.972 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.972 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=6, name=Gerda, email=Jared.Glover@gmail.com, balance=0.0, bills=[])
+30-04-2025 05:27:08.973 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.973 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=7, name=Edwardo, email=Alicia_Rath@hotmail.com, balance=0.0, bills=[])
+30-04-2025 05:27:08.975 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:08.975 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=8, name=Kyler, email=Jedediah32@gmail.com, balance=0.0, bills=[])
+30-04-2025 05:27:08.975 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.getAllUsers() с результатом: Collection[size=7]
+30-04-2025 05:27:09.012 [http-nio-8080-exec-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.getAllUsers() с результатом: Collection[size=7]
+30-04-2025 05:27:20.173 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.getUserById(..)
+30-04-2025 05:27:20.173 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.getUserById(..)
+30-04-2025 05:27:20.176 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:27:20.199 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@756254ef]
+30-04-2025 05:27:20.200 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserMapper.toDto(..)
+30-04-2025 05:27:20.203 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserMapper.toDto(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:27:20.204 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserServiceImpl.getUserById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:27:20.204 [http-nio-8080-exec-3] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: UserController.getUserById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session
+30-04-2025 05:27:20.206 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:27:20.210 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@1ca99ae9,[]>
+30-04-2025 05:27:20.222 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.User.bills: could not initialize proxy - no Session]
+30-04-2025 05:27:44.569 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:27:44.586 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:27:44.818 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:27:44.819 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:27:44.819 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:27:45.647 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:27:45.922 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:27:47.401 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:27:47.448 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\UserController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+30-04-2025 05:27:47.507 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.UserController required a bean of type 'com.example.financery.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.UserService' in your configuration.
+
+30-04-2025 05:27:49.076 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:27:49.076 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:27:49.076 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:27:49.939 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:27:50.386 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:27:52.096 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:27:52.185 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:27:52.187 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:27:53.318 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:27:53.332 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 4.329 seconds (process running for 62.658)
+30-04-2025 05:27:55.426 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserController.deleteUser(..)
+30-04-2025 05:27:55.426 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: UserServiceImpl.deleteUser(..)
+30-04-2025 05:27:55.431 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:27:55.438 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@1edb334d]
+30-04-2025 05:27:55.439 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.deleteById(..)
+30-04-2025 05:27:55.514 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.deleteById(..) с результатом: null
+30-04-2025 05:27:55.515 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: InMemoryCache.clearForUser(..)
+30-04-2025 05:27:55.515 [http-nio-8080-exec-2] INFO  c.e.financery.utils.InMemoryCache - Очистка кеша для пользователя: 8
+30-04-2025 05:27:55.516 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: InMemoryCache.clearForUser(..) с результатом: null
+30-04-2025 05:27:55.516 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.deleteUser(..) с результатом: null
+30-04-2025 05:27:55.517 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.deleteUser(..) с результатом: null
+30-04-2025 05:28:52.225 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:28:52.240 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:28:52.459 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:28:52.460 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:28:52.461 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:28:53.708 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:28:54.195 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:28:55.953 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:28:55.980 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\TransactionController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.TransactionService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+30-04-2025 05:28:56.007 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.TransactionController required a bean of type 'com.example.financery.service.TransactionService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.TransactionService' in your configuration.
+
+30-04-2025 05:28:57.556 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:28:57.556 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:28:57.557 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:28:58.559 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:28:58.903 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:29:00.333 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:29:00.413 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:29:00.414 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:29:01.532 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:29:01.548 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 4.05 seconds (process running for 130.874)
+30-04-2025 05:29:03.464 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getAllTags()
+30-04-2025 05:29:03.464 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getAllTags()
+30-04-2025 05:29:03.471 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:29:03.492 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: Collection[size=20]
+30-04-2025 05:29:03.494 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.497 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=1, title=LALALALA-1, userId=2)
+30-04-2025 05:29:03.497 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.498 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=2, title=LALALALA-2, userId=2)
+30-04-2025 05:29:03.498 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.498 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=3, title=LALALALA-3, userId=2)
+30-04-2025 05:29:03.498 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.498 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=4, title=LALALALA-4, userId=2)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=5, title=LALALALA-5, userId=2)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=6, title=LALALALA-6, userId=2)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=7, title=LALALALA-7, userId=2)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=8, title=LALALALA-1, userId=2)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.499 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=9, title=LALALALA-3, userId=2)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=10, title=LALALALA-4, userId=2)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=11, title=LALALALA-5, userId=2)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=12, title=LALALALA-6, userId=2)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=13, title=LALALALA-7, userId=2)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.500 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=14, title=LALALAL, userId=4)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=15, title=hjkl, userId=4)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=16, title=каакака, userId=4)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=17, title=hjkl, userId=4)
+30-04-2025 05:29:03.501 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=18, title=LALALALA, userId=5)
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=19, title=каакака, userId=5)
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=20, title=hjkl, userId=5)
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getAllTags() с результатом: Collection[size=20]
+30-04-2025 05:29:03.502 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getAllTags() с результатом: Collection[size=20]
+30-04-2025 05:29:12.771 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getAllUserTags(..)
+30-04-2025 05:29:12.772 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getTagsByUserId(..)
+30-04-2025 05:29:12.775 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:29:12.781 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@57017762]
+30-04-2025 05:29:12.782 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagRepository.findByUser(..)
+30-04-2025 05:29:12.974 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagRepository.findByUser(..) с результатом: Collection[size=3]
+30-04-2025 05:29:12.975 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:12.975 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=18, title=LALALALA, userId=5)
+30-04-2025 05:29:12.975 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:12.976 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=19, title=каакака, userId=5)
+30-04-2025 05:29:12.976 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:29:12.976 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=20, title=hjkl, userId=5)
+30-04-2025 05:29:12.976 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getTagsByUserId(..) с результатом: Collection[size=3]
+30-04-2025 05:29:12.976 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getAllUserTags(..) с результатом: Collection[size=3]
+30-04-2025 05:29:21.389 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getTagsByTransactionId(..)
+30-04-2025 05:29:21.389 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getTagsByTransactionId(..)
+30-04-2025 05:29:21.391 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagRepository.findByTransaction(..)
+30-04-2025 05:29:21.397 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagRepository.findByTransaction(..) с результатом: Collection[size=0]
+30-04-2025 05:29:21.397 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:21.397 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:26.441 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getTagsByTransactionId(..)
+30-04-2025 05:29:26.441 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getTagsByTransactionId(..)
+30-04-2025 05:29:26.442 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagRepository.findByTransaction(..)
+30-04-2025 05:29:26.447 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagRepository.findByTransaction(..) с результатом: Collection[size=0]
+30-04-2025 05:29:26.447 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:26.447 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:30.761 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getTagsByTransactionId(..)
+30-04-2025 05:29:30.762 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getTagsByTransactionId(..)
+30-04-2025 05:29:30.762 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagRepository.findByTransaction(..)
+30-04-2025 05:29:30.766 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagRepository.findByTransaction(..) с результатом: Collection[size=0]
+30-04-2025 05:29:30.766 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:30.767 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:45.583 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getTagsByTransactionId(..)
+30-04-2025 05:29:45.583 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getTagsByTransactionId(..)
+30-04-2025 05:29:45.583 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagRepository.findByTransaction(..)
+30-04-2025 05:29:45.585 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagRepository.findByTransaction(..) с результатом: Collection[size=0]
+30-04-2025 05:29:45.585 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:29:45.585 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getTagsByTransactionId(..) с результатом: Collection[size=0]
+30-04-2025 05:30:20.598 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:30:20.601 [http-nio-8080-exec-8] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@34fae1ed,[]>
+30-04-2025 05:30:20.610 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource tags/get-tags-by-id/4.]
+30-04-2025 05:30:47.611 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:30:47.625 [Thread-14] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:30:47.800 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:30:47.801 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:30:47.801 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:30:48.743 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:30:49.099 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:30:50.713 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tagController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\TagController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.TagService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+30-04-2025 05:30:50.850 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.TagController required a bean of type 'com.example.financery.service.TagService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.TagService' in your configuration.
+
+30-04-2025 05:30:52.391 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:30:52.392 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:30:52.392 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:30:53.154 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:30:53.455 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:30:54.652 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:30:54.724 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:30:54.726 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:30:55.644 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:30:55.653 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.308 seconds (process running for 244.979)
+30-04-2025 05:30:58.524 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:30:58.528 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@1657013b,[]>
+30-04-2025 05:30:58.538 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource tags/get-tags-by-id/4.]
+30-04-2025 05:31:33.745 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagController.getTagById(..)
+30-04-2025 05:31:33.749 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagServiceImpl.getTagById(..)
+30-04-2025 05:31:33.755 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:31:33.765 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[Tag@29221ae5]
+30-04-2025 05:31:33.767 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: TagMapper.toTagDto(..)
+30-04-2025 05:31:33.771 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagMapper.toTagDto(..) с результатом: TagDtoResponse(id=4, title=LALALALA-4, userId=2)
+30-04-2025 05:31:33.771 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagServiceImpl.getTagById(..) с результатом: TagDtoResponse(id=4, title=LALALALA-4, userId=2)
+30-04-2025 05:31:33.776 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: TagController.getTagById(..) с результатом: <200 OK OK,TagDtoResponse(id=4, title=LALALALA-4, userId=2),[]>
+30-04-2025 05:31:44.110 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:31:44.126 [Thread-21] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:31:44.369 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 17912 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:31:44.370 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:31:44.370 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:31:45.336 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:31:45.723 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:31:47.438 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tagController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\TagController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.TagService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+30-04-2025 05:31:47.460 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.TagController required a bean of type 'com.example.financery.service.TagService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.TagService' in your configuration.
+
+30-04-2025 05:32:28.371 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 12436 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:32:28.374 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:32:28.375 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:32:30.730 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:32:31.958 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:32:35.517 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:32:35.592 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:32:35.596 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:32:36.941 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:32:36.972 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.405 seconds (process running for 10.398)
+30-04-2025 05:32:46.698 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillController.getAllBills()
+30-04-2025 05:32:46.713 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillServiceImpl.getAllBills()
+30-04-2025 05:32:46.721 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: ListCrudRepository.findAll()
+30-04-2025 05:32:46.965 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: ListCrudRepository.findAll() с результатом: Collection[size=5]
+30-04-2025 05:32:46.985 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:32:47.022 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=2, name=NewBill, balance=5000.0, userId=2, transactions=[TransactionDtoResponse(id=5, name=fefefe, description=Outdoors Mayotte, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=6, name=fefefe, description=monitor Tennessee withdrawal Rubber, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=7, name=fefefe, description=driver calculating SDD hacking, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2), TransactionDtoResponse(id=8, name=fefefe, description=Fantastic Corporate mission-critical, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=2, billId=2)])
+30-04-2025 05:32:47.027 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:32:47.032 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=3, name=NewBill, balance=5000.0, userId=3, transactions=[TransactionDtoResponse(id=9, name=fefefe, description=Handmade hacking, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=10, name=fefefe, description=Pizza Generic online Island Card, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=11, name=fefefe, description=Automotive interface reboot Extended Outdoors, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3), TransactionDtoResponse(id=12, name=fefefe, description=payment Handcrafted, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=3, billId=3)])
+30-04-2025 05:32:47.037 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:32:47.041 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=4, name=NewBill, balance=5000.0, userId=4, transactions=[TransactionDtoResponse(id=13, name=fefefe, description=infrastructures Secured Intuitive Metal Mobility, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=14, name=fefefe, description=Associate application, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=15, name=fefefe, description=Books compelling, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4), TransactionDtoResponse(id=16, name=fefefe, description=hack EXE Fresh coherent Web, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=4, billId=4)])
+30-04-2025 05:32:47.053 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:32:47.062 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=5, name=NewBill, balance=6000.0, userId=5, transactions=[TransactionDtoResponse(id=17, name=fefefe, description=Litas Dollar time-frame teal, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=18, name=fefefe, description=seamless Security Monitored analyzer e-commerce, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=19, name=fefefe, description=hub high-level intangible dynamic Markets, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=20, name=fefefe, description=Niger Gloves, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=21, name=fefefe, description=AGP Progressive, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5)])
+30-04-2025 05:32:47.064 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:32:47.065 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])
+30-04-2025 05:32:47.065 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillServiceImpl.getAllBills() с результатом: Collection[size=5]
+30-04-2025 05:32:47.107 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillController.getAllBills() с результатом: Collection[size=5]
+30-04-2025 05:33:43.393 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillController.getAllUserBills(..)
+30-04-2025 05:33:43.394 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillServiceImpl.getBillsByUserId(..)
+30-04-2025 05:33:43.401 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:33:43.419 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@324d1cbd]
+30-04-2025 05:33:43.422 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillRepository.findByUser(..)
+30-04-2025 05:33:43.614 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillRepository.findByUser(..) с результатом: Collection[size=2]
+30-04-2025 05:33:43.619 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: BillServiceImpl.getBillsByUserId(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session
+30-04-2025 05:33:43.620 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: BillController.getAllUserBills(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session
+30-04-2025 05:33:43.625 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:33:43.635 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@2fc3811e,[]>
+30-04-2025 05:33:43.645 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session]
+30-04-2025 05:33:51.800 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillController.getBillById(..)
+30-04-2025 05:33:51.800 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillServiceImpl.getBillById(..)
+30-04-2025 05:33:51.803 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:33:51.807 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[Bill@127508a]
+30-04-2025 05:33:51.809 [http-nio-8080-exec-5] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: BillServiceImpl.getBillById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session
+30-04-2025 05:33:51.809 [http-nio-8080-exec-5] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: BillController.getBillById(..) с причиной: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session
+30-04-2025 05:33:51.810 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleGenericException(..)
+30-04-2025 05:33:51.810 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleGenericException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@50f2bd55,[]>
+30-04-2025 05:33:51.812 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.example.financery.model.Bill.transactions: could not initialize proxy - no Session]
+30-04-2025 05:34:13.130 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:13.145 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:13.346 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 12436 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:34:13.347 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:34:13.347 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:34:14.271 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:14.677 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:34:15.744 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\BillController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.BillService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+30-04-2025 05:34:15.844 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.BillController required a bean of type 'com.example.financery.service.BillService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.BillService' in your configuration.
+
+30-04-2025 05:34:17.511 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 12436 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:34:17.512 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:34:17.512 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:34:18.627 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:19.209 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:34:21.568 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:34:21.652 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:34:21.653 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:34:22.885 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:22.894 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 5.451 seconds (process running for 116.32)
+30-04-2025 05:34:25.391 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:25.409 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:25.613 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 12436 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:34:25.614 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:34:25.615 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:34:26.485 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:26.839 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:34:28.281 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:34:28.354 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:34:28.355 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:34:29.476 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:34:29.490 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.949 seconds (process running for 122.916)
+30-04-2025 05:34:43.550 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillController.getAllUserBills(..)
+30-04-2025 05:34:43.554 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillServiceImpl.getBillsByUserId(..)
+30-04-2025 05:34:43.559 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CrudRepository.findById(..)
+30-04-2025 05:34:43.568 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CrudRepository.findById(..) с результатом: Optional[User@ee7b963]
+30-04-2025 05:34:43.571 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillRepository.findByUser(..)
+30-04-2025 05:34:43.578 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillRepository.findByUser(..) с результатом: Collection[size=2]
+30-04-2025 05:34:43.582 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:34:43.605 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=5, name=NewBill, balance=6000.0, userId=5, transactions=[TransactionDtoResponse(id=17, name=fefefe, description=Litas Dollar time-frame teal, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=18, name=fefefe, description=seamless Security Monitored analyzer e-commerce, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=19, name=fefefe, description=hub high-level intangible dynamic Markets, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=20, name=fefefe, description=Niger Gloves, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5), TransactionDtoResponse(id=21, name=fefefe, description=AGP Progressive, tags=[], type=true, amount=1000.0, date=2002-02-19, userId=5, billId=5)])
+30-04-2025 05:34:43.607 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: BillMapper.toBillDto(..)
+30-04-2025 05:34:43.608 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillMapper.toBillDto(..) с результатом: BillDtoResponse(id=6, name=NewBill, balance=27.4513, userId=5, transactions=[])
+30-04-2025 05:34:43.608 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillServiceImpl.getBillsByUserId(..) с результатом: Collection[size=2]
+30-04-2025 05:34:43.610 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: BillController.getAllUserBills(..) с результатом: Collection[size=2]
+30-04-2025 05:42:00.714 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:42:00.731 [Thread-14] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:42:00.946 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 12436 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:42:00.947 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:42:00.947 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:42:01.686 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:42:02.571 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:42:04.289 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\BillController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'billServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\BillServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\TransactionMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tagMapper': Lookup method resolution failed
+30-04-2025 05:42:04.601 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\BillController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'billServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\BillServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\TransactionMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tagMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\BillServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\TransactionMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tagMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'billMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\BillMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\TransactionMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tagMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionMapper' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\mapper\TransactionMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tagMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 51 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tagMapper': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 64 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.financery.mapper.TagMapper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3f1cd507]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476)
+	... 77 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/financery/dto/TagDtoRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3650)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2735)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 79 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.financery.dto.TagDtoRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 83 common frames omitted
+30-04-2025 05:42:07.822 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 12436 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 05:42:07.822 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 05:42:07.822 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 05:42:08.497 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:42:08.822 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 05:42:10.491 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 05:42:10.577 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 05:42:10.579 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 05:42:11.873 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+30-04-2025 05:42:11.883 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 4.106 seconds (process running for 585.308)

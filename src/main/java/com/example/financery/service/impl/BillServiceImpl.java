@@ -12,6 +12,8 @@ import com.example.financery.repository.UserRepository;
 import com.example.financery.service.BillService;
 import java.util.ArrayList;
 import java.util.List;
+
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,7 @@ public class BillServiceImpl implements BillService {
     private final UserRepository userRepository;
 
     @Override
+    @Transactional
     public List<BillDtoResponse> getAllBills() {
         List<BillDtoResponse> billsResponse = new ArrayList<>();
         billRepository.findAll().forEach(bill -> {
@@ -38,6 +41,7 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
+    @Transactional
     public List<BillDtoResponse> getBillsByUserId(long userId) {
         userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException(
@@ -52,6 +56,7 @@ public class BillServiceImpl implements BillService {
         return billsResponse;
     }
 
+    @Transactional
     public BillDtoResponse getBillById(long id) {
         Bill bill = billRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(
@@ -85,6 +90,7 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
+    @Transactional
     public BillDtoResponse updateBill(long billId, BillDtoRequest billDto) {
         if (billDto.getBalance() < 0) {
             throw new InvalidInputException("Баланс счёта не может быть отрицательным");

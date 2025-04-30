@@ -16,6 +16,7 @@ import com.example.financery.repository.TransactionRepository;
 import com.example.financery.repository.UserRepository;
 import com.example.financery.service.TransactionService;
 import com.example.financery.utils.InMemoryCache;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.hibernate.Hibernate;
 import org.slf4j.Logger;
@@ -45,6 +46,7 @@ public class TransactionServiceImpl implements TransactionService {
     private static final Logger log = LoggerFactory.getLogger(TransactionServiceImpl.class);
 
     @Override
+    @Transactional
     public List<TransactionDtoResponse> getAllTransactions() {
         List<TransactionDtoResponse> transactionsResponse = new ArrayList<>();
         transactionRepository.findAll().forEach(
@@ -56,6 +58,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public TransactionDtoResponse getTransactionById(long transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
@@ -65,6 +68,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public List<TransactionDtoResponse> getTransactionsByUserId(long userId) {
 
         if (!userRepository.existsById(userId)) {
@@ -89,6 +93,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public List<TransactionDtoResponse> getTransactionsByBillId(long billId) {
         billRepository.findById(billId)
                 .orElseThrow(() -> new NotFoundException(
@@ -106,6 +111,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public TransactionDtoResponse createTransaction(TransactionDtoRequest transactionDto) {
         // Проверяем сумму транзакции перед обращением к репозиториям
         if (transactionDto.getAmount() > 1_000_000) {
@@ -159,7 +165,9 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDtoResponse updateTransaction(long transactionId, TransactionDtoRequest transactionDto) {
+    @Transactional
+    public TransactionDtoResponse updateTransaction(long transactionId,
+                                                    TransactionDtoRequest transactionDto) {
         Transaction existingTransaction = transactionRepository
                 .findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(
@@ -209,12 +217,15 @@ public class TransactionServiceImpl implements TransactionService {
             List<Tag> tags = transactionDto.getTagIds().isEmpty()
                     ? new ArrayList<>()
                     : tagRepository.findAllById(transactionDto.getTagIds());
-            if (!transactionDto.getTagIds().isEmpty() && tags.size() != transactionDto.getTagIds().size()) {
-                throw new InvalidInputException("Один или несколько тегов не найдены или не принадлежат пользователю");
+            if (!transactionDto.getTagIds().isEmpty() && tags.size() != transactionDto
+                    .getTagIds().size()) {
+                throw new InvalidInputException(
+                        "Один или несколько тегов не найдены или не принадлежат пользователю");
             }
             // Добавляем проверку принадлежности тегов пользователю
             if (tags.stream().anyMatch(tag -> tag.getUser().getId() != user.getId())) {
-                throw new InvalidInputException("Один или несколько тегов не найдены или не принадлежат пользователю");
+                throw new InvalidInputException(
+                        "Один или несколько тегов не найдены или не принадлежат пользователю");
             }
             existingTransaction.setTags(tags);
         }
@@ -240,6 +251,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public void deleteTransaction(long transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
                 .orElseThrow(() -> new NotFoundException(

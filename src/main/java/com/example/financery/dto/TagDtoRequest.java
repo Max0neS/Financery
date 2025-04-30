@@ -9,7 +9,8 @@ import lombok.Data;
 @Data
 public class TagDtoRequest {
 
-    @Size(min = 3, max = 15, message = "Длина названия тега должна быть в пределах от 3 до 15 символов")
+    @Size(min = 3, max = 15,
+            message = "Длина названия тега должна быть в пределах от 3 до 15 символов")
     @NotBlank(message = "Название не должно быть пустым")
     private String title;
     @Min(value = 1, message = "Id не может быть меньше 1")

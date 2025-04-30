@@ -354,7 +354,8 @@ class TagServiceImplTest {
     void deleteTag_success() {
         when(tagRepository.findById(1L)).thenReturn(Optional.of(tag));
         when(tagRepository.findTransactionsByTag(1L)).thenReturn(Collections.emptyList());
-        when(transactionRepository.saveAll(Collections.emptyList())).thenReturn(Collections.emptyList());
+        when(transactionRepository.saveAll(Collections.emptyList()))
+                .thenReturn(Collections.emptyList());
 
         tagService.deleteTag(1L);
 
