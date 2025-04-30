@@ -12,11 +12,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 
+import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -65,11 +67,11 @@ class LogServiceImplTest {
         }
     }
 
-    // Новый тест для конструктора по умолчанию
+    // Тест для конструктора по умолчанию
     @Test
     void defaultConstructor_createsTempDir() throws IOException {
         // Удаляем tempDir, если она существует
-        Path tempDirForDefault = Path.of(System.getProperty("java.io.tmpdir"), "financery-temp");
+        Path tempDirForDefault = Paths.get("D:/documents/JavaLabs/temp");
         if (Files.exists(tempDirForDefault)) {
             Files.walk(tempDirForDefault)
                     .filter(Files::isRegularFile)
@@ -96,9 +98,9 @@ class LogServiceImplTest {
         assertTrue(Files.exists(tempDir));
     }
 
-    // Новый тест для случая, когда tempDir не существует
+    // Тест для случая, когда tempDir не существует
     @Test
-    void ensureTempDirExists_tempDirNotExists_createsDir() throws Exception {
+    void ensureTempDirExists_tempDirNotExists_createsDir() {
         // Создаем новый экземпляр сервиса с несуществующей директорией
         Path nonExistentDir = tempDirReal.resolve("nonexistent");
         LogServiceImpl newLogService = new LogServiceImpl(logFilePath, nonExistentDir);
@@ -108,19 +110,15 @@ class LogServiceImplTest {
     }
 
     @Test
-    void ensureTempDirExists_ioException_throwsIllegalStateException() throws Exception {
+    void ensureTempDirExists_ioException_throwsIllegalStateException() throws IOException {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             Path invalidDir = tempDirReal.resolve("invalid");
             filesMock.when(() -> Files.exists(invalidDir)).thenReturn(false);
             filesMock.when(() -> Files.createDirectories(invalidDir)).thenThrow(new IOException("IO error"));
 
-            // Используем рефлексию, чтобы изменить tempDir в logService
-            Field tempDirField = LogServiceImpl.class.getDeclaredField("tempDir");
-            tempDirField.setAccessible(true);
-            tempDirField.set(logService, invalidDir);
-
             IllegalStateException exception = assertThrows(IllegalStateException.class,
-                    () -> logService.ensureTempDirExists());
+                    () -> new LogServiceImpl(logFilePath, invalidDir));
+
             assertEquals("Не удаётся создать защищённую временную директорию", exception.getMessage());
         }
     }
@@ -257,9 +255,9 @@ class LogServiceImplTest {
     void createUrlResource_malformedUrl_throwsIOException() throws IOException {
         URI invalidUri = URI.create("invalid://url");
         LogServiceImpl spyService = spy(logService);
-        doThrow(new IOException("Invalid URL")).when(spyService).createUrlResource(invalidUri);
+        doThrow(new MalformedURLException("Invalid URL")).when(spyService).createUrlResource(invalidUri);
 
-        IOException exception = assertThrows(IOException.class,
+        MalformedURLException exception = assertThrows(MalformedURLException.class,
                 () -> spyService.createUrlResource(invalidUri));
 
         assertEquals("Invalid URL", exception.getMessage());
@@ -316,7 +314,6 @@ class LogServiceImplTest {
         assertEquals("Нет логов за указанную дату: 28-04-2025", exception.getMessage());
     }
 
-    // Новый тест для покрытия catch в createTempFile
     @Test
     void createTempFile_ioException_throwsIllegalStateException() {
         LocalDate fixedDate = LocalDate.of(2025, 4, 28); // Фиксированная дата для теста
@@ -332,6 +329,61 @@ class LogServiceImplTest {
                     () -> logService.createTempFile(fixedDate));
 
             assertEquals("Ошибка при создании временного файла: IO error", exception.getMessage());
+        }
+    }
+
+    @Test
+    void createTempFile_setReadableFails_throwsIllegalStateException() throws IOException {
+        LocalDate logDate = LocalDate.of(2025, 4, 28);
+
+        // Создаём замоканный объект Path
+        Path mockPath = mock(Path.class);
+
+        // Создаём замоканный объект File
+        File mockFile = mock(File.class);
+        when(mockFile.setReadable(true, true)).thenReturn(false); // Симулируем неудачу при установке прав на чтение
+
+        // Настраиваем mockPath, чтобы метод toFile() возвращал mockFile
+        when(mockPath.toFile()).thenReturn(mockFile);
+
+        // Мокаем Files.createTempFile, чтобы он возвращал mockPath
+        try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
+            filesMock.when(() -> Files.createTempFile(eq(tempDir), eq("log-" + logDate + "-"), eq(".log")))
+                    .thenReturn(mockPath);
+
+            // Проверяем, что выбрасывается исключение
+            IllegalStateException exception = assertThrows(IllegalStateException.class,
+                    () -> logService.createTempFile(logDate));
+
+            assertEquals("Не удалось установить права на чтение для временного файла: " + mockFile, exception.getMessage());
+        }
+    }
+
+    @Test
+    void createTempFile_setWritableFails_throwsIllegalStateException() throws IOException {
+        LocalDate logDate = LocalDate.of(2025, 4, 28);
+
+        // Создаём замоканный объект Path
+        Path mockPath = mock(Path.class);
+
+        // Создаём замоканный объект File
+        File mockFile = mock(File.class);
+        when(mockFile.setReadable(true, true)).thenReturn(true); // Успешная установка прав на чтение
+        when(mockFile.setWritable(true, true)).thenReturn(false); // Симулируем неудачу при установке прав на запись
+
+        // Настраиваем mockPath, чтобы метод toFile() возвращал mockFile
+        when(mockPath.toFile()).thenReturn(mockFile);
+
+        // Мокаем Files.createTempFile, чтобы он возвращал mockPath
+        try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
+            filesMock.when(() -> Files.createTempFile(eq(tempDir), eq("log-" + logDate + "-"), eq(".log")))
+                    .thenReturn(mockPath);
+
+            // Проверяем, что выбрасывается исключение
+            IllegalStateException exception = assertThrows(IllegalStateException.class,
+                    () -> logService.createTempFile(logDate));
+
+            assertEquals("Не удалось установить права на запись для временного файла: " + mockFile, exception.getMessage());
         }
     }
 }

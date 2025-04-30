@@ -1400,3 +1400,346 @@ Consider defining a bean of type 'com.example.financery.service.LogService' in y
 30-04-2025 04:34:16.736 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2889377426093973465\temp
 30-04-2025 04:34:16.744 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7514766700008580052\temp
 30-04-2025 04:34:17.464 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:45:40.289 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 19464 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:45:40.296 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:45:40.300 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:45:50.565 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:45:59.441 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:45:59.653 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:45:59.661 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:46:02.683 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 24.682 seconds (process running for 30.23)
+30-04-2025 04:46:06.000 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1600884543889745600\temp
+30-04-2025 04:46:06.029 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-11022329274724951318\temp\test-8809225734899142763.log
+30-04-2025 04:46:06.036 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11022329274724951318\temp
+30-04-2025 04:46:06.047 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-2384391270044557216\temp\test-244981944483947280.log: 0 байт
+30-04-2025 04:46:06.049 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2384391270044557216\temp
+30-04-2025 04:46:06.064 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-12617001040318629515\temp\log-2025-04-28-12370877924025096033.log
+30-04-2025 04:46:06.065 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-12617001040318629515\temp\log-2025-04-28-12370877924025096033.log
+30-04-2025 04:46:06.067 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12617001040318629515\temp
+30-04-2025 04:46:06.226 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7247084097509185641\temp
+30-04-2025 04:46:06.258 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-15757955046157758761\temp
+30-04-2025 04:46:06.292 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1140921446462952249\temp
+30-04-2025 04:46:06.305 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1868150033102181636\temp
+30-04-2025 04:46:06.318 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-15440335233147089984\temp
+30-04-2025 04:46:06.336 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1459208161469005886\temp
+30-04-2025 04:46:06.344 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12102966703779670613\temp
+30-04-2025 04:46:06.359 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2029806142452571259\temp
+30-04-2025 04:46:06.381 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-13272951272830751705\temp
+30-04-2025 04:46:06.391 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-573526735051395942\temp
+30-04-2025 04:46:06.402 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-18350580240450828545\temp
+30-04-2025 04:46:06.415 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12063385614915996586\temp
+30-04-2025 04:46:06.424 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-9632004597397439629\temp\test-13777678726700451036.log: 16 байт
+30-04-2025 04:46:06.425 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-9632004597397439629\temp\test-13777678726700451036.log
+30-04-2025 04:46:06.427 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-9632004597397439629\temp
+30-04-2025 04:46:06.437 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\junit-1643650700808844148\nonexistent
+30-04-2025 04:46:06.439 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1643650700808844148\temp
+30-04-2025 04:46:06.451 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-11625431182274528974\temp\log-2025-04-28-13073533825520376069.log
+30-04-2025 04:46:06.452 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-11625431182274528974\temp\log-2025-04-28-13073533825520376069.log
+30-04-2025 04:46:06.453 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-11625431182274528974\temp\log-2025-04-28-13073533825520376069.log
+30-04-2025 04:46:06.454 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-11625431182274528974\temp\log-2025-04-28-13073533825520376069.log: 0 байт
+30-04-2025 04:46:06.454 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11625431182274528974\temp
+30-04-2025 04:46:06.468 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-1155660512345489234\temp\log-2025-04-28-2783146092985706839.log
+30-04-2025 04:46:06.469 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-1155660512345489234\temp\log-2025-04-28-2783146092985706839.log
+30-04-2025 04:46:06.474 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-1155660512345489234\temp\log-2025-04-28-2783146092985706839.log
+30-04-2025 04:46:06.475 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-1155660512345489234\temp\log-2025-04-28-2783146092985706839.log: 32 байт
+30-04-2025 04:46:06.476 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-1155660512345489234\temp\log-2025-04-28-2783146092985706839.log
+30-04-2025 04:46:06.477 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:46:06.481 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1155660512345489234\temp
+30-04-2025 04:46:06.494 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-18055649109784343165\temp
+30-04-2025 04:46:07.809 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:48:05.112 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 14440 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:48:05.114 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:48:05.116 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:48:10.013 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:48:15.632 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:48:15.771 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:48:15.775 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:48:17.749 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.713 seconds (process running for 16.55)
+30-04-2025 04:48:19.782 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11899881870033286738\temp
+30-04-2025 04:48:19.800 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-10980698481340991206\temp\test-16411933707572876404.log
+30-04-2025 04:48:19.803 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10980698481340991206\temp
+30-04-2025 04:48:19.812 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-16021818394992838942\temp\test-11438354729163193310.log: 0 байт
+30-04-2025 04:48:19.813 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16021818394992838942\temp
+30-04-2025 04:48:19.823 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-10735719340144225942\temp\log-2025-04-28-4948489251053757892.log
+30-04-2025 04:48:19.823 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-10735719340144225942\temp\log-2025-04-28-4948489251053757892.log
+30-04-2025 04:48:19.824 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10735719340144225942\temp
+30-04-2025 04:48:19.933 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14292873953451255136\temp
+30-04-2025 04:48:19.950 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10341807510744348236\temp
+30-04-2025 04:48:19.959 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16292011446908655998\temp
+30-04-2025 04:48:19.965 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4798172203139266947\temp
+30-04-2025 04:48:19.972 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14729583226713960256\temp
+30-04-2025 04:48:19.979 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6361872002351500002\temp
+30-04-2025 04:48:19.986 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7566191332002012850\temp
+30-04-2025 04:48:19.993 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7534323410948937676\temp
+30-04-2025 04:48:20.000 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: D:\documents\JavaLabs\temp
+30-04-2025 04:48:20.001 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-121816705766718570\temp
+30-04-2025 04:48:20.007 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-13646924190864147616\temp
+30-04-2025 04:48:20.013 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1087722121330565570\temp
+30-04-2025 04:48:20.021 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12389638988719665974\temp
+30-04-2025 04:48:20.029 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-3769844655367217032\temp\test-16797618466441969948.log: 16 байт
+30-04-2025 04:48:20.029 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-3769844655367217032\temp\test-16797618466441969948.log
+30-04-2025 04:48:20.030 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3769844655367217032\temp
+30-04-2025 04:48:20.037 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\junit-2465570826055724058\nonexistent
+30-04-2025 04:48:20.038 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2465570826055724058\temp
+30-04-2025 04:48:20.047 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-16505458401852987722\temp\log-2025-04-28-1042487612251359.log
+30-04-2025 04:48:20.047 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-16505458401852987722\temp\log-2025-04-28-1042487612251359.log
+30-04-2025 04:48:20.049 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-16505458401852987722\temp\log-2025-04-28-1042487612251359.log
+30-04-2025 04:48:20.050 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-16505458401852987722\temp\log-2025-04-28-1042487612251359.log: 0 байт
+30-04-2025 04:48:20.050 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16505458401852987722\temp
+30-04-2025 04:48:20.059 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-17630904481023032125\temp\log-2025-04-28-4451710670641123159.log
+30-04-2025 04:48:20.059 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-17630904481023032125\temp\log-2025-04-28-4451710670641123159.log
+30-04-2025 04:48:20.071 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-17630904481023032125\temp\log-2025-04-28-4451710670641123159.log
+30-04-2025 04:48:20.071 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-17630904481023032125\temp\log-2025-04-28-4451710670641123159.log: 32 байт
+30-04-2025 04:48:20.071 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-17630904481023032125\temp\log-2025-04-28-4451710670641123159.log
+30-04-2025 04:48:20.072 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:48:20.074 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-17630904481023032125\temp
+30-04-2025 04:48:20.082 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-343688675455579861\temp
+30-04-2025 04:48:20.855 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:52:14.786 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 20204 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:52:14.789 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:52:14.790 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:52:19.587 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:52:25.348 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:52:25.492 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:52:25.497 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:52:27.384 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.733 seconds (process running for 16.566)
+30-04-2025 04:52:29.433 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-146206439633550660\temp
+30-04-2025 04:52:29.450 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-12484555077012862585\temp\test-13554859998656807240.log
+30-04-2025 04:52:29.453 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12484555077012862585\temp
+30-04-2025 04:52:29.465 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-7908056275903710868\temp\test-7479176854696242337.log: 0 байт
+30-04-2025 04:52:29.466 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7908056275903710868\temp
+30-04-2025 04:52:29.477 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-1041256524110768759\temp\log-2025-04-28-1859090393831560598.log
+30-04-2025 04:52:29.477 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-1041256524110768759\temp\log-2025-04-28-1859090393831560598.log
+30-04-2025 04:52:29.478 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-1041256524110768759\temp
+30-04-2025 04:52:29.571 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10808092804921598305\temp
+30-04-2025 04:52:29.578 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7938634851867236375\temp
+30-04-2025 04:52:29.587 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3857808739766670694\temp
+30-04-2025 04:52:29.595 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10075992128138459375\temp
+30-04-2025 04:52:29.603 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4630705941701155111\temp
+30-04-2025 04:52:29.612 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12134606127216069945\temp
+30-04-2025 04:52:29.619 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10167337513555709299\temp
+30-04-2025 04:52:29.627 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14862838120425374061\temp
+30-04-2025 04:52:29.634 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: D:\documents\JavaLabs\temp
+30-04-2025 04:52:29.635 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-17471562129477798916\temp
+30-04-2025 04:52:29.642 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-733234520029051527\temp
+30-04-2025 04:52:29.648 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12491445025632972070\temp
+30-04-2025 04:52:29.656 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3745583624074150060\temp
+30-04-2025 04:52:29.662 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-5713017515049014216\temp\test-9143360620177208667.log: 16 байт
+30-04-2025 04:52:29.663 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-5713017515049014216\temp\test-9143360620177208667.log
+30-04-2025 04:52:29.664 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5713017515049014216\temp
+30-04-2025 04:52:29.672 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\junit-12874294762302591550\nonexistent
+30-04-2025 04:52:29.673 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12874294762302591550\temp
+30-04-2025 04:52:29.683 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-8718643993329264279\temp\log-2025-04-28-4367956926310193927.log
+30-04-2025 04:52:29.683 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-8718643993329264279\temp\log-2025-04-28-4367956926310193927.log
+30-04-2025 04:52:29.685 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-8718643993329264279\temp\log-2025-04-28-4367956926310193927.log
+30-04-2025 04:52:29.685 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-8718643993329264279\temp\log-2025-04-28-4367956926310193927.log: 0 байт
+30-04-2025 04:52:29.686 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-8718643993329264279\temp
+30-04-2025 04:52:29.695 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-7484205370364311809\temp\log-2025-04-28-2262784094909277280.log
+30-04-2025 04:52:29.695 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-7484205370364311809\temp\log-2025-04-28-2262784094909277280.log
+30-04-2025 04:52:29.698 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-7484205370364311809\temp\log-2025-04-28-2262784094909277280.log
+30-04-2025 04:52:29.699 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-7484205370364311809\temp\log-2025-04-28-2262784094909277280.log: 32 байт
+30-04-2025 04:52:29.699 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-7484205370364311809\temp\log-2025-04-28-2262784094909277280.log
+30-04-2025 04:52:29.700 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:52:29.702 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7484205370364311809\temp
+30-04-2025 04:52:29.711 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10016338032138544952\temp
+30-04-2025 04:52:30.527 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:55:43.663 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 4992 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:55:43.665 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:55:43.666 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:55:48.412 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:55:54.130 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:55:54.278 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:55:54.282 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:55:56.152 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.566 seconds (process running for 16.432)
+30-04-2025 04:55:58.210 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-15488702321833525431\temp
+30-04-2025 04:55:58.228 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-7408549107121743671\temp\test-4377529461444742761.log
+30-04-2025 04:55:58.232 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7408549107121743671\temp
+30-04-2025 04:55:58.242 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-12403062203582127241\temp\test-16452470824707275177.log: 0 байт
+30-04-2025 04:55:58.244 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-12403062203582127241\temp
+30-04-2025 04:55:58.254 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-8373890495454274688\temp\log-2025-04-28-9237646572626109423.log
+30-04-2025 04:55:58.254 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-8373890495454274688\temp\log-2025-04-28-9237646572626109423.log
+30-04-2025 04:55:58.255 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-8373890495454274688\temp
+30-04-2025 04:55:58.330 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-297870482705402245\temp
+30-04-2025 04:55:58.337 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-491635292905871494\temp
+30-04-2025 04:55:58.345 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2799869937987549391\temp
+30-04-2025 04:55:58.352 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16418807829880584831\temp
+30-04-2025 04:55:58.358 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5187435407578141095\temp
+30-04-2025 04:55:58.365 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6852367505671929807\temp
+30-04-2025 04:55:58.596 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3259655703198687975\temp
+30-04-2025 04:55:58.615 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5956488528650292434\temp
+30-04-2025 04:55:58.622 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11344490382187612897\temp
+30-04-2025 04:55:58.629 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: D:\documents\JavaLabs\temp
+30-04-2025 04:55:58.630 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-845150380757652763\temp
+30-04-2025 04:55:58.636 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4635886405011648632\temp
+30-04-2025 04:55:58.643 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5006180383137783504\temp
+30-04-2025 04:55:58.649 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5819685284955722489\temp
+30-04-2025 04:55:58.657 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-13868240649518696301\temp\test-946532410760201587.log: 16 байт
+30-04-2025 04:55:58.657 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-13868240649518696301\temp\test-946532410760201587.log
+30-04-2025 04:55:58.658 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-13868240649518696301\temp
+30-04-2025 04:55:58.664 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\junit-6204520177871914403\nonexistent
+30-04-2025 04:55:58.665 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6204520177871914403\temp
+30-04-2025 04:55:58.672 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-97001412603276958\temp\log-2025-04-28-7878305228844816758.log
+30-04-2025 04:55:58.672 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-97001412603276958\temp\log-2025-04-28-7878305228844816758.log
+30-04-2025 04:55:58.674 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-97001412603276958\temp\log-2025-04-28-7878305228844816758.log
+30-04-2025 04:55:58.674 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-97001412603276958\temp\log-2025-04-28-7878305228844816758.log: 0 байт
+30-04-2025 04:55:58.674 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-97001412603276958\temp
+30-04-2025 04:55:58.682 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-13956887187332952411\temp\log-2025-04-28-18126712794475154446.log
+30-04-2025 04:55:58.682 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-13956887187332952411\temp\log-2025-04-28-18126712794475154446.log
+30-04-2025 04:55:58.684 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-13956887187332952411\temp\log-2025-04-28-18126712794475154446.log
+30-04-2025 04:55:58.685 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-13956887187332952411\temp\log-2025-04-28-18126712794475154446.log: 32 байт
+30-04-2025 04:55:58.685 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-13956887187332952411\temp\log-2025-04-28-18126712794475154446.log
+30-04-2025 04:55:58.685 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:55:58.687 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-13956887187332952411\temp
+30-04-2025 04:55:58.694 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-9385175333189600337\temp
+30-04-2025 04:55:58.704 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-8662680510997009257\temp
+30-04-2025 04:55:59.432 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+30-04-2025 04:58:37.292 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 7640 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+30-04-2025 04:58:37.295 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+30-04-2025 04:58:37.296 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+30-04-2025 04:58:42.199 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+30-04-2025 04:58:47.855 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+30-04-2025 04:58:48.003 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+30-04-2025 04:58:48.008 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+30-04-2025 04:58:49.900 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 13.683 seconds (process running for 16.573)
+30-04-2025 04:58:51.958 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10145901596408015305\temp
+30-04-2025 04:58:51.976 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-11527069059544714812\temp\test-15702692967764449476.log
+30-04-2025 04:58:51.980 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11527069059544714812\temp
+30-04-2025 04:58:51.989 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-10806544844519734846\temp\test-2081349876322660984.log: 0 байт
+30-04-2025 04:58:51.990 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10806544844519734846\temp
+30-04-2025 04:58:51.997 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-5105302174971569095\temp\log-2025-04-28-6387827075739198296.log
+30-04-2025 04:58:51.998 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-5105302174971569095\temp\log-2025-04-28-6387827075739198296.log
+30-04-2025 04:58:51.998 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5105302174971569095\temp
+30-04-2025 04:58:52.080 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3762638087753619091\temp
+30-04-2025 04:58:52.088 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-17955748540272346881\temp
+30-04-2025 04:58:52.096 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-10165475807527804731\temp
+30-04-2025 04:58:52.103 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5385484138501082971\temp
+30-04-2025 04:58:52.109 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-13383883037033237933\temp
+30-04-2025 04:58:52.118 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-13528080047424449519\temp
+30-04-2025 04:58:52.366 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-7656313090663799232\temp
+30-04-2025 04:58:52.372 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6457999069731751569\temp
+30-04-2025 04:58:52.380 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4191827331838885059\temp
+30-04-2025 04:58:52.388 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: D:\documents\JavaLabs\temp
+30-04-2025 04:58:52.389 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4123501563917666886\temp
+30-04-2025 04:58:52.395 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-5421498030070636107\temp
+30-04-2025 04:58:52.401 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-14504293814273691232\temp
+30-04-2025 04:58:52.408 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6233580880091004706\temp
+30-04-2025 04:58:52.416 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-4577769104243351247\temp\test-12533405781256915304.log: 16 байт
+30-04-2025 04:58:52.417 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-4577769104243351247\temp\test-12533405781256915304.log
+30-04-2025 04:58:52.417 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-4577769104243351247\temp
+30-04-2025 04:58:52.423 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создана защищённая временная директория: C:\Users\MaxiM\AppData\Local\Temp\junit-6924313611034415229\nonexistent
+30-04-2025 04:58:52.424 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-6924313611034415229\temp
+30-04-2025 04:58:52.431 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-2310070107697450049\temp\log-2025-04-28-5148932301261358393.log
+30-04-2025 04:58:52.432 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-2310070107697450049\temp\log-2025-04-28-5148932301261358393.log
+30-04-2025 04:58:52.433 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-2310070107697450049\temp\log-2025-04-28-5148932301261358393.log
+30-04-2025 04:58:52.434 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-2310070107697450049\temp\log-2025-04-28-5148932301261358393.log: 0 байт
+30-04-2025 04:58:52.435 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-2310070107697450049\temp
+30-04-2025 04:58:52.444 [main] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-11365367035132183818\temp\log-2025-04-28-4178371559795207295.log
+30-04-2025 04:58:52.444 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан защищённый временный файл: C:\Users\MaxiM\AppData\Local\Temp\junit-11365367035132183818\temp\log-2025-04-28-4178371559795207295.log
+30-04-2025 04:58:52.447 [main] INFO  c.e.f.service.impl.LogServiceImpl - Отфильтрованные логи за дату 28-04-2025 записаны во временный файл C:\Users\MaxiM\AppData\Local\Temp\junit-11365367035132183818\temp\log-2025-04-28-4178371559795207295.log
+30-04-2025 04:58:52.447 [main] DEBUG c.e.f.service.impl.LogServiceImpl - Размер временного файла C:\Users\MaxiM\AppData\Local\Temp\junit-11365367035132183818\temp\log-2025-04-28-4178371559795207295.log: 32 байт
+30-04-2025 04:58:52.448 [main] INFO  c.e.f.service.impl.LogServiceImpl - Создан загружаемый ресурс из временного файла: C:\Users\MaxiM\AppData\Local\Temp\junit-11365367035132183818\temp\log-2025-04-28-4178371559795207295.log
+30-04-2025 04:58:52.448 [main] INFO  c.e.f.service.impl.LogServiceImpl - Файл логов с датой 28-04-2025 успешно загружен
+30-04-2025 04:58:52.450 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-11365367035132183818\temp
+30-04-2025 04:58:52.457 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-3938568380662984822\temp
+30-04-2025 04:58:52.467 [main] INFO  c.e.f.s.impl.LogServiceImplTest - Очистка временной директории: C:\Users\MaxiM\AppData\Local\Temp\junit-16326868019619840111\temp
+30-04-2025 04:58:53.158 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1

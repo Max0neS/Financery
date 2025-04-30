@@ -2,6 +2,12 @@ package com.example.financery.service.impl;
 
 import com.example.financery.exception.InvalidInputException;
 import com.example.financery.exception.NotFoundException;
+import com.example.financery.service.LogService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.stereotype.Service;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -14,24 +20,31 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-import com.example.financery.service.LogService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.stereotype.Service;
-
 @Slf4j
 @Service
 public class LogServiceImpl implements LogService {
 
-    private static final String LOG_FILE_PATH = "log/app.log";
-    private static final Path TEMP_DIR = Paths.get("D:/documents/JavaLabs/temp");
+    private final Path logFilePath;
+    private final Path tempDir;
 
-    static {
+    // Конструктор по умолчанию
+    public LogServiceImpl() {
+        this(Paths.get("log/app.log"), Paths.get("D:/documents/JavaLabs/temp"));
+    }
+
+    // Конструктор с параметрами для тестов
+    public LogServiceImpl(Path logFilePath, Path tempDir) {
+        this.logFilePath = logFilePath;
+        this.tempDir = tempDir;
+        ensureTempDirExists();
+    }
+
+    // Метод для создания временной директории
+    public void ensureTempDirExists() {
         try {
-            if (!Files.exists(TEMP_DIR)) {
-                Files.createDirectories(TEMP_DIR);
-                log.info("Создана защищённая временная директория: {}", TEMP_DIR);
+            if (!Files.exists(tempDir)) {
+                Files.createDirectories(tempDir);
+                log.info("Создана защищённая временная директория: {}", tempDir);
             }
         } catch (IOException e) {
             throw new IllegalStateException(
@@ -39,9 +52,9 @@ public class LogServiceImpl implements LogService {
         }
     }
 
+    @Override
     public Resource downloadLogs(String date) {
         LocalDate logDate = parseDate(date);
-        Path logFilePath = Paths.get(LOG_FILE_PATH);
         validateLogFileExists(logFilePath);
         String formattedDate = logDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 
@@ -64,13 +77,13 @@ public class LogServiceImpl implements LogService {
 
     public void validateLogFileExists(Path path) {
         if (!Files.exists(path)) {
-            throw new NotFoundException("Файл не существует: " + LOG_FILE_PATH);
+            throw new NotFoundException("Файл не существует: " + path);
         }
     }
 
     public Path createTempFile(LocalDate logDate) {
         try {
-            Path tempFilePath = Files.createTempFile(TEMP_DIR, "log-" + logDate + "-", ".log");
+            Path tempFilePath = Files.createTempFile(tempDir, "log-" + logDate + "-", ".log");
             File tempFile = tempFilePath.toFile();
             if (!tempFile.setReadable(true, true)) {
                 throw new IllegalStateException("Не удалось установить права на чтение "
@@ -80,8 +93,7 @@ public class LogServiceImpl implements LogService {
                 throw new IllegalStateException("Не удалось установить права на запись "
                         + "для временного файла: " + tempFile);
             }
-            if (tempFile.canExecute()
-                    && !tempFile.setExecutable(false, false)) {
+            if (tempFile.canExecute() && !tempFile.setExecutable(false, false)) {
                 log.warn("Не удалось удалить права на выполнение для временного файла: {}",
                         tempFile);
             }
