@@ -26,3 +26,11 @@ logging:
     org.hibernate: WARN
     com.zaxxer.hikari: ERROR
     org.apache.catalina: ERROR
+
+app:
+  log:
+    file:
+      path: log/app.log
+  temp:
+    dir:
+      path: D:/documents/JavaLabs/temp
