@@ -45,6 +45,7 @@ public class LogServiceImpl implements LogService {
     private final AtomicLong idCounter = new AtomicLong(1);
     private final Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
     private static final String DATE_FORMAT = "yyyy-mm-dd";
+    private static final String FAIL_TEXT = "FAILED";
 
     public LogServiceImpl(
             @Value("${app.log.file.path}") String logFilePath,
@@ -204,7 +205,7 @@ public class LogServiceImpl implements LogService {
             if (currentLogs.isEmpty()) {
                 LogObject logObject = tasks.get(taskId);
                 if (logObject != null) {
-                    logObject.setStatus("FAILED");
+                    logObject.setStatus(FAIL_TEXT);
                     logObject.setErrorMessage("Нет логов за дату: " + date);
                 }
                 throw new NotFoundException("Нет логов за дату: " + date);
@@ -244,26 +245,20 @@ public class LogServiceImpl implements LogService {
         } catch (InvalidInputException e) {
             LogObject task = tasks.get(taskId);
 
-            task.setStatus("FAILED");
+            task.setStatus(FAIL_TEXT);
             task.setErrorMessage(e.getMessage());
             log.error("Invalid date format for taskId {}: {}", taskId, e.getMessage());
-        } catch (IOException e) {
-            LogObject task = tasks.get(taskId);
-
-            task.setStatus("FAILED");
-            task.setErrorMessage(e.getMessage());
-            log.error("IOException in createLogs for taskId {}: {}", taskId, e.getMessage());
         } catch (InterruptedException e) {
             LogObject task = tasks.get(taskId);
 
-            task.setStatus("FAILED");
+            task.setStatus(FAIL_TEXT);
             task.setErrorMessage("Task interrupted");
             Thread.currentThread().interrupt();
             log.warn("Task interrupted for taskId {}", taskId);
         } catch (Exception e) {
             LogObject task = tasks.get(taskId);
 
-            task.setStatus("FAILED");
+            task.setStatus(FAIL_TEXT);
             task.setErrorMessage("Unexpected error: " + e.getMessage());
             log.error("Unexpected error in createLogs for taskId {}: {}", taskId, e.getMessage());
         }
@@ -277,7 +272,7 @@ public class LogServiceImpl implements LogService {
         Long id = idCounter.getAndIncrement();
         LogObject logObject = new LogObject(id, "IN_PROGRESS");
         tasks.put(id, logObject);
-        executor.execute(() -> createLogs(id, date));
+        executor.execute(() -> this.createLogs(id, date));
         return id;
     }
 
