@@ -44,6 +44,7 @@ public class LogServiceImpl implements LogService {
     private final Executor executor;
     private final AtomicLong idCounter = new AtomicLong(1);
     private final Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
+    private static final String DATE_FORMAT = "yyyy-mm-dd";
 
     public LogServiceImpl(
             @Value("${app.log.file.path}") String logFilePath,
@@ -73,7 +74,7 @@ public class LogServiceImpl implements LogService {
         LocalDate logDate = parseDate(date);
         validateLogFileExists(logFilePath);
         String formattedDate = logDate.format(DateTimeFormatter
-                .ofPattern("dd-MM-yyyy"));
+                .ofPattern(DATE_FORMAT));
 
         Path tempFilePath = createTempFile(logDate);
         filterAndWriteLogsToTempFile(logFilePath, formattedDate, tempFilePath);
@@ -86,7 +87,7 @@ public class LogServiceImpl implements LogService {
     @Override
     public LocalDate parseDate(String date) {
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT);
             return LocalDate.parse(date, formatter);
         } catch (DateTimeParseException e) {
             throw new InvalidInputException("Неверный формат даты. Требуется dd-mm-yyyy");
@@ -193,7 +194,7 @@ public class LogServiceImpl implements LogService {
 
             LocalDate logDate = parseDate(date);
             validateLogFileExists(logFilePath);
-            String formattedDate = logDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            String formattedDate = logDate.format(DateTimeFormatter.ofPattern(DATE_FORMAT));
 
             List<String> logLines = Files.readAllLines(logFilePath);
             List<String> currentLogs = logLines.stream()

@@ -72,7 +72,7 @@ public class LogController {
     @GetMapping("/download/{id}")
     @Operation(summary = "Download generated log file",
             description = "Downloads the generated log file by ID")
-    public ResponseEntity<Resource> getLogFileById(@PathVariable Long id) throws IOException {
+    public ResponseEntity<Resource> getLogFileById(@PathVariable Long id){
         if (id < 1) {
             throw new InvalidInputException("Id must be greater than 0");
         }

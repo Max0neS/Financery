@@ -1,13 +1,15 @@
-16-05-2025 14:22:02.867 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6024 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
-16-05-2025 14:22:02.877 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
-16-05-2025 14:22:02.877 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
-16-05-2025 14:22:05.279 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:22:06.508 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-16-05-2025 14:22:11.135 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
-16-05-2025 14:22:11.138 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@39a14c29
-16-05-2025 14:22:11.273 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
-16-05-2025 14:22:11.360 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
-16-05-2025 14:22:11.363 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+16-05-2025 15:00:02.204 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:02.230 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:02.417 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16516 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 15:00:02.417 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 15:00:02.418 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 15:00:03.323 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:03.744 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+16-05-2025 15:00:05.139 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+16-05-2025 15:00:05.215 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+16-05-2025 15:00:05.216 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@474ae911
+16-05-2025 15:00:05.255 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+16-05-2025 15:00:05.256 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
     openapi: 3.0.1
     info: class Info {
         title: Financery API
@@ -28,52 +30,20 @@
     paths: null
     components: null
 }
-16-05-2025 14:22:12.696 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:22:12.726 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 10.709 seconds (process running for 11.731)
-16-05-2025 14:40:46.048 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.createLogFile(..)
-16-05-2025 14:40:46.052 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.createLogAsync(..)
-16-05-2025 14:40:46.057 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.createLogAsync(..) с результатом: 1
-16-05-2025 14:40:46.068 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.createLogFile(..) с результатом: <200 OK OK,1,[]>
-16-05-2025 14:41:06.096 [LogExecutor-1] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для файла: D:\documents\JavaLabs\temp\logs-16-05-202518178483760572639197.log
-16-05-2025 14:41:34.611 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.createLogFile(..)
-16-05-2025 14:41:34.611 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.createLogAsync(..)
-16-05-2025 14:41:34.612 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.createLogAsync(..) с результатом: 2
-16-05-2025 14:41:34.612 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.createLogFile(..) с результатом: <200 OK OK,2,[]>
-16-05-2025 14:41:38.813 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
-16-05-2025 14:41:38.814 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
-16-05-2025 14:41:38.816 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.getStatus(..) с результатом: LogObject@3576041d
-16-05-2025 14:41:38.817 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.getStatus(..) с результатом: <200 OK OK,{status=COMPLETED},[]>
-16-05-2025 14:41:43.419 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
-16-05-2025 14:41:43.420 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
-16-05-2025 14:41:43.420 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.getStatus(..) с результатом: LogObject@1d8c55d9
-16-05-2025 14:41:43.420 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.getStatus(..) с результатом: <200 OK OK,{status=IN_PROGRESS},[]>
-16-05-2025 14:41:48.926 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getLogFileById(..)
-16-05-2025 14:41:48.927 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadCreatedLogs(..)
-16-05-2025 14:41:48.927 [http-nio-8080-exec-6] INFO  c.e.f.service.impl.LogServiceImpl - Запрос на скачивание логов для ID: 1
-16-05-2025 14:41:48.930 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.downloadCreatedLogs(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/logs-16-05-202518178483760572639197.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="logs-16-05-202518178483760572639197.log""]>
-16-05-2025 14:41:48.931 [http-nio-8080-exec-6] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.getLogFileById(..) с результатом: <200 OK OK,URL [file:///D:/documents/JavaLabs/temp/logs-16-05-202518178483760572639197.log],[Content-Type:"application/octet-stream", Content-Disposition:"attachment; filename="logs-16-05-202518178483760572639197.log""]>
-16-05-2025 14:41:53.329 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getLogFileById(..)
-16-05-2025 14:41:53.329 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadCreatedLogs(..)
-16-05-2025 14:41:53.329 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Запрос на скачивание логов для ID: 2
-16-05-2025 14:41:53.329 [http-nio-8080-exec-4] ERROR c.e.f.service.impl.LogServiceImpl - Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:41:53.331 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.downloadCreatedLogs(..) с причиной: Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:41:53.331 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getLogFileById(..) с причиной: Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:41:53.334 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleIllegalStateException(..)
-16-05-2025 14:41:53.336 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleIllegalStateException(..) с результатом: <500 INTERNAL_SERVER_ERROR Internal Server Error,com.example.financery.model.ErrorResponse@45e136a3,[]>
-16-05-2025 14:41:53.404 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.IllegalStateException: Файл логов не готов. Текущий статус: IN_PROGRESS]
-16-05-2025 14:41:54.662 [LogExecutor-2] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для файла: D:\documents\JavaLabs\temp\logs-16-05-20255770501436768756864.log
-16-05-2025 14:50:18.691 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:18.710 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:18.909 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6024 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
-16-05-2025 14:50:18.910 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
-16-05-2025 14:50:18.910 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
-16-05-2025 14:50:19.639 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:19.931 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-16-05-2025 14:50:21.177 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
-16-05-2025 14:50:21.178 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@2a7f3be
-16-05-2025 14:50:21.265 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
-16-05-2025 14:50:21.338 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
-16-05-2025 14:50:21.338 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+16-05-2025 15:00:06.195 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:06.208 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.878 seconds (process running for 448.387)
+16-05-2025 15:00:07.648 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:07.664 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:07.782 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16516 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 15:00:07.782 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 15:00:07.782 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 15:00:08.361 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:08.621 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+16-05-2025 15:00:09.761 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+16-05-2025 15:00:09.762 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@181ebb0f
+16-05-2025 15:00:09.865 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+16-05-2025 15:00:09.936 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+16-05-2025 15:00:09.936 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
     openapi: 3.0.1
     info: class Info {
         title: Financery API
@@ -94,20 +64,63 @@
     paths: null
     components: null
 }
-16-05-2025 14:50:22.323 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:22.337 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.496 seconds (process running for 1701.342)
-16-05-2025 14:50:23.751 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:23.767 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:23.882 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6024 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
-16-05-2025 14:50:23.882 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
-16-05-2025 14:50:23.882 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
-16-05-2025 14:50:24.458 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:24.709 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-16-05-2025 14:50:25.694 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
-16-05-2025 14:50:25.694 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@41be23f7
-16-05-2025 14:50:25.776 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
-16-05-2025 14:50:25.837 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
-16-05-2025 14:50:25.838 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+16-05-2025 15:00:10.767 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:10.774 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.033 seconds (process running for 452.954)
+16-05-2025 15:00:44.563 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:44.581 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:44.709 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16516 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 15:00:44.709 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 15:00:44.709 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 15:00:44.776 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [com.example.financery.service.impl.VisitCounterServiceImpl]
+16-05-2025 15:00:44.814 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [com.example.financery.service.impl.VisitCounterServiceImpl]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:272)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:205)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:340)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:193)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:171)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.financery.FinanceryApplication.main(FinanceryApplication.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: class path resource [com/example/financery/service/VisitCounterService.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:98)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:85)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:75)
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:697)
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getInterfaces(ConfigurationClassParser.java:1046)
+	at org.springframework.context.annotation.ConfigurationClassParser.processInterfaces(ConfigurationClassParser.java:427)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:371)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267)
+	... 21 common frames omitted
+16-05-2025 15:00:46.375 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16516 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 15:00:46.375 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 15:00:46.375 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 15:00:47.117 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:47.392 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+16-05-2025 15:00:48.478 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+16-05-2025 15:00:48.478 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@6d8e8c5e
+16-05-2025 15:00:48.553 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+16-05-2025 15:00:48.617 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+16-05-2025 15:00:48.617 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
     openapi: 3.0.1
     info: class Info {
         title: Financery API
@@ -128,20 +141,41 @@
     paths: null
     components: null
 }
-16-05-2025 14:50:26.654 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:26.663 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.823 seconds (process running for 1705.669)
-16-05-2025 14:50:40.632 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:40.649 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:40.758 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6024 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
-16-05-2025 14:50:40.758 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
-16-05-2025 14:50:40.759 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
-16-05-2025 14:50:41.357 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:41.617 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-16-05-2025 14:50:42.658 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
-16-05-2025 14:50:42.658 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@65e47a35
-16-05-2025 14:50:42.751 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
-16-05-2025 14:50:42.813 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
-16-05-2025 14:50:42.813 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+16-05-2025 15:00:49.503 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:00:49.512 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.195 seconds (process running for 491.692)
+16-05-2025 15:02:12.135 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:02:12.154 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:02:12.278 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16516 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 15:02:12.279 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 15:02:12.279 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 15:02:12.902 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:02:13.190 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+16-05-2025 15:02:14.603 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\LogController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.LogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+16-05-2025 15:02:14.647 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.LogController required a bean of type 'com.example.financery.service.LogService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.LogService' in your configuration.
+
+16-05-2025 15:02:16.157 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 16516 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 15:02:16.157 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 15:02:16.157 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 15:02:16.740 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:02:16.981 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+16-05-2025 15:02:18.033 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+16-05-2025 15:02:18.034 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@50a28195
+16-05-2025 15:02:18.129 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+16-05-2025 15:02:18.204 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+16-05-2025 15:02:18.205 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
     openapi: 3.0.1
     info: class Info {
         title: Financery API
@@ -162,115 +196,5 @@
     paths: null
     components: null
 }
-16-05-2025 14:50:43.749 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:43.760 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.042 seconds (process running for 1722.765)
-16-05-2025 14:50:45.185 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:45.202 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:45.296 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6024 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
-16-05-2025 14:50:45.297 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
-16-05-2025 14:50:45.297 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
-16-05-2025 14:50:45.891 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:46.169 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-16-05-2025 14:50:47.244 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
-16-05-2025 14:50:47.244 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@3dec8d98
-16-05-2025 14:50:47.318 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
-16-05-2025 14:50:47.383 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
-16-05-2025 14:50:47.384 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
-    openapi: 3.0.1
-    info: class Info {
-        title: Financery API
-        description: API documentation for Financery API
-        summary: null
-        termsOfService: null
-        contact: null
-        license: null
-        version: 1.0
-    }
-    externalDocs: class ExternalDocumentation {
-        description: GitHub repository
-        url: https://github.com/Max0neS/Financery
-    }
-    servers: null
-    security: null
-    tags: null
-    paths: null
-    components: null
-}
-16-05-2025 14:50:48.214 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:50:48.223 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.965 seconds (process running for 1727.228)
-16-05-2025 14:51:25.992 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 1336 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
-16-05-2025 14:51:25.994 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
-16-05-2025 14:51:25.995 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
-16-05-2025 14:51:28.389 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:51:29.611 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-16-05-2025 14:51:33.149 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
-16-05-2025 14:51:33.152 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@6e01447b
-16-05-2025 14:51:33.291 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
-16-05-2025 14:51:33.376 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
-16-05-2025 14:51:33.378 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
-    openapi: 3.0.1
-    info: class Info {
-        title: Financery API
-        description: API documentation for Financery API
-        summary: null
-        termsOfService: null
-        contact: null
-        license: null
-        version: 1.0
-    }
-    externalDocs: class ExternalDocumentation {
-        description: GitHub repository
-        url: https://github.com/Max0neS/Financery
-    }
-    servers: null
-    security: null
-    tags: null
-    paths: null
-    components: null
-}
-16-05-2025 14:51:34.713 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16-05-2025 14:51:34.745 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.568 seconds (process running for 10.746)
-16-05-2025 14:51:43.517 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.createLogFile(..)
-16-05-2025 14:51:43.518 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.createLogAsync(..)
-16-05-2025 14:51:43.521 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.createLogAsync(..) с результатом: 1
-16-05-2025 14:51:43.526 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.createLogFile(..) с результатом: <200 OK OK,1,[]>
-16-05-2025 14:51:47.615 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
-16-05-2025 14:51:47.616 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
-16-05-2025 14:51:47.618 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.getStatus(..) с причиной: Log object not found
-16-05-2025 14:51:47.618 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getStatus(..) с причиной: Log object not found
-16-05-2025 14:51:47.621 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
-16-05-2025 14:51:47.621 [http-nio-8080-exec-2] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (InvalidInputException): Log object not found
-16-05-2025 14:51:47.622 [http-nio-8080-exec-2] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@b88affd,[]>
-16-05-2025 14:51:47.670 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.InvalidInputException: Log object not found]
-16-05-2025 14:51:51.211 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getLogFileById(..)
-16-05-2025 14:51:51.212 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadCreatedLogs(..)
-16-05-2025 14:51:51.212 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Запрос на скачивание логов для ID: 2
-16-05-2025 14:51:51.212 [http-nio-8080-exec-5] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.downloadCreatedLogs(..) с причиной: Log object not found
-16-05-2025 14:51:51.213 [http-nio-8080-exec-5] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getLogFileById(..) с причиной: Log object not found
-16-05-2025 14:51:51.213 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
-16-05-2025 14:51:51.214 [http-nio-8080-exec-5] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (InvalidInputException): Log object not found
-16-05-2025 14:51:51.214 [http-nio-8080-exec-5] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@48f1129e,[]>
-16-05-2025 14:51:51.215 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.InvalidInputException: Log object not found]
-16-05-2025 14:51:55.181 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
-16-05-2025 14:51:55.182 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
-16-05-2025 14:51:55.182 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.getStatus(..) с результатом: LogObject@4d78fda1
-16-05-2025 14:51:55.183 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.getStatus(..) с результатом: <200 OK OK,{status=IN_PROGRESS},[]>
-16-05-2025 14:51:59.192 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getLogFileById(..)
-16-05-2025 14:51:59.192 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadCreatedLogs(..)
-16-05-2025 14:51:59.192 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Запрос на скачивание логов для ID: 1
-16-05-2025 14:51:59.192 [http-nio-8080-exec-4] ERROR c.e.f.service.impl.LogServiceImpl - Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:51:59.193 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.downloadCreatedLogs(..) с причиной: Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:51:59.193 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getLogFileById(..) с причиной: Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:51:59.193 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleFileNotReadyException(..)
-16-05-2025 14:51:59.193 [http-nio-8080-exec-4] WARN  c.e.f.e.GlobalExceptionHandler - Файл не готов (FileNotReadyException): Файл логов не готов. Текущий статус: IN_PROGRESS
-16-05-2025 14:51:59.194 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleFileNotReadyException(..) с результатом: <409 CONFLICT Conflict,com.example.financery.model.ErrorResponse@1efa1459,[]>
-16-05-2025 14:51:59.195 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.FileNotReadyException: Файл логов не готов. Текущий статус: IN_PROGRESS]
-16-05-2025 14:52:03.544 [LogExecutor-1] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для файла: D:\documents\JavaLabs\temp\logs-16-05-202513437333063475238383.log
-16-05-2025 14:52:06.450 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
-16-05-2025 14:52:06.451 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
-16-05-2025 14:52:06.451 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.getStatus(..) с причиной: Log object not found
-16-05-2025 14:52:06.451 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getStatus(..) с причиной: Log object not found
-16-05-2025 14:52:06.451 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
-16-05-2025 14:52:06.451 [http-nio-8080-exec-9] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (InvalidInputException): Log object not found
-16-05-2025 14:52:06.452 [http-nio-8080-exec-9] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@5a88e9bf,[]>
-16-05-2025 14:52:06.453 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.InvalidInputException: Log object not found]
+16-05-2025 15:02:18.993 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2025 15:02:19.001 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.88 seconds (process running for 581.181)
