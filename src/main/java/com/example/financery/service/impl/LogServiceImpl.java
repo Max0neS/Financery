@@ -1,5 +1,6 @@
 package com.example.financery.service.impl;
 
+import com.example.financery.exception.FileNotReadyException;
 import com.example.financery.exception.InvalidInputException;
 import com.example.financery.exception.NotFoundException;
 import com.example.financery.model.LogObject;
@@ -295,7 +296,7 @@ public class LogServiceImpl implements LogService {
         LogObject logObject = getStatus(taskId);
         if (!"COMPLETED".equals(logObject.getStatus())) {
             log.error("Файл логов не готов. Текущий статус: {}", logObject.getStatus());
-            throw new IllegalStateException(
+            throw new FileNotReadyException(
                     "Файл логов не готов. Текущий статус: "
                             + logObject.getStatus());
         }
