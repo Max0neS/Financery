@@ -198,3 +198,79 @@
 }
 16-05-2025 14:50:48.214 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 16-05-2025 14:50:48.223 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.965 seconds (process running for 1727.228)
+16-05-2025 14:51:25.992 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 1336 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+16-05-2025 14:51:25.994 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+16-05-2025 14:51:25.995 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2025 14:51:28.389 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2025 14:51:29.611 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+16-05-2025 14:51:33.149 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+16-05-2025 14:51:33.152 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@6e01447b
+16-05-2025 14:51:33.291 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+16-05-2025 14:51:33.376 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+16-05-2025 14:51:33.378 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+16-05-2025 14:51:34.713 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2025 14:51:34.745 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.568 seconds (process running for 10.746)
+16-05-2025 14:51:43.517 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.createLogFile(..)
+16-05-2025 14:51:43.518 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.createLogAsync(..)
+16-05-2025 14:51:43.521 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.createLogAsync(..) с результатом: 1
+16-05-2025 14:51:43.526 [http-nio-8080-exec-3] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.createLogFile(..) с результатом: <200 OK OK,1,[]>
+16-05-2025 14:51:47.615 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
+16-05-2025 14:51:47.616 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
+16-05-2025 14:51:47.618 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.getStatus(..) с причиной: Log object not found
+16-05-2025 14:51:47.618 [http-nio-8080-exec-2] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getStatus(..) с причиной: Log object not found
+16-05-2025 14:51:47.621 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+16-05-2025 14:51:47.621 [http-nio-8080-exec-2] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (InvalidInputException): Log object not found
+16-05-2025 14:51:47.622 [http-nio-8080-exec-2] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@b88affd,[]>
+16-05-2025 14:51:47.670 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.InvalidInputException: Log object not found]
+16-05-2025 14:51:51.211 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getLogFileById(..)
+16-05-2025 14:51:51.212 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadCreatedLogs(..)
+16-05-2025 14:51:51.212 [http-nio-8080-exec-5] INFO  c.e.f.service.impl.LogServiceImpl - Запрос на скачивание логов для ID: 2
+16-05-2025 14:51:51.212 [http-nio-8080-exec-5] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.downloadCreatedLogs(..) с причиной: Log object not found
+16-05-2025 14:51:51.213 [http-nio-8080-exec-5] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getLogFileById(..) с причиной: Log object not found
+16-05-2025 14:51:51.213 [http-nio-8080-exec-5] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+16-05-2025 14:51:51.214 [http-nio-8080-exec-5] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (InvalidInputException): Log object not found
+16-05-2025 14:51:51.214 [http-nio-8080-exec-5] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@48f1129e,[]>
+16-05-2025 14:51:51.215 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.InvalidInputException: Log object not found]
+16-05-2025 14:51:55.181 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
+16-05-2025 14:51:55.182 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
+16-05-2025 14:51:55.182 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogServiceImpl.getStatus(..) с результатом: LogObject@4d78fda1
+16-05-2025 14:51:55.183 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.getStatus(..) с результатом: <200 OK OK,{status=IN_PROGRESS},[]>
+16-05-2025 14:51:59.192 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getLogFileById(..)
+16-05-2025 14:51:59.192 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.downloadCreatedLogs(..)
+16-05-2025 14:51:59.192 [http-nio-8080-exec-4] INFO  c.e.f.service.impl.LogServiceImpl - Запрос на скачивание логов для ID: 1
+16-05-2025 14:51:59.192 [http-nio-8080-exec-4] ERROR c.e.f.service.impl.LogServiceImpl - Файл логов не готов. Текущий статус: IN_PROGRESS
+16-05-2025 14:51:59.193 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.downloadCreatedLogs(..) с причиной: Файл логов не готов. Текущий статус: IN_PROGRESS
+16-05-2025 14:51:59.193 [http-nio-8080-exec-4] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getLogFileById(..) с причиной: Файл логов не готов. Текущий статус: IN_PROGRESS
+16-05-2025 14:51:59.193 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleFileNotReadyException(..)
+16-05-2025 14:51:59.193 [http-nio-8080-exec-4] WARN  c.e.f.e.GlobalExceptionHandler - Файл не готов (FileNotReadyException): Файл логов не готов. Текущий статус: IN_PROGRESS
+16-05-2025 14:51:59.194 [http-nio-8080-exec-4] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleFileNotReadyException(..) с результатом: <409 CONFLICT Conflict,com.example.financery.model.ErrorResponse@1efa1459,[]>
+16-05-2025 14:51:59.195 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.FileNotReadyException: Файл логов не готов. Текущий статус: IN_PROGRESS]
+16-05-2025 14:52:03.544 [LogExecutor-1] WARN  c.e.f.service.impl.LogServiceImpl - Не удалось удалить права на выполнение для файла: D:\documents\JavaLabs\temp\logs-16-05-202513437333063475238383.log
+16-05-2025 14:52:06.450 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogController.getStatus(..)
+16-05-2025 14:52:06.451 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: LogServiceImpl.getStatus(..)
+16-05-2025 14:52:06.451 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogServiceImpl.getStatus(..) с причиной: Log object not found
+16-05-2025 14:52:06.451 [http-nio-8080-exec-9] ERROR c.e.financery.aspect.LoggingAspect - Исключение в: LogController.getStatus(..) с причиной: Log object not found
+16-05-2025 14:52:06.451 [http-nio-8080-exec-9] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: GlobalExceptionHandler.handleValidationExceptions(..)
+16-05-2025 14:52:06.451 [http-nio-8080-exec-9] WARN  c.e.f.e.GlobalExceptionHandler - Ошибка валидации (InvalidInputException): Log object not found
+16-05-2025 14:52:06.452 [http-nio-8080-exec-9] WARN  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: GlobalExceptionHandler.handleValidationExceptions(..) с результатом: <400 BAD_REQUEST Bad Request,com.example.financery.model.ErrorResponse@5a88e9bf,[]>
+16-05-2025 14:52:06.453 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.financery.exception.InvalidInputException: Log object not found]

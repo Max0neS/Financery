@@ -284,7 +284,7 @@ public class LogServiceImpl implements LogService {
     public LogObject getStatus(Long taskId) {
         LogObject obj = tasks.get(taskId);
         if (obj == null) {
-            throw new InvalidInputException("Log object not found");
+            throw new NotFoundException("Log object not found");
         }
         return obj;
     }
