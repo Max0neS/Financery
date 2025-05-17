@@ -272,7 +272,7 @@ public class LogServiceImpl implements LogService {
         Long id = idCounter.getAndIncrement();
         LogObject logObject = new LogObject(id, "IN_PROGRESS");
         tasks.put(id, logObject);
-        executor.execute(() -> this.createLogs(id, date));
+        executor.execute(() -> createLogs(id, date));
         return id;
     }
 
