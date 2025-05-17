@@ -4,7 +4,6 @@ package com.example.financery.controller;
 import com.example.financery.dto.UserDtoRequest;
 import com.example.financery.dto.UserDtoResponse;
 import com.example.financery.model.User;
-import com.example.financery.service.TransactionService;
 import com.example.financery.service.UserService;
 import java.util.List;
 
@@ -13,7 +12,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -25,16 +23,6 @@ public class UserController {
 
     private final UserService userService;
     private final VisitCounterService visitCounterService;
-    private final TransactionService transactionService;
-
-    @Autowired
-    public UserController(UserService userService,
-                          TransactionService transactionService,
-                          VisitCounterService visitCounterService) {
-        this.userService = userService;
-        this.transactionService = transactionService;
-        this.visitCounterService = visitCounterService;
-    }
 
     @Operation(
             summary = "Вывод всех пользователей",

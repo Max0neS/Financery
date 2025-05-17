@@ -27,16 +27,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(FileNotReadyException.class)
-    public ResponseEntity<ErrorResponse> handleFileNotReadyException(FileNotReadyException ex) {
-        logger.warn("Файл не готов (FileNotReadyException): {}", ex.getMessage());
-        ErrorResponse errorResponse = new ErrorResponse(
-                HttpStatus.CONFLICT.value(),
-                ex.getMessage()
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
-    }
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationExceptions(
             MethodArgumentNotValidException ex) {
@@ -48,6 +38,17 @@ public class GlobalExceptionHandler {
                 errorMessage);
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(FileNotReadyException.class)
+    public ResponseEntity<ErrorResponse> handleFileNotReadyException(FileNotReadyException ex) {
+        logger.warn("Файл не готов (FileNotReadyException): {}", ex.getMessage());
+        ErrorResponse errorResponse = new ErrorResponse(
+                HttpStatus.CONFLICT.value(),
+                ex.getMessage()
+        );
+        return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
+    }
+
 
     @ExceptionHandler(LogException.class)
     public ResponseEntity<ErrorResponse> handleLogException(LogException ex) {

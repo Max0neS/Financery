@@ -7,7 +7,6 @@ import com.example.financery.model.LogObject;
 import com.example.financery.service.AsyncLogExecutor;
 import com.example.financery.service.LogService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -33,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Slf4j
@@ -52,7 +50,6 @@ public class LogServiceImpl implements LogService {
     public LogServiceImpl(
             @Value("${app.log.file.path}") String logFilePath,
             @Value("${app.temp.dir.path}") String tempDirPath,
-            @Qualifier("executor") Executor executor,
             AsyncLogExecutor asyncLogExecutor) {
         this.logFilePath = Paths.get(logFilePath);
         this.tempDir = Paths.get(tempDirPath);
