@@ -84,7 +84,7 @@ public class TransactionServiceImpl implements TransactionService {
         List<Transaction> transactions = transactionRepository.findByUserId(userId);
         List<TransactionDtoResponse> transactionsResponse = transactions.stream()
                 .map(transactionMapper::toTransactionDto)
-                .collect(Collectors.toList());
+                .toList();
 
         log.info("Сопоставлено {} транзакций для пользователя: {}",
                 transactionsResponse.size(), userId);

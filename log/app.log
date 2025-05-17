@@ -229,3 +229,35 @@ Consider defining a bean of type 'com.example.financery.service.LogService' in y
 }
 17-05-2025 13:59:32.171 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 16.548 seconds (process running for 20.279)
 17-05-2025 13:59:34.780 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
+17-05-2025 14:03:12.793 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 14872 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+17-05-2025 14:03:12.796 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+17-05-2025 14:03:12.797 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+17-05-2025 14:03:15.190 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17-05-2025 14:03:16.412 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+17-05-2025 14:03:19.866 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+17-05-2025 14:03:19.870 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@74a136e7
+17-05-2025 14:03:20.005 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+17-05-2025 14:03:20.088 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+17-05-2025 14:03:20.091 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+17-05-2025 14:03:21.428 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17-05-2025 14:03:21.464 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 9.45 seconds (process running for 10.529)

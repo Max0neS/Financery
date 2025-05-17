@@ -4,6 +4,7 @@ import com.example.financery.exception.FileNotReadyException;
 import com.example.financery.exception.InvalidInputException;
 import com.example.financery.exception.NotFoundException;
 import com.example.financery.model.LogObject;
+import com.example.financery.service.AsyncLogExecutor;
 import com.example.financery.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,19 +42,21 @@ public class LogServiceImpl implements LogService {
 
     private final Path logFilePath;
     private final Path tempDir;
-    private final Executor executor;
     private final AtomicLong idCounter = new AtomicLong(1);
     private final Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
     private static final String DATE_FORMAT = "yyyy-mm-dd";
     private static final String FAIL_TEXT = "FAILED";
 
+    private final AsyncLogExecutor asyncLogExecutor;
+
     public LogServiceImpl(
             @Value("${app.log.file.path}") String logFilePath,
             @Value("${app.temp.dir.path}") String tempDirPath,
-            @Qualifier("executor") Executor executor) {
+            @Qualifier("executor") Executor executor,
+            AsyncLogExecutor asyncLogExecutor) {
         this.logFilePath = Paths.get(logFilePath);
         this.tempDir = Paths.get(tempDirPath);
-        this.executor = executor;
+        this.asyncLogExecutor = asyncLogExecutor;
         ensureTempDirExists();
     }
 
@@ -272,7 +275,7 @@ public class LogServiceImpl implements LogService {
         Long id = idCounter.getAndIncrement();
         LogObject logObject = new LogObject(id, "IN_PROGRESS");
         tasks.put(id, logObject);
-        executor.execute(() -> createLogs(id, date));
+        asyncLogExecutor.executeCreateLogs(id, date);
         return id;
     }
 
