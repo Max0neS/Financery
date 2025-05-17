@@ -25,6 +25,8 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final InMemoryCache cache;
+    private static final String USER_WITH_ID = "Пользователь с id ";
+    private static final String NOT_FOUND = " не найден";
 
     @Override
     @Transactional
@@ -51,7 +53,7 @@ public class UserServiceImpl implements UserService {
     public UserDtoResponse getUserById(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException(
-                        "Пользователь с id " + userId + " не найден"));
+                        USER_WITH_ID + userId + NOT_FOUND));
         return userMapper.toDto(user);
     }
 
@@ -65,7 +67,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserDtoResponse updateUser(long id, UserDtoRequest userDtoRequest) {
         User newUser = userRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Пользователь с id " + id + " не найден"));
+                .orElseThrow(() -> new NotFoundException(USER_WITH_ID + id + NOT_FOUND));
 
 
         newUser.setName(userDtoRequest.getName());
@@ -79,7 +81,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Пользователь с id " + id + " не найден"));
+                .orElseThrow(() -> new NotFoundException(USER_WITH_ID + id + NOT_FOUND));
 
         userRepository.deleteById(id);
 

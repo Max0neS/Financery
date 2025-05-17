@@ -1102,20 +1102,20 @@ class TransactionServiceImplTest {
 
     @Test
     void deleteTransaction_billNotFound_throwsNotFoundException() {
-        Transaction transaction = new Transaction();
-        transaction.setId(1L);
-        transaction.setName("Test Transaction");
-        transaction.setDescription("Test Description");
-        transaction.setType(true); // Доход
-        transaction.setAmount(100.0);
-        transaction.setDate(LocalDate.now());
-        transaction.setUser(user);
+        Transaction testTransaction = new Transaction(); // Изменено с transaction
+        testTransaction.setId(1L);
+        testTransaction.setName("Test Transaction");
+        testTransaction.setDescription("Test Description");
+        testTransaction.setType(true); // Доход
+        testTransaction.setAmount(100.0);
+        testTransaction.setDate(LocalDate.now());
+        testTransaction.setUser(user);
 
-        Bill bill = new Bill();
-        bill.setId(1L);
-        transaction.setBill(bill);
+        Bill testBill = new Bill(); // Изменено с bill
+        testBill.setId(1L);
+        testTransaction.setBill(testBill);
 
-        when(transactionRepository.findById(1L)).thenReturn(Optional.of(transaction));
+        when(transactionRepository.findById(1L)).thenReturn(Optional.of(testTransaction));
         when(billRepository.findById(1L)).thenReturn(Optional.empty());
 
         NotFoundException exception = assertThrows(NotFoundException.class,
@@ -1131,18 +1131,18 @@ class TransactionServiceImplTest {
     @Test
     void deleteTransaction_cacheRemoveThrowsException() {
         bill.setBalance(1000.0);
-        Transaction transaction = new Transaction();
-        transaction.setId(1L);
-        transaction.setName("Test Transaction");
-        transaction.setDescription("Test Description");
-        transaction.setType(true); // Доход
-        transaction.setAmount(100.0);
-        transaction.setDate(LocalDate.now());
-        transaction.setUser(user);
-        transaction.setBill(bill);
-        transaction.setTags(new ArrayList<>(List.of(tag)));
+        Transaction testTransaction = new Transaction(); // Изменено с transaction
+        testTransaction.setId(1L);
+        testTransaction.setName("Test Transaction");
+        testTransaction.setDescription("Test Description");
+        testTransaction.setType(true); // Доход
+        testTransaction.setAmount(100.0);
+        testTransaction.setDate(LocalDate.now());
+        testTransaction.setUser(user);
+        testTransaction.setBill(bill);
+        testTransaction.setTags(new ArrayList<>(List.of(tag)));
 
-        when(transactionRepository.findById(1L)).thenReturn(Optional.of(transaction));
+        when(transactionRepository.findById(1L)).thenReturn(Optional.of(testTransaction));
         when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
         doThrow(new RuntimeException("Cache remove failed")).when(cache).removeTransaction(1L, 1L);
 
@@ -1153,7 +1153,7 @@ class TransactionServiceImplTest {
         assertEquals(900.0, bill.getBalance()); // Баланс всё равно уменьшился (отмена дохода)
         verify(transactionRepository).findById(1L);
         verify(billRepository).findById(1L);
-        verify(transactionRepository).delete(transaction);
+        verify(transactionRepository).delete(testTransaction);
         verify(cache).removeTransaction(1L, 1L);
     }
 }

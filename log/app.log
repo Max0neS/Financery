@@ -198,3 +198,34 @@ Consider defining a bean of type 'com.example.financery.service.LogService' in y
 }
 16-05-2025 15:02:18.993 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 16-05-2025 15:02:19.001 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 2.88 seconds (process running for 581.181)
+17-05-2025 13:59:16.863 [main] INFO  c.e.f.FinanceryApplicationTests - Starting FinanceryApplicationTests using Java 23.0.2 with PID 16744 (started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+17-05-2025 13:59:16.865 [main] DEBUG c.e.f.FinanceryApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+17-05-2025 13:59:16.866 [main] INFO  c.e.f.FinanceryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+17-05-2025 13:59:22.749 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+17-05-2025 13:59:29.933 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+17-05-2025 13:59:29.940 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@78af3e88
+17-05-2025 13:59:30.137 [main] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+17-05-2025 13:59:30.298 [main] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+17-05-2025 13:59:30.302 [main] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+17-05-2025 13:59:32.171 [main] INFO  c.e.f.FinanceryApplicationTests - Started FinanceryApplicationTests in 16.548 seconds (process running for 20.279)
+17-05-2025 13:59:34.780 [main] INFO  c.e.f.s.impl.TransactionServiceImpl - Сопоставлено 1 транзакций для пользователя: 1
