@@ -2389,3 +2389,62 @@ Consider defining a bean of type 'com.example.financery.service.TransactionServi
 21-05-2025 23:17:49.647 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserMapper.toDto(..) с результатом: UserDtoResponse(id=6, name=Gerda, email=Jared.Glover@gmail.com, balance=10000.0, bills=[BillDtoResponse(id=8, name=NewBill, balance=58.8284, userId=6, transactions=[]), BillDtoResponse(id=7, name=NewBill, balance=10084.350900000001, userId=6, transactions=[TransactionDtoResponse(id=22, name=fefefe, description=website Syrian, tags=[], type=true, amount=5000.0, date=2002-02-19, userId=6, billId=7), TransactionDtoResponse(id=23, name=fefefe, description=innovate Realigned, tags=[], type=false, amount=5000.0, date=2002-02-19, userId=6, billId=7), TransactionDtoResponse(id=33, name=fefefe, description=Computers invoice Account, tags=[], type=true, amount=10000.0, date=2002-02-19, userId=6, billId=7)])])
 21-05-2025 23:17:49.647 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserServiceImpl.getUserById(..) с результатом: UserDtoResponse(id=6, name=Gerda, email=Jared.Glover@gmail.com, balance=10000.0, bills=[BillDtoResponse(id=8, name=NewBill, balance=58.8284, userId=6, transactions=[]), BillDtoResponse(id=7, name=NewBill, balance=10084.350900000001, userId=6, transactions=[TransactionDtoResponse(id=22, name=fefefe, description=website Syrian, tags=[], type=true, amount=5000.0, date=2002-02-19, userId=6, billId=7), TransactionDtoResponse(id=23, name=fefefe, description=innovate Realigned, tags=[], type=false, amount=5000.0, date=2002-02-19, userId=6, billId=7), TransactionDtoResponse(id=33, name=fefefe, description=Computers invoice Account, tags=[], type=true, amount=10000.0, date=2002-02-19, userId=6, billId=7)])])
 21-05-2025 23:17:49.649 [http-nio-8080-exec-7] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: UserController.getUserById(..) с результатом: UserDtoResponse(id=6, name=Gerda, email=Jared.Glover@gmail.com, balance=10000.0, bills=[BillDtoResponse(id=8, name=NewBill, balance=58.8284, userId=6, transactions=[]), BillDtoResponse(id=7, name=NewBill, balance=10084.350900000001, userId=6, transactions=[TransactionDtoResponse(id=22, name=fefefe, description=website Syrian, tags=[], type=true, amount=5000.0, date=2002-02-19, userId=6, billId=7), TransactionDtoResponse(id=23, name=fefefe, description=innovate Realigned, tags=[], type=false, amount=5000.0, date=2002-02-19, userId=6, billId=7), TransactionDtoResponse(id=33, name=fefefe, description=Computers invoice Account, tags=[], type=true, amount=10000.0, date=2002-02-19, userId=6, billId=7)])])
+21-05-2025 23:28:49.812 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+21-05-2025 23:28:49.831 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+21-05-2025 23:28:50.084 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 4952 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+21-05-2025 23:28:50.085 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+21-05-2025 23:28:50.085 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+21-05-2025 23:28:50.897 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+21-05-2025 23:28:51.289 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+21-05-2025 23:28:53.090 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\LogController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.financery.service.LogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+21-05-2025 23:28:53.108 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.financery.controller.LogController required a bean of type 'com.example.financery.service.LogService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.LogService' in your configuration.
+
+21-05-2025 23:28:54.661 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 4952 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+21-05-2025 23:28:54.661 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+21-05-2025 23:28:54.661 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+21-05-2025 23:28:55.362 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+21-05-2025 23:28:55.712 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+21-05-2025 23:28:56.939 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AppConfig.logTasks()
+21-05-2025 23:28:56.940 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AppConfig.logTasks() с результатом: {}
+21-05-2025 23:28:57.057 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+21-05-2025 23:28:57.154 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+21-05-2025 23:28:57.154 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@483c2af0
+21-05-2025 23:28:57.201 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+21-05-2025 23:28:57.201 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+21-05-2025 23:28:57.463 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CorsConfig.addCorsMappings(..)
+21-05-2025 23:28:57.464 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CorsConfig.addCorsMappings(..) с результатом: null
+21-05-2025 23:28:58.331 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+21-05-2025 23:28:58.341 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.729 seconds (process running for 2190.5)
