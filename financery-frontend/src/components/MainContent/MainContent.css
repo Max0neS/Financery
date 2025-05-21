@@ -1,0 +1,26 @@
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.user-info h1 {
+    font-size: 32px;
+    margin: 20px 0;
+}
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.expense {
+    color: red;
+    font-size: 18px;
+}
+.income {
+    color: green;
+    font-size: 18px;
+}

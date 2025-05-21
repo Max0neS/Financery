@@ -3,7 +3,6 @@ package com.example.financery.service;
 import com.example.financery.model.LogObject;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
 
 import java.nio.file.Path;
 import java.time.LocalDate;

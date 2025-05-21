@@ -45,7 +45,6 @@ public class LogServiceImpl implements LogService {
     private final AtomicLong idCounter = new AtomicLong(1);
     private Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
     private static final String DATE_FORMAT = "yyyy-mm-dd";
-    //private static final String FAIL_TEXT = "FAILED";
 
     private final AsyncLogExecutor asyncLogExecutor;
 

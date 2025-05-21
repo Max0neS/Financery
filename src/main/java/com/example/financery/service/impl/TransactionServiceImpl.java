@@ -70,21 +70,23 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     @Transactional
     public List<TransactionDtoResponse> getTransactionsByUserId(long userId) {
-
         if (!userRepository.existsById(userId)) {
             throw new NotFoundException(String.format(USER_WITH_ID_NOT_FOUND, userId));
         }
 
-        //Чекаем есть ли в кеше
+        // Проверяем, есть ли в кэше
         List<TransactionDtoResponse> cachedTransactions = cache.get(userId);
         if (cachedTransactions != null) {
             return cachedTransactions;
         }
 
         List<Transaction> transactions = transactionRepository.findByUserId(userId);
-        List<TransactionDtoResponse> transactionsResponse = transactions.stream()
-                .map(transactionMapper::toTransactionDto)
-                .toList();
+        // Преобразуем в изменяемый список
+        List<TransactionDtoResponse> transactionsResponse = new ArrayList<>(
+                transactions.stream()
+                        .map(transactionMapper::toTransactionDto)
+                        .toList()
+        );
 
         log.info("Сопоставлено {} транзакций для пользователя: {}",
                 transactionsResponse.size(), userId);
