@@ -22,9 +22,6 @@ public interface LogService {
 
     Resource createResourceFromTempFile(Path tempFilePath, String date);
 
-    @Async("executor")
-    void createLogs(Long taskId, String date);
-
     Long createLogAsync(String date);
 
     LogObject getStatus(Long taskId);

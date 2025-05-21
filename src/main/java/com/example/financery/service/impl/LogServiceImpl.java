@@ -8,6 +8,8 @@ import com.example.financery.service.AsyncLogExecutor;
 import com.example.financery.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -41,19 +43,21 @@ public class LogServiceImpl implements LogService {
     private final Path logFilePath;
     private final Path tempDir;
     private final AtomicLong idCounter = new AtomicLong(1);
-    private final Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
+    private Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
     private static final String DATE_FORMAT = "yyyy-mm-dd";
-    private static final String FAIL_TEXT = "FAILED";
+    //private static final String FAIL_TEXT = "FAILED";
 
     private final AsyncLogExecutor asyncLogExecutor;
 
     public LogServiceImpl(
             @Value("${app.log.file.path}") String logFilePath,
             @Value("${app.temp.dir.path}") String tempDirPath,
-            AsyncLogExecutor asyncLogExecutor) {
+            AsyncLogExecutor asyncLogExecutor,
+            Map<Long, LogObject> tasks) {
         this.logFilePath = Paths.get(logFilePath);
         this.tempDir = Paths.get(tempDirPath);
         this.asyncLogExecutor = asyncLogExecutor;
+        this.tasks = tasks;
         ensureTempDirExists();
     }
 
@@ -187,88 +191,9 @@ public class LogServiceImpl implements LogService {
         }
     }
 
-    @Async("executor")
-    @Override
-    public void createLogs(Long taskId, String date) {
-        try {
-            Thread.sleep(20000);
-
-            LocalDate logDate = parseDate(date);
-            validateLogFileExists(logFilePath);
-            String formattedDate = logDate.format(DateTimeFormatter.ofPattern(DATE_FORMAT));
-
-            List<String> logLines = Files.readAllLines(logFilePath);
-            List<String> currentLogs = logLines.stream()
-                    .filter(line -> line.contains(formattedDate))
-                    .toList();
-
-            if (currentLogs.isEmpty()) {
-                LogObject logObject = tasks.get(taskId);
-                if (logObject != null) {
-                    logObject.setStatus(FAIL_TEXT);
-                    logObject.setErrorMessage("Нет логов за дату: " + date);
-                }
-                throw new NotFoundException("Нет логов за дату: " + date);
-            }
-
-            Path logFile;
-            String osName = System.getProperty("os.name").toLowerCase();
-            if (osName.contains("win")) {
-                logFile = Files.createTempFile(tempDir, "logs-" + formattedDate, ".log");
-                java.io.File tempFile = logFile.toFile();
-                if (!tempFile.setReadable(true, true) || !tempFile.setWritable(true, true)) {
-                    throw new IllegalStateException(
-                            "Не удалось установить права для файла: "
-                                    + tempFile);
-                }
-                if (tempFile.canExecute() && !tempFile.setExecutable(false, false)) {
-                    log.warn(
-                            "Не удалось удалить права на выполнение для файла: {}",
-                            tempFile);
-                }
-            } else {
-                java.nio.file.attribute.FileAttribute<Set<PosixFilePermission>> attr =
-                        PosixFilePermissions.asFileAttribute(
-                                PosixFilePermissions
-                                        .fromString("rw-------"));
-                logFile = Files.createTempFile(tempDir, "logs-" + formattedDate, ".log", attr);
-            }
-
-            Files.write(logFile, currentLogs);
-            logFile.toFile().deleteOnExit();
-
-            LogObject task = tasks.get(taskId);
-            if (task != null) {
-                task.setStatus("COMPLETED");
-                task.setFilePath(logFile.toString());
-            }
-        } catch (InvalidInputException e) {
-            LogObject task = tasks.get(taskId);
-
-            task.setStatus(FAIL_TEXT);
-            task.setErrorMessage(e.getMessage());
-            log.error("Invalid date format for taskId {}: {}", taskId, e.getMessage());
-        } catch (InterruptedException e) {
-            LogObject task = tasks.get(taskId);
-
-            task.setStatus(FAIL_TEXT);
-            task.setErrorMessage("Task interrupted");
-            Thread.currentThread().interrupt();
-            log.warn("Task interrupted for taskId {}", taskId);
-        } catch (Exception e) {
-            LogObject task = tasks.get(taskId);
-
-            task.setStatus(FAIL_TEXT);
-            task.setErrorMessage("Unexpected error: " + e.getMessage());
-            log.error("Unexpected error in createLogs for taskId {}: {}", taskId, e.getMessage());
-        }
-    }
-
     @Override
     public Long createLogAsync(String date) {
-
         parseDate(date);
-
         Long id = idCounter.getAndIncrement();
         LogObject logObject = new LogObject(id, "IN_PROGRESS");
         tasks.put(id, logObject);
@@ -293,8 +218,7 @@ public class LogServiceImpl implements LogService {
         if (!"COMPLETED".equals(logObject.getStatus())) {
             log.error("Файл логов не готов. Текущий статус: {}", logObject.getStatus());
             throw new FileNotReadyException(
-                    "Файл логов не готов. Текущий статус: "
-                            + logObject.getStatus());
+                    "Файл логов не готов. Текущий статус: " + logObject.getStatus());
         }
 
         Path path = Paths.get(logObject.getFilePath());
