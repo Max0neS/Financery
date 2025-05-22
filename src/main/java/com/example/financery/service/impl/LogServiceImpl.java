@@ -8,8 +8,6 @@ import com.example.financery.service.AsyncLogExecutor;
 import com.example.financery.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -44,7 +42,7 @@ public class LogServiceImpl implements LogService {
     private final Path tempDir;
     private final AtomicLong idCounter = new AtomicLong(1);
     private Map<Long, LogObject> tasks = new ConcurrentHashMap<>();
-    private static final String DATE_FORMAT = "yyyy-mm-dd";
+    private static final String DATE_FORMAT = "dd-MM-yyyy"; // Обновлено
 
     private final AsyncLogExecutor asyncLogExecutor;
 
@@ -77,8 +75,7 @@ public class LogServiceImpl implements LogService {
     public Resource downloadLogs(String date) {
         LocalDate logDate = parseDate(date);
         validateLogFileExists(logFilePath);
-        String formattedDate = logDate.format(DateTimeFormatter
-                .ofPattern(DATE_FORMAT));
+        String formattedDate = logDate.format(DateTimeFormatter.ofPattern(DATE_FORMAT));
 
         Path tempFilePath = createTempFile(logDate);
         filterAndWriteLogsToTempFile(logFilePath, formattedDate, tempFilePath);
@@ -90,11 +87,14 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public LocalDate parseDate(String date) {
+        log.debug("Получена дата для парсинга: '{}'", date); // Отладочный лог
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT);
-            return LocalDate.parse(date, formatter);
+            log.debug("Используемый формат: '{}'", DATE_FORMAT); // Лог формата
+            return LocalDate.parse(date.trim(), formatter); // Убираем пробелы
         } catch (DateTimeParseException e) {
-            throw new InvalidInputException("Неверный формат даты. Требуется dd-mm-yyyy");
+            log.error("Ошибка парсинга даты: '{}', причина: {}", date, e.getMessage());
+            throw new InvalidInputException("Неверный формат даты. Требуется " + DATE_FORMAT);
         }
     }
 
@@ -116,7 +116,7 @@ public class LogServiceImpl implements LogService {
                 if (!tempFile.setReadable(true, true)) {
                     throw new IllegalStateException(
                             "Не удалось установить права на чтение для временного файла: "
-                            + tempFile);
+                                    + tempFile);
                 }
                 if (!tempFile.setWritable(true, true)) {
                     throw new IllegalStateException(
@@ -192,7 +192,8 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public Long createLogAsync(String date) {
-        parseDate(date);
+        log.debug("Вызов createLogAsync с датой: '{}'", date); // Отладочный лог
+        LocalDate logDate = parseDate(date);
         Long id = idCounter.getAndIncrement();
         LogObject logObject = new LogObject(id, "IN_PROGRESS");
         tasks.put(id, logObject);

@@ -108,7 +108,9 @@ public class AsyncLogExecutorImpl implements AsyncLogExecutor {
                 task.setStatus(FAIL_TEXT);
                 task.setErrorMessage("Unexpected error: " + e.getMessage());
             }
-            log.error("Unexpected error in executeCreateLogs for taskId {}: {}", taskId, e.getMessage());
+            log.error(
+                    "Unexpected error in executeCreateLogs for taskId {}: {}",
+                    taskId, e.getMessage());
         }
     }
 
