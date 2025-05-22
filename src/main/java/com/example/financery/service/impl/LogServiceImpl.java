@@ -193,7 +193,6 @@ public class LogServiceImpl implements LogService {
     @Override
     public Long createLogAsync(String date) {
         log.debug("Вызов createLogAsync с датой: '{}'", date); // Отладочный лог
-        LocalDate logDate = parseDate(date);
         Long id = idCounter.getAndIncrement();
         LogObject logObject = new LogObject(id, "IN_PROGRESS");
         tasks.put(id, logObject);

@@ -5563,3 +5563,62 @@ Consider defining a bean of type 'com.example.financery.service.LogService' in y
 22-05-2025 11:56:40.154 [http-nio-8080-exec-2] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: LogController.getStatus(..) с результатом: <200 OK OK,{status=IN_PROGRESS},[]>
 22-05-2025 11:56:54.379 [LogExecutor-1] ERROR c.e.f.s.impl.AsyncLogExecutorImpl - Invalid date format for taskId 1: Неверный формат даты. Требуется yyyy-mm-dd
 22-05-2025 11:56:54.379 [LogExecutor-1] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncLogExecutorImpl.executeCreateLogs(..) с результатом: null
+22-05-2025 11:57:47.514 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+22-05-2025 11:57:47.533 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+22-05-2025 11:57:47.711 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6660 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+22-05-2025 11:57:47.711 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+22-05-2025 11:57:47.712 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+22-05-2025 11:57:48.541 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+22-05-2025 11:57:48.983 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+22-05-2025 11:57:50.471 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logController' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\controller\LogController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'logServiceImpl' defined in file [C:\Users\MaxiM\IdeaProjects\Financery\target\classes\com\example\financery\service\impl\LogServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 2: No qualifying bean of type 'com.example.financery.service.AsyncLogExecutor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+22-05-2025 11:57:50.697 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 2 of constructor in com.example.financery.service.impl.LogServiceImpl required a bean of type 'com.example.financery.service.AsyncLogExecutor' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.financery.service.AsyncLogExecutor' in your configuration.
+
+22-05-2025 11:57:52.242 [restartedMain] INFO  c.e.financery.FinanceryApplication - Starting FinanceryApplication using Java 23.0.2 with PID 6660 (C:\Users\MaxiM\IdeaProjects\Financery\target\classes started by MaxiM in C:\Users\MaxiM\IdeaProjects\Financery)
+22-05-2025 11:57:52.242 [restartedMain] DEBUG c.e.financery.FinanceryApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+22-05-2025 11:57:52.242 [restartedMain] INFO  c.e.financery.FinanceryApplication - No active profile set, falling back to 1 default profile: "default"
+22-05-2025 11:57:52.961 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+22-05-2025 11:57:53.227 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+22-05-2025 11:57:54.481 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AppConfig.logTasks()
+22-05-2025 11:57:54.482 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AppConfig.logTasks() с результатом: {}
+22-05-2025 11:57:54.588 [restartedMain] INFO  c.e.financery.utils.InMemoryCache - LRU Кеш инициализирован с максимальным размером: 3
+22-05-2025 11:57:54.672 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: AsyncConfig.executor()
+22-05-2025 11:57:54.673 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: AsyncConfig.executor() с результатом: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@6cc04f01
+22-05-2025 11:57:54.705 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: OpenApiConfig.customOpenApi()
+22-05-2025 11:57:54.705 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: OpenApiConfig.customOpenApi() с результатом: class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Financery API
+        description: API documentation for Financery API
+        summary: null
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.0
+    }
+    externalDocs: class ExternalDocumentation {
+        description: GitHub repository
+        url: https://github.com/Max0neS/Financery
+    }
+    servers: null
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+22-05-2025 11:57:54.941 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Началось выполнение: CorsConfig.addCorsMappings(..)
+22-05-2025 11:57:54.943 [restartedMain] INFO  c.e.financery.aspect.LoggingAspect - Закончилось выполнение: CorsConfig.addCorsMappings(..) с результатом: null
+22-05-2025 11:57:55.600 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+22-05-2025 11:57:55.608 [restartedMain] INFO  c.e.financery.FinanceryApplication - Started FinanceryApplication in 3.421 seconds (process running for 210.292)
