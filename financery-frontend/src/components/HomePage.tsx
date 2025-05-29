@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AccountCard from './AccountCard';
 import TransactionModal from './modals/TransactionModal';
 import TransactionList from './TransactionList';
 import { api } from '@/services/api';
 
+// Функция нормализации типов транзакций (копируем из api.ts, чтобы использовать локально)
+const normalizeTransactionType = (data: any): any => {
+  if (Array.isArray(data)) {
+    return data.map(item => normalizeTransactionType(item));
+  } else if (data && typeof data === 'object') {
+    if ('type' in data) {
+      return {
+        ...data,
+        type: data.type === true ? 'income' : 'expense',
+        accountId: data.billId ?? data.accountId,
+      };
+    }
+    return data;
+  }
+  return data;
+};
+
 const HomePage = ({ state, dispatch }) => {
   const [showTransactionModal, setShowTransactionModal] = useState(false);
-  const [transactionType, setTransactionType] = useState('income');
+  const [transactionType, setTransactionType] = useState<'income' | 'expense'>('income');
   const [currentAccountIndex, setCurrentAccountIndex] = useState(0);
   const [showCreateAccountModal, setShowCreateAccountModal] = useState(false);
   const [filters, setFilters] = useState({
@@ -17,21 +34,28 @@ const HomePage = ({ state, dispatch }) => {
 
   const { accounts, transactions, tags, currentUser } = state;
 
+  // Нормализация транзакций при первом рендере
+  useEffect(() => {
+    if (transactions.length > 0) {
+      // Проверяем, есть ли транзакции с ненормализованным типом (true/false)
+      const hasUnnormalizedTransactions = transactions.some(
+          (t) => typeof t.type === 'boolean'
+      );
+      if (hasUnnormalizedTransactions) {
+        const normalizedTransactions = normalizeTransactionType(transactions);
+        dispatch({ type: 'SET_TRANSACTIONS', payload: normalizedTransactions });
+      }
+    }
+  }, [transactions, dispatch]);
+
   // Filter accounts and transactions for current user
   const userAccounts = accounts.filter((account) => account.userId === currentUser?.id);
   const currentAccount = userAccounts[currentAccountIndex] || null;
+
   const userTransactions = transactions.filter((t) => t.userId === currentUser?.id);
   const currentAccountTransactions = userTransactions.filter(
       (t) => t.accountId === currentAccount?.id
   );
-
-  // Debugging
-  console.log('User accounts:', userAccounts);
-  console.log('Current account:', currentAccount);
-  console.log('User transactions:', userTransactions);
-  console.log('Current account transactions:', currentAccountTransactions);
-  console.log('Tags:', tags);
-  console.log('Filtered tags:', tags.filter((tag) => tag.userId === currentUser?.id));
 
   // Calculate totals for current user
   const totalBalance = userAccounts.reduce((sum, account) => sum + account.balance, 0);
@@ -50,7 +74,7 @@ const HomePage = ({ state, dispatch }) => {
     setCurrentAccountIndex((prev) => Math.min(userAccounts.length, prev + 1));
   };
 
-  const handleAddTransaction = (type) => {
+  const handleAddTransaction = (type: 'income' | 'expense') => {
     if (!currentAccount) {
       alert('Пожалуйста, выберите счет');
       return;
@@ -59,9 +83,9 @@ const HomePage = ({ state, dispatch }) => {
     setShowTransactionModal(true);
   };
 
-  const handleCreateAccount = async (e) => {
+  const handleCreateAccount = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
     const name = formData.get('name');
     const balance = formData.get('balance');
 
@@ -75,12 +99,7 @@ const HomePage = ({ state, dispatch }) => {
         const createdAccount = await api.accounts.create(newAccount);
         dispatch({
           type: 'ADD_ACCOUNT',
-          payload: {
-            id: createdAccount.id,
-            name: createdAccount.name,
-            balance: createdAccount.balance,
-            userId: createdAccount.userId,
-          },
+          payload: createdAccount,
         });
         setShowCreateAccountModal(false);
         setCurrentAccountIndex(userAccounts.length);
@@ -90,6 +109,19 @@ const HomePage = ({ state, dispatch }) => {
       }
     }
   };
+
+  // Синхронизация данных после изменений
+  useEffect(() => {
+    const syncData = async () => {
+      if (currentUser) {
+        const updatedAccounts = await api.accounts.getByUserId(currentUser.id);
+        const updatedTransactions = await api.transactions.getByUserId(currentUser.id);
+        dispatch({ type: 'SET_ACCOUNTS', payload: updatedAccounts });
+        dispatch({ type: 'SET_TRANSACTIONS', payload: updatedTransactions });
+      }
+    };
+    syncData();
+  }, [currentUser, dispatch]);
 
   if (!currentUser) {
     return (

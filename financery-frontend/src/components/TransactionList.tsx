@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import TransactionModal from './modals/TransactionModal';
+import TransactionModal from "@/components/modals/TransactionModal.tsx";
+import { useState } from "react";
 
 const TransactionList = ({ transactions, tags, filters, setFilters, state, dispatch, title = "История транзакций" }) => {
   const [selectedTransaction, setSelectedTransaction] = useState(null);
   const [showTransactionModal, setShowTransactionModal] = useState(false);
 
-  // Форматирование даты: из dd.MM.yyyy в объект Date
   const parseDate = (dateStr) => {
     if (!dateStr) return new Date();
     if (dateStr.includes('.')) {
@@ -15,13 +14,11 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
     return new Date(dateStr);
   };
 
-  // Нормализация тегов: извлекаем ID из объектов или используем напрямую
   const normalizeTagIds = (tagData) => {
     if (!tagData || !Array.isArray(tagData)) return [];
     return tagData.map((tag) => (typeof tag === 'object' && tag.id ? tag.id : tag)).filter(Boolean);
   };
 
-  // Получение названий тегов с ограничением в 2 тега
   const getTagNames = (tagData) => {
     const tagIds = normalizeTagIds(tagData);
     return tagIds
@@ -30,28 +27,25 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
           return tag ? tag.title : '';
         })
         .filter(Boolean)
-        .slice(0, 2); // Ограничиваем до 2 тегов
+        .slice(0, 2);
   };
 
   const filteredTransactions = transactions.filter((transaction) => {
-    // Period filter
+    // Фильтр по периоду
     if (filters.period === 'month') {
       const now = new Date();
       const transactionDate = parseDate(transaction.date);
-      if (
-          transactionDate.getMonth() !== now.getMonth() ||
-          transactionDate.getFullYear() !== now.getFullYear()
-      ) {
+      if (transactionDate.getMonth() !== now.getMonth() || transactionDate.getFullYear() !== now.getFullYear()) {
         return false;
       }
     }
 
-    // Type filter
+    // Фильтр по типу
     if (filters.type !== 'all' && transaction.type !== filters.type) {
       return false;
     }
 
-    // Tags filter
+    // Фильтр по тегам
     if (filters.tags.length > 0) {
       const transactionTagIds = normalizeTagIds(transaction.tags);
       const hasAllSelectedTags = filters.tags.every((tagId) => transactionTagIds.includes(tagId));
@@ -60,6 +54,9 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
 
     return true;
   });
+
+  console.log('Transactions in TransactionList:', transactions);
+  console.log('Filtered transactions:', filteredTransactions);
 
   const handleTransactionClick = (transaction) => {
     setSelectedTransaction(transaction);
@@ -74,8 +71,6 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
       <div className="bg-white rounded-lg shadow-sm border">
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-xl font-bold text-gray-800 mb-4">{title}</h2>
-
-          {/* Filters */}
           <div className="flex flex-wrap gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Период</label>
@@ -88,7 +83,6 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
                 <option value="month">Этот месяц</option>
               </select>
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Тип</label>
               <select
@@ -101,7 +95,6 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
                 <option value="expense">Только расходы</option>
               </select>
             </div>
-
             <div className="flex-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">Теги</label>
               <div className="flex flex-wrap gap-2 max-h-20 overflow-y-auto items-center">
@@ -127,7 +120,6 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
             </div>
           </div>
         </div>
-
         <div className="divide-y divide-gray-200">
           {filteredTransactions.length === 0 ? (
               <div className="p-6 text-center text-gray-500">Транзакции не найдены</div>
@@ -142,9 +134,7 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
                       <div className="flex-1">
                         <div className="flex items-center space-x-4">
                           <div className="flex-1">
-                            <p className="font-medium text-gray-900 inline">
-                              {transaction.name || 'Без названия'}
-                            </p>
+                            <p className="font-medium text-gray-900 inline">{transaction.name || 'Без названия'}</p>
                             <p className="text-sm text-gray-500">{transaction.description}</p>
                             <p className="text-sm text-gray-500">
                               {parseDate(transaction.date).toLocaleDateString('ru-RU', {
@@ -156,15 +146,12 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
                             {normalizeTagIds(transaction.tags).length > 0 && (
                                 <div className="flex flex-wrap gap-1 mt-1">
                                   {getTagNames(transaction.tags).map((tagName, index) => (
-                                      <span
-                                          key={index}
-                                          className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
-                                      >
+                                      <span key={index} className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded">
                                         {tagName}
-                                      </span> ))}
-                                  {normalizeTagIds(transaction.tags).length > 2 && (
-                                      <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded">...
                                       </span>
+                                  ))}
+                                  {normalizeTagIds(transaction.tags).length > 2 && (
+                                      <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded">...</span>
                                   )}
                                 </div>
                             )}
@@ -186,7 +173,6 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
               ))
           )}
         </div>
-
         {selectedTransaction && (
             <TransactionModal
                 isOpen={showTransactionModal}
@@ -194,7 +180,7 @@ const TransactionList = ({ transactions, tags, filters, setFilters, state, dispa
                   setShowTransactionModal(false);
                   setSelectedTransaction(null);
                 }}
-                type={selectedTransaction.type}
+                type={selectedTransaction.type} // Теперь type всегда 'income'/'expense'
                 account={getTransactionAccount(selectedTransaction)}
                 transaction={selectedTransaction}
                 state={state}

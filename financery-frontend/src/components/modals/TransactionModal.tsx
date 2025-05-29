@@ -1,17 +1,78 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '@/services/api.ts';
+import { api } from '@/services/api';
 
-const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, dispatch }) => {
+interface User {
+  id: number;
+  name: string;
+  [key: string]: any;
+}
+
+interface Account {
+  id: number;
+  name: string;
+  balance: number;
+  userId: number;
+  [key: string]: any;
+}
+
+interface Transaction {
+  id: number;
+  accountId: number;
+  userId: number;
+  type: 'income' | 'expense';
+  amount: number;
+  date: string;
+  name?: string;
+  description?: string;
+  tags?: (number | { id: number; title?: string })[];
+  [key: string]: any;
+}
+
+interface TransactionAPIData {
+  id?: number;
+  name: string;
+  amount: number;
+  description: string;
+  date: string;
+  type: boolean;
+  userId: number;
+  billId: number;
+  tagIds: number[];
+  [key: string]: any;
+}
+
+interface Tag {
+  id: number;
+  title: string;
+  userId: number;
+  [key: string]: any;
+}
+
+interface TransactionModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  type: 'income' | 'expense';
+  account: Account | null;
+  transaction: Transaction | null;
+  state: {
+    tags: Tag[];
+    currentUser: User | null;
+    accounts: Account[];
+  };
+  dispatch: (action: { type: string; payload: any }) => void;
+}
+
+const TransactionModal: React.FC<TransactionModalProps> = ({ isOpen, onClose, type, account, transaction, state, dispatch }) => {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState<number[]>([]);
   const [isEditing, setIsEditing] = useState(false);
 
-  const { tags, currentUser } = state;
+  const { tags, currentUser, accounts } = state;
 
-  const formatDateToInput = (dateStr) => {
+  const formatDateToInput = (dateStr: string): string => {
     if (!dateStr) return '';
     if (dateStr.includes('.')) {
       const [day, month, year] = dateStr.split('.');
@@ -20,7 +81,7 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
     return dateStr;
   };
 
-  const formatDateToAPI = (dateStr) => {
+  const formatDateToAPI = (dateStr: string): string => {
     if (!dateStr) return '';
     const [year, month, day] = dateStr.split('-');
     return `${day}.${month}.${year}`;
@@ -35,8 +96,10 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
         setDescription(transaction.description || '');
         setDate(formatDateToInput(transaction.date));
         setSelectedTags(
-            transaction.tags && Array.isArray(transaction.tags)
-                ? transaction.tags.map((tag) => tag.id || tag)
+            Array.isArray(transaction.tags)
+                ? transaction.tags
+                    .map((tag) => (typeof tag === 'object' && tag !== null ? tag.id : tag))
+                    .filter((tag): tag is number => typeof tag === 'number')
                 : []
         );
       } else {
@@ -52,7 +115,7 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !amount || !description.trim()) {
       alert('Пожалуйста, заполните все обязательные поля');
@@ -75,32 +138,58 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
       return;
     }
 
-    const transactionData = {
+    const transactionData: TransactionAPIData = {
       name: name.trim(),
-      amount: Math.abs(parseFloat(amount)),
+      amount: Math.abs(parsedAmount),
       description: description.trim(),
       date: formattedDate,
-      type: isEditing ? (transaction.type === 'income' ? true : false) : type === 'income',
-      userId: currentUser.id,
-      billId: isEditing ? transaction.accountId : account.id,
+      type: isEditing ? transaction.type === 'income' : type === 'income', // Преобразуем в boolean для бэкенда
+      userId: currentUser?.id,
+      billId: isEditing ? transaction.accountId : account?.id,
       tagIds: selectedTags || [],
     };
 
     console.log('Отправляемые данные:', transactionData);
 
     try {
-      let updatedData;
+      let updatedData: Transaction;
       if (isEditing) {
         updatedData = await api.transactions.update(transaction.id, transactionData);
-        dispatch({ type: 'UPDATE_TRANSACTION', payload: updatedData });
+        dispatch({
+          type: 'UPDATE_TRANSACTION',
+          payload: {
+            id: transaction.id,
+            name: updatedData.name,
+            amount: updatedData.amount,
+            description: updatedData.description,
+            date: updatedData.date,
+            type: updatedData.type, // Уже нормализовано в 'income' или 'expense'
+            userId: updatedData.userId,
+            accountId: updatedData.accountId,
+            tags: updatedData.tags || [],
+          },
+        });
       } else {
         updatedData = await api.transactions.create(transactionData);
-        dispatch({ type: 'ADD_TRANSACTION', payload: updatedData });
+        dispatch({
+          type: 'ADD_TRANSACTION',
+          payload: {
+            id: updatedData.id,
+            name: updatedData.name,
+            amount: updatedData.amount,
+            description: updatedData.description,
+            date: updatedData.date,
+            type: updatedData.type, // Уже нормализовано в 'income' или 'expense'
+            userId: updatedData.userId,
+            accountId: updatedData.accountId,
+            tags: updatedData.tags || [],
+          },
+        });
       }
 
-      // Получаем обновленные данные с сервера
-      const updatedAccounts = await api.accounts.getByUserId(currentUser.id);
-      const updatedTransactions = await api.transactions.getTransactionsByUserId(currentUser.id);
+      // Синхронизация данных с сервера
+      const updatedAccounts = await api.accounts.getByUserId(currentUser?.id);
+      const updatedTransactions = await api.transactions.getByUserId(currentUser?.id);
       dispatch({ type: 'SET_ACCOUNTS', payload: updatedAccounts });
       dispatch({ type: 'SET_TRANSACTIONS', payload: updatedTransactions });
       onClose();
@@ -116,9 +205,9 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
         await api.transactions.delete(transaction.id);
         dispatch({ type: 'DELETE_TRANSACTION', payload: transaction.id });
 
-        // Получаем обновленные данные с сервера
-        const updatedAccounts = await api.accounts.getByUserId(currentUser.id);
-        const updatedTransactions = await api.transactions.getTransactionsByUserId(currentUser.id);
+        // Синхронизация данных с сервера
+        const updatedAccounts = await api.accounts.getByUserId(currentUser?.id);
+        const updatedTransactions = await api.transactions.getByUserId(currentUser?.id);
         dispatch({ type: 'SET_ACCOUNTS', payload: updatedAccounts });
         dispatch({ type: 'SET_TRANSACTIONS', payload: updatedTransactions });
         onClose();
@@ -129,7 +218,7 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
     }
   };
 
-  const toggleTag = (tagId) => {
+  const toggleTag = (tagId: number) => {
     setSelectedTags((prev) =>
         prev.includes(tagId) ? prev.filter((id) => id !== tagId) : [...prev, tagId]
     );
@@ -219,7 +308,7 @@ const TransactionModal = ({ isOpen, onClose, type, account, transaction, state, 
                         className={`px-3 py-1 rounded-full text-sm transition-colors ${
                             selectedTags.includes(tag.id)
                                 ? 'bg-[#003464] text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                     >
                       {tag.title}
