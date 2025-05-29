@@ -93,11 +93,12 @@ public class BillController {
             description = "Удаляет счет с указанным ID."
     )
     @DeleteMapping("/delete-by-id/{billId}")
-    public void deleteBillById(
+    public ResponseEntity<Integer>  deleteBillById(
             @Parameter(description =
                     "ID счета, который необходимо удалить",
                     required = true, example = "1")
             @PathVariable long billId) {
         billService.deleteBill(billId);
+        return ResponseEntity.ok(1);
     }
 }

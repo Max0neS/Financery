@@ -101,11 +101,12 @@ public class TransactionController {
             description = "Удаляет транзакцию с указанным ID."
     )
     @DeleteMapping("/delete-by-id/{transactionId}")
-    public void deleteTransactionById(
+    public ResponseEntity<Integer> deleteTransactionById(
             @Parameter(description = "ID транзакции, которую необходимо удалить",
                     required = true, example = "1")
             @PathVariable long transactionId) {
         transactionService.deleteTransaction(transactionId);
+        return ResponseEntity.ok(1);
     }
 
     @Operation(

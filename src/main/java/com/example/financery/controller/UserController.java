@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -77,7 +78,8 @@ public class UserController {
             description = "Удаляет пользователя по Id"
     )
     @DeleteMapping("/delete-by-id/{id}")
-    public void deleteUser(@PathVariable long id) {
+    public ResponseEntity<Integer> deleteUser(@PathVariable long id) {
         userService.deleteUser(id);
+        return ResponseEntity.ok(1); // Возвращаем 1 с HTTP 200
     }
 }
