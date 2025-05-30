@@ -132,135 +132,138 @@ const HomePage = ({ state, dispatch }) => {
   }
 
   return (
-      <div className="space-y-8">
-        {/* Total Balance and Stats - Centered */}
-        <div className="text-center space-y-3">
-          <div className="grid grid-cols-1 bg-white max-w-md mx-auto rounded-lg shadow-sm border p-4">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">Общий баланс</h3>
-            <p className="text-2xl font-bold text-[#003464]">
-              {totalBalance.toLocaleString('be-BY', { minimumFractionDigits: 2 })} BYN
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-md mx-auto">
-            <div className="bg-white rounded-lg shadow-sm border p-4 text-center">
-              <h3 className="text-m font-semibold text-gray-700 mb-2">Общий доход</h3>
-              <p className="text-xl font-bold text-green-600">
-                +{totalIncome.toLocaleString('be-BY', { minimumFractionDigits: 2 })} BYN
+      <>
+        {/* Основной контент страницы */}
+        <div className="space-y-8">
+          {/* Total Balance and Stats - Centered */}
+          <div className="text-center space-y-3">
+            <div className="grid grid-cols-1 bg-white max-w-md mx-auto rounded-lg shadow-sm border p-4">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">Общий баланс</h3>
+              <p className="text-2xl font-bold text-[#003464]">
+                {totalBalance.toLocaleString('be-BY', { minimumFractionDigits: 2 })} BYN
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow-sm border p-4 text-center">
-              <h3 className="text-m font-semibold text-gray-700 mb-2">Общие расходы</h3>
-              <p className="text-xl font-bold text-red-600">
-                -{totalExpenses.toLocaleString('be-BY', { minimumFractionDigits: 2 })} BYN
-              </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-md mx-auto">
+              <div className="bg-white rounded-lg shadow-sm border p-4 text-center">
+                <h3 className="text-m font-semibold text-gray-700 mb-2">Общий доход</h3>
+                <p className="text-xl font-bold text-green-600">
+                  +{totalIncome.toLocaleString('be-BY', { minimumFractionDigits: 2 })} BYN
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow-sm border p-4 text-center">
+                <h3 className="text-m font-semibold text-gray-700 mb-2">Общие расходы</h3>
+                <p className="text-xl font-bold text-red-600">
+                  -{totalExpenses.toLocaleString('be-BY', { minimumFractionDigits: 2 })} BYN
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Account Cards Slider - Centered */}
-        <div className="bg-white rounded-lg shadow-sm border p-4">
-          <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">Счета</h2>
+          {/* Account Cards Slider - Centered */}
+          <div className="bg-white rounded-lg shadow-sm border p-4">
+            <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">Счета</h2>
 
-          <div className="flex items-center justify-center space-x-4">
-            <button
-                onClick={handlePrevAccount}
-                disabled={currentAccountIndex === 0}
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
+            <div className="flex items-center justify-center space-x-4">
+              <button
+                  onClick={handlePrevAccount}
+                  disabled={currentAccountIndex === 0}
+                  className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-            <div className="flex-1 flex justify-center">
-              {currentAccountIndex < userAccounts.length ? (
-                  <div className="w-64">
-                    <AccountCard
-                        account={currentAccount}
-                        transactions={currentAccountTransactions}
-                        state={state}
-                        dispatch={dispatch}
-                    />
-                  </div>
-              ) : (
-                  <div
-                      onClick={() => setShowCreateAccountModal(true)}
-                      className="w-64 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors h-[200px]"
-                      style={{ aspectRatio: '1/0.8' }}
-                  >
-                    <div className="text-center">
-                      <svg
-                          className="w-12 h-12 mx-auto text-gray-400 mb-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                      >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                        />
-                      </svg>
-                      <p className="text-gray-500 font-medium">Добавить счет</p>
+              <div className="flex-1 flex justify-center">
+                {currentAccountIndex < userAccounts.length ? (
+                    <div className="w-64">
+                      <AccountCard
+                          account={currentAccount}
+                          transactions={currentAccountTransactions}
+                          state={state}
+                          dispatch={dispatch}
+                      />
                     </div>
-                  </div>
-              )}
+                ) : (
+                    <div
+                        onClick={() => setShowCreateAccountModal(true)}
+                        className="w-64 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors h-[200px]"
+                        style={{ aspectRatio: '1/0.8' }}
+                    >
+                      <div className="text-center">
+                        <svg
+                            className="w-12 h-12 mx-auto text-gray-400 mb-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                          <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                          />
+                        </svg>
+                        <p className="text-gray-500 font-medium">Добавить счет</p>
+                      </div>
+                    </div>
+                )}
+              </div>
+
+              <button
+                  onClick={handleNextAccount}
+                  disabled={currentAccountIndex >= userAccounts.length}
+                  className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
 
-            <button
-                onClick={handleNextAccount}
-                disabled={currentAccountIndex >= userAccounts.length}
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            <div className="text-center text-sm text-gray-500 mt-2">
+              {userAccounts.length > 0 || currentAccountIndex === userAccounts.length
+                  ? `${currentAccountIndex + 1} из ${userAccounts.length + 1} счетов`
+                  : 'Нет счетов'}
+            </div>
           </div>
 
-          <div className="text-center text-sm text-gray-500 mt-2">
-            {userAccounts.length > 0 || currentAccountIndex === userAccounts.length
-                ? `${currentAccountIndex + 1} из ${userAccounts.length + 1} счетов`
-                : 'Нет счетов'}
-          </div>
+          {/* Transaction Buttons - Centered */}
+          {currentAccount && (
+              <div className="flex justify-center space-x-5">
+                <button
+                    onClick={() => handleAddTransaction('income')}
+                    className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
+                >
+                  <span className="text-xl">+</span>
+                  <span>Доход</span>
+                </button>
+                <button
+                    onClick={() => handleAddTransaction('expense')}
+                    className="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center space-x-2"
+                >
+                  <span className="text-xl">−</span>
+                  <span>Расход</span>
+                </button>
+              </div>
+          )}
+
+          {/* Current Account Transactions */}
+          {currentAccount && (
+              <TransactionList
+                  transactions={currentAccountTransactions}
+                  tags={tags.filter((tag) => tag.userId === currentUser?.id)}
+                  filters={filters}
+                  setFilters={setFilters}
+                  state={state}
+                  dispatch={dispatch}
+                  title={`Недавние транзакции по счету: ${currentAccount.name}`}
+              />
+          )}
         </div>
 
-        {/* Transaction Buttons - Centered */}
-        {currentAccount && (
-            <div className="flex justify-center space-x-5">
-              <button
-                  onClick={() => handleAddTransaction('income')}
-                  className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
-              >
-                <span className="text-xl">+</span>
-                <span>Доход</span>
-              </button>
-              <button
-                  onClick={() => handleAddTransaction('expense')}
-                  className="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center space-x-2"
-              >
-                <span className="text-xl">−</span>
-                <span>Расход</span>
-              </button>
-            </div>
-        )}
-
-        {/* Current Account Transactions */}
-        {currentAccount && (
-            <TransactionList
-                transactions={currentAccountTransactions}
-                tags={tags.filter((tag) => tag.userId === currentUser?.id)}
-                filters={filters}
-                setFilters={setFilters}
-                state={state}
-                dispatch={dispatch}
-                title={`Недавние транзакции по счету: ${currentAccount.name}`}
-            />
-        )}
-
-        {/* Create Account Modal */}
+        {/* Модальные окна вынесены за пределы основного div */}
         {showCreateAccountModal && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
               <div className="bg-white rounded-lg max-w-md w-full">
@@ -327,16 +330,18 @@ const HomePage = ({ state, dispatch }) => {
             </div>
         )}
 
-        <TransactionModal
-            isOpen={showTransactionModal}
-            onClose={() => setShowTransactionModal(false)}
-            type={transactionType}
-            account={currentAccount}
-            transaction={null}
-            state={state}
-            dispatch={dispatch}
-        />
-      </div>
+        {showTransactionModal && (
+            <TransactionModal
+                isOpen={showTransactionModal}
+                onClose={() => setShowTransactionModal(false)}
+                type={transactionType}
+                account={currentAccount}
+                transaction={null}
+                state={state}
+                dispatch={dispatch}
+            />
+        )}
+      </>
   );
 };
 

@@ -2,15 +2,64 @@ import React, { useState } from 'react';
 import TransactionList from './TransactionList';
 import TransactionModal from './modals/TransactionModal';
 
-const TransactionHistoryPage = ({ state, dispatch }) => {
+// Импорт интерфейсов (предполагается, что они определены в других файлах или нужно добавить их сюда)
+interface User {
+    id: number;
+    name: string;
+    [key: string]: any;
+}
+
+interface Account {
+    id: number;
+    name: string;
+    balance: number;
+    userId: number;
+    [key: string]: any;
+}
+
+interface Transaction {
+    id: number;
+    accountId: number;
+    userId: number;
+    type: 'income' | 'expense';
+    amount: number;
+    date: string;
+    name?: string;
+    description?: string;
+    tags?: (number | { id: number; title?: string })[];
+    [key: string]: any;
+}
+
+interface Tag {
+    id: number;
+    title: string;
+    userId: number;
+    [key: string]: any;
+}
+
+// Определение типа для dispatch
+type DispatchAction = (action: { type: string; payload: any }) => void;
+
+// Определение пропсов для TransactionHistoryPage
+interface TransactionHistoryPageProps {
+    state: {
+        transactions: Transaction[];
+        tags: Tag[];
+        currentUser: User | null;
+        accounts: Account[];
+    };
+    dispatch: DispatchAction;
+}
+
+const TransactionHistoryPage = ({ state, dispatch }: TransactionHistoryPageProps) => {
     const [filters, setFilters] = useState({
         period: 'all',
         type: 'all',
         tags: [],
     });
     const [showTransactionModal, setShowTransactionModal] = useState(false);
-    const [transactionType, setTransactionType] = useState('income');
-    const [selectedAccountId, setSelectedAccountId] = useState('');
+    const [transactionType, setTransactionType] = useState<'income' | 'expense'>('income');
+    const [selectedAccountId, setSelectedAccountId] = useState<string>('');
 
     const { transactions, tags, currentUser, accounts } = state;
 
@@ -19,7 +68,7 @@ const TransactionHistoryPage = ({ state, dispatch }) => {
     const userTags = tags.filter((tag) => tag.userId === currentUser?.id);
     const userAccounts = accounts.filter((account) => account.userId === currentUser?.id);
 
-    const handleAddTransaction = (type) => {
+    const handleAddTransaction = (type: 'income' | 'expense') => {
         if (!selectedAccountId) {
             alert('Пожалуйста, выберите счет');
             return;

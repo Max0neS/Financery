@@ -19,4 +19,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: '../src/main/resources/static',  // Путь относительно фронтенда
+    emptyOutDir: true,                      // Очищать папку перед билдом
+  },
 }));

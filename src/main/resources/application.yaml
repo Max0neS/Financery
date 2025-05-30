@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/FinancyDB
     username: postgres
-    password: admin
+    password: ${PASSWORD_BD}
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
